@@ -18,16 +18,15 @@ digitaltwindenboschbackend
 4.  Run `git pull`.
 5.  Run `docker-compose down` then `docker-compose up --build -d` to rebuild and restart the containers.
 
-
 # AI-Driven InfluxDB Query System
 
-This project provides an AI-driven system for querying InfluxDB using natural language. It integrates Kafka for data streaming and utilizes a Language Model (LLM) to translate natural language queries into executable InfluxDB queries.
+This project provides an AI-driven system for querying InfluxDB using natural language. It integrates Kafka for data streaming and utilizes a Language Model (LLM) through the `ExplainerFinal.py` component to translate natural language queries into executable InfluxDB queries.
 
 ## Components
 
-* **AIQueryInfluxDB.py:** Main interface for natural language queries; translates and executes InfluxDB queries.
+* **ExplainerFinal.py:** Handles LLM interaction and translates natural language queries to InfluxDB queries. This is the core component for query translation.
 * **KafakInflux.py:** Kafka consumer that writes data to InfluxDB.
-* **LLMInfluxQuerieEngine.py:** Handles LLM interaction for query translation.
+* **LLMInfluxQuerieEngine.py:** Manages the LLM API interaction, potentially used for initial query understanding or as a supporting component.
 * **kafka-consumer.py:** General Kafka consumer.
 * **kafka-producer.py:** General Kafka producer.
 * **telegraf.conf:** Telegraf configuration for data collection.
@@ -73,20 +72,17 @@ This project provides an AI-driven system for querying InfluxDB using natural la
     * Obtain an API key from an LLM provider.
     * Store the key securely as an environment variable.
 
-10. **Start Chatbot Service:**
-    * Run `python AIQueryInfluxDB.py`.
-
-11. **Test Chatbot:**
-    * Use natural language queries to test the chatbot.
-    * Verify accurate query translation and results.
+10. **Test Query Translation:**
+    * Run the `ExplainerFinal.py` script.
+    * Test the query translation functionality with various natural language queries.
+    * Verify accurate query translation to InfluxDB format.
 
 ## Usage
 
 * **Data Ingestion:** Telegraf and Kafka producers send data to InfluxDB.
 * **Kafka Streaming:** Kafka manages data streams.
-* **Natural Language Queries:** Use `AIQueryInfluxDB.py` for natural language queries.
-* **Query Translation:** LLM translates queries to InfluxDB format.
-* **Query Execution:** Queries are executed against InfluxDB.
+* **Query Translation:** `ExplainerFinal.py` translates queries to InfluxDB format.
+* **Query Execution:** Translated queries are executed against InfluxDB.
 * **Visualization:** `den_bosch_random_points_map.html` visualizes data.
 
 ## Dependencies
@@ -108,6 +104,16 @@ Contributions are welcome. Please follow these guidelines:
 3.  Commit your changes.
 4.  Push to your fork.
 5.  Create a pull request.
+
+## License
+
+This project is licensed under the [LICENSE NAME] License. See the `LICENSE` file for details.
+
+## Notes
+
+* `ExplainerFinal.py` is the central component for query translation using the LLM.
+* `LLMInfluxQuerieEngine.py` may be used for supporting tasks.
+* Ensure to configure all API keys and connection details securely.
 
 ## License
 
