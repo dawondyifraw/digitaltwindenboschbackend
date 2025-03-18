@@ -2,7 +2,7 @@
 digitaltwindenboschbackend
 
 
-# Local Deployment Instructions
+# You need DOCKERSETUP first and for Deployment Instructions
 
 1.  Clone this repository to your local server.
 2.  Install Docker and Docker Compose on your local server.
