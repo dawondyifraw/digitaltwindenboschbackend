@@ -1,13 +1,21 @@
 #!/usr/bin/env python3
+"""
+ODIN (Hybrid) — Local intent + LLM fallback for Flux query construction.
 
-import requests , re
+Schema (as produced by your direct-to-Influx writer):
+  bucket:       sensordb_influx
+  measurement:  environment
+  tags:         sensor_id, zone
+  fields:       co2_ppm, no2_ppb, pm25_ugm3, noise_db, latitude, longitude
+"""
+
+import re
 import json
-from influxdb_client import InfluxDBClient
-from typing import List, Dict
-from typing import Dict, List, Any,Optional
-import nominatim_api
 import logging
-
+import requests
+from datetime import datetime, timezone
+from typing import Dict, Any, List, Optional
+from influxdb_client import InfluxDBClient
 
 # =============== CONFIG ===============
 HYPERBOLIC_URL = "https://api.hyperbolic.xyz/v1/chat/completions"
@@ -15,300 +23,333 @@ HYPERBOLIC_URL = "https://api.hyperbolic.xyz/v1/chat/completions"
 
 LOCAL_URL = "http://ollama:11434"
 
-HYPERBOLIC_API_KEY = ""  # Replace with your actual API key
+HYPERBOLIC_API_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0dHJhY2V4QGdtYWlsLmNvbSIsImlhdCI6MTczODU5MjE4NX0.04OL3D0p9kh4nlJmccZ2gQGDTE8D2FE06TY3ytSbBW0"  # Replace with your actual API key
 INFLUX_URL = "http://localhost:8086"
 INFLUX_TOKEN = "vQZH5VT3VRUrDBdX4oyDO5BV7kWN4NvRvUJUSvkOGEz-cL3huzmpkBo5ywMVBioDXNQ0UfHc3afinUpxFnLmA==" ##replace
 INFLUX_ORG = "DenBosch"
 KADASTER_API_URL = "https://api.pdok.nl/kadaster/brk-percelen/v1/percelen"
 LOCATIESERVER_URL = "https://geodata.nationaalgeoregister.nl/locatieserver/v3/search"
-BUCKET_NAME = "sensordb_influx"
-BUCKET_NAME = "sensordb_influx"
+BUCKET_NAME = "sensors_db"
+BUCKET_NAME = "sensors_db"
 MEASUREMENT_NAME = "kafka_consumer"
 SENSOR_FIELDS = ["co2", "sound_level", "no2"]
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
-# ---------------- Helper Functions ----------------
 
-def sanitize_flux_query(q: str) -> str:
-    q = q.strip()
-    q = q.replace("’", "'").replace("‘", "'")
-    q = q.replace("“", '"').replace("”", '"')
-    q = q.replace("\u00A0", " ")
+BUCKET       = "sensors_db"   # <-- match your producer
+MEASUREMENT  = "environment"
+
+FIELDS_NUMERIC = ["co2_ppm", "no2_ppb", "pm25_ugm3", "noise_db"]
+FIELDS_COORDS  = ["latitude", "longitude"]
+
+# LLM (fallback only)
+HYPERBOLIC_URL     = "https://api.hyperbolic.xyz/v1/chat/completions"
+
+logging.basicConfig(level=logging.INFO, format="%(asctime)s | %(levelname)s | %(message)s")
+
+# ---------------- Utilities ----------------
+def utc_now_iso() -> str:
+    return datetime.now(timezone.utc).isoformat()
+
+def sanitize_flux(q: str) -> str:
+    q = q.strip().replace("’","'").replace("‘","'").replace("“",'"').replace("”",'"').replace("\u00A0", " ")
     q = " ".join(q.splitlines())
-    q = re.sub(r"from\(bucket:\s*'([^']+)'\)", r'from(bucket: "\1")', q)
+    q = re.sub(r'from\(\s*bucket:\s*\'([^\']+)\'\s*\)', r'from(bucket: "\1")', q)
+    q = "".join(ch for ch in q if ord(ch) < 128)
     return q
 
-def force_ascii_single_line_flux(flux: str) -> str:
-    flux = flux.strip()
-    flux = " ".join(flux.splitlines())
-    flux = flux.replace("’", "'").replace("‘", "'")
-    flux = flux.replace("“", '"').replace("”", '"')
-    flux = flux.replace("\u00A0", " ")
-    flux = re.sub(r"from\(bucket:\s*'([^']+)'\)", r'from(bucket: "\1")', flux)
-    flux = "".join(ch for ch in flux if ord(ch) < 128)
-    return flux
+def is_offtopic(query: str) -> bool:
+    uq = query.lower()
+    relevant = [
+        "co2", "noise", "sound", "no2", "pm2.5", "pm25", "ppm", "ppb", "ug/m3",
+        "sensor", "zone", "average", "mean", "max", "min", "latest",
+        "last hour", "last 24 hours", "last day", "yesterday", "this week", "week"
+    ]
+    return not any(t in uq for t in relevant)
 
-def is_off_topic(user_query: str) -> bool:
-    uq = user_query.lower()
-    relevant_terms = ["co2", "sound_level", "no2", "pm25", "highest", "lowest", "average", "mean", "top", "bottom", "latest"]
-    return not any(term in uq for term in relevant_terms)
+# ---------------- Intent Parser ----------------
+_TIME_WINDOWS = [
+    (r"\blast\s*30\s*min(ute)?s?\b", "-30m"),
+    (r"\blast\s*hour\b|\blast\s*1\s*hour\b", "-1h"),
+    (r"\blast\s*24\s*hours\b|\blast\s*day\b", "-24h"),
+    (r"\byesterday\b", "-48h"),     # conservative; we still return the last 48h window
+    (r"\bthis\s*week\b", "-7d"),
+    (r"\blast\s*7\s*days\b", "-7d"),
+]
+_METRIC_ALIASES = {
+    "co2": "co2_ppm",
+    "noise": "noise_db",
+    "sound": "noise_db",
+    "no2": "no2_ppb",
+    "pm2.5": "pm25_ugm3",
+    "pm25": "pm25_ugm3",
+}
 
-def extract_query_parameters(user_query: str) -> Dict[str, Any]:
-    params = {}
-    uq = user_query.lower()
-    if "last hour" in uq:
-        params["start"] = "-1h"
-    elif "last day" in uq:
-        params["start"] = "-1d"
-    elif "last two days" in uq:
-        params["start"] = "-2d"
-    else:
-        params["start"] = "-2d"
-    if "average" in uq or "mean" in uq:
-        params["aggregator"] = "mean"
-    else:
-        params["aggregator"] = None
-    if "highest" in uq or "max" in uq or "top" in uq:
-        params["sort"] = "desc"
-        params["limit"] = 1
-    elif "lowest" in uq or "min" in uq or "bottom" in uq:
-        params["sort"] = "asc"
-        params["limit"] = 1
-    elif "latest" in uq:
-        params["sort"] = "desc"
-        params["limit"] = 1
-    else:
-        params["sort"] = None
-    return params
+_SENSOR_PATTERNS = [
+    r"\bsensor\s*([A-Za-z0-9\-_.]+)\b",
+    r"\bS-[CRI]\d+\b",  # S-C1 / S-R1 / S-I1
+]
 
-# ---------------- LLM: Flux Query Generator ----------------
+def parse_intent(q: str) -> Dict[str, Any]:
+    uq = q.lower()
 
-def generate_flux_query(user_query: str) -> Optional[str]:
-    if is_off_topic(user_query):
+    # metrics
+    metrics: List[str] = []
+    for k, v in _METRIC_ALIASES.items():
+        if re.search(rf"\b{k}\b", uq):
+            metrics.append(v)
+    metrics = list(dict.fromkeys(metrics))
+
+    # sensor_id
+    sensor_id = None
+    for pat in _SENSOR_PATTERNS:
+        m = re.search(pat, q)  # keep case
+        if m:
+            sensor_id = m.group(0) if len(m.groups()) == 0 else m.group(1)
+            break
+
+    # zone
+    zone = None
+    for z in ["construction", "residential", "industrial"]:
+        if re.search(rf"\b{z}\b", uq):
+            zone = z
+            break
+
+    # time window
+    window = "-24h"
+    for rx, val in _TIME_WINDOWS:
+        if re.search(rx, uq):
+            window = val
+            break
+
+    # aggregations
+    agg = None
+    if re.search(r"\bavg|average|mean\b", uq):
+        agg = "mean"
+    elif re.search(r"\bmax(imum)?\b", uq):
+        agg = "max"
+    elif re.search(r"\bmin(imum)?\b", uq):
+        agg = "min"
+
+    # thresholds
+    threshold = None
+    tm = re.search(r"\b(co2|no2|pm2\.?5|pm25|noise|sound)\s*(>|>=|exceed(s|ed)?)\s*([0-9]+(\.[0-9]+)?)\s*(ppm|ppb|ug/m3|db)?", uq)
+    if tm:
+        raw_metric = tm.group(1).replace(".", "")
+        value = float(tm.group(4))
+        metric = _METRIC_ALIASES.get(raw_metric, None)
+        if metric:
+            threshold = {"metric": metric, "op": ">", "value": value}
+
+    latest = bool(re.search(r"\blatest\b|\bmost recent\b", uq))
+
+    # classify
+    qtype = "timeseries"
+    if threshold:
+        qtype = "threshold"
+    elif agg:
+        qtype = "aggregate"
+    elif latest:
+        qtype = "lookup_latest"
+
+    return {
+        "type": qtype,
+        "metrics": metrics,           # [] means “any numeric”
+        "sensor_id": sensor_id,
+        "zone": zone,
+        "window": window,
+        "agg": agg,
+        "threshold": threshold,
+        "latest": latest,
+    }
+
+# ---------------- Flux builders (local) ----------------
+def _tag_filters(sensor_id: Optional[str], zone: Optional[str]) -> str:
+    parts = []
+    if sensor_id:
+        parts.append(f'|> filter(fn: (r) => r["sensor_id"] == "{sensor_id}")')
+    if zone:
+        parts.append(f'|> filter(fn: (r) => r["zone"] == "{zone}")')
+    return " ".join(parts) + (" " if parts else "")
+
+def _field_filter(metrics: List[str]) -> str:
+    fields = metrics if metrics else FIELDS_NUMERIC
+    ors = " or ".join([f'r._field == "{f}"' for f in fields])
+    return f'|> filter(fn: (r) => {ors}) '
+
+def _pivot_keep(metrics: List[str]) -> str:
+    cols = metrics if metrics else FIELDS_NUMERIC + FIELDS_COORDS
+    keep_cols = ["_time"] + cols + ["sensor_id","zone"]
+    keep_list = ", ".join([f'"{c}"' for c in keep_cols])
+    return f'|> pivot(rowKey: ["_time"], columnKey: ["_field"], valueColumn: "_value") |> keep(columns: [{keep_list}]) '
+
+def build_flux_from_intent(intent: Dict[str, Any]) -> Optional[str]:
+    itype     = intent["type"]
+    metrics   = intent["metrics"]
+    sensor_id = intent["sensor_id"]
+    zone      = intent["zone"]
+    window    = intent["window"]
+    agg       = intent["agg"]
+    threshold = intent["threshold"]
+    latest    = intent["latest"]
+
+    # Base
+    base = f'from(bucket: "{BUCKET}") |> range(start: {window}) |> filter(fn: (r) => r._measurement == "{MEASUREMENT}") '
+
+    # --- 1) TIMESERIES (raw series, no pivot) ---
+    if itype == "timeseries" and not agg and not threshold and metrics:
+        # If user gave a single metric + (optional) sensor filter → classic series
+        # Example query: "noise for sensor S-I1 last hour"
+        flux = base
+        flux += _field_filter(metrics)
+        flux += _tag_filters(sensor_id, zone)
+        # group per sensor so we don't mix series
+        flux += '|> group(columns: ["sensor_id","_field"]) '
+        # keep tidy columns
+        flux += '|> keep(columns: ["_time","_value","_field","sensor_id","zone"]) '
+        return sanitize_flux(flux)
+
+    # --- 2) LOOKUP_LATEST across sensors (per-sensor latest) ---
+    if itype == "lookup_latest" and (metrics or True):
+        # choose a single primary metric for “latest”; default to co2_ppm if none
+        primary = metrics[0] if metrics else "co2_ppm"
+        flux = base
+        flux += f'|> filter(fn: (r) => r._field == "{primary}") '
+        flux += _tag_filters(sensor_id, zone)
+        flux += '|> group(columns: ["sensor_id","_field"]) '
+        flux += '|> sort(columns: ["_time"], desc: true) '
+        flux += '|> unique(column: "sensor_id") '
+        # now one row per sensor; keep columns
+        flux += '|> keep(columns: ["_time","_value","sensor_id","zone"]) '
+        return sanitize_flux(flux)
+
+    # --- 3) AGGREGATE over window (pivot to wide, then aggregateWindow) ---
+    if itype == "aggregate" and agg in ["mean","max","min"]:
+        fn = {"mean":"mean","max":"max","min":"min"}[agg]
+        flux = base
+        flux += _field_filter(metrics)
+        flux += _tag_filters(sensor_id, zone)
+        # 1h window aggregation for stability
+        flux += f'|> aggregateWindow(every: 1h, fn: {fn}, createEmpty: false) '
+        flux += _pivot_keep(metrics)
+        return sanitize_flux(flux)
+
+    # --- 4) THRESHOLD exceedances (pivot so we can filter on a named field) ---
+    if itype == "threshold" and threshold and threshold["metric"]:
+        m = threshold["metric"]; v = threshold["value"]
+        # Pull all numeric fields so pivot has the metric present
+        flux = base
+        flux += _field_filter([m])  # narrow to the relevant field for performance
+        flux += _tag_filters(sensor_id, zone)
+        flux += _pivot_keep([m])
+        flux += f'|> filter(fn: (r) => exists r["{m}"] and r["{m}"] > {v}) '
+        return sanitize_flux(flux)
+
+    # --- 5) Fallback “wide latest” (pivot + global latest) ---
+    if latest:
+        flux = base + _field_filter(metrics)
+        flux += _tag_filters(sensor_id, zone)
+        flux += _pivot_keep(metrics)
+        flux += '|> sort(columns: ["_time"], desc: true) |> limit(n: 1) '
+        return sanitize_flux(flux)
+
+    # If nothing matched, return None to trigger LLM fallback
+    return None
+
+# ---------------- LLM Fallback ----------------
+def llm_flux_fallback(user_query: str) -> Optional[str]:
+    sys_prompt = f"""
+Return a SINGLE-LINE InfluxDB Flux query for this schema:
+- bucket: {BUCKET}
+- measurement: {MEASUREMENT}
+- tags: sensor_id, zone
+- fields: {", ".join(FIELDS_NUMERIC + FIELDS_COORDS)}
+Rules:
+1) Start with from(bucket: "{BUCKET}") |> range(start: -24h)
+2) Always filter _measurement == "{MEASUREMENT}"
+3) If a sensor or zone is mentioned, filter r["sensor_id"] / r["zone"].
+4) For raw series, do NOT pivot; keep _time/_value/_field/sensor_id/zone.
+5) For per-sensor latest, group by sensor_id then sort desc by _time and unique(sensor_id).
+6) One line only, no comments or code fences.
+"""
+    payload = {
+        "model": "deepseek-ai/DeepSeek-V3",
+        "max_tokens": 500,
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "messages": [
+            {"role": "system", "content": sys_prompt},
+            {"role": "user", "content": user_query}
+        ]
+    }
+    headers = {"Authorization": f"Bearer {HYPERBOLIC_API_KEY}", "Content-Type": "application/json"}
+    try:
+        r = requests.post(HYPERBOLIC_URL, json=payload, headers=headers, timeout=20)
+        r.raise_for_status()
+        flux = r.json().get("choices", [{}])[0].get("message", {}).get("content", "")
+        return sanitize_flux(flux)
+    except Exception as e:
+        logging.error(f"LLM fallback error: {e}")
         return None
 
-    params_extracted = extract_query_parameters(user_query)
-    time_range = params_extracted.get("start", "-2d")
-    aggregator = params_extracted.get("aggregator")
-    sort = params_extracted.get("sort")
-    limit = params_extracted.get("limit")
-
-    dynamic_instructions = f"\nAdditional parameters detected:\n- Time range: {time_range}\n"
-    if aggregator:
-        dynamic_instructions += f"- Use aggregator: {aggregator}\n"
-    if sort:
-        dynamic_instructions += f"- Sort order: {sort} with limit: {limit}\n"
-
-    system_instructions = (
-        "You are an expert data engineer specialized in writing InfluxDB Flux queries.\n"
-        f"We have the following data schema:\n"
-        f"- Bucket: {BUCKET_NAME}\n"
-        f"- Measurement: {MEASUREMENT_NAME}\n"
-        f"- Numeric fields: {', '.join(SENSOR_FIELDS)}\n"
-        f"- If no time range is specified, default to the last two days.\n"
-        f"Dynamic query adjustments:{dynamic_instructions}\n"
-        "Goal:\n"
-        f"1) Begin with: from(bucket: '{BUCKET_NAME}') |> range(start: {time_range}).\n"
-        "2) Filter on _measurement == \"kafka_consumer\".\n"
-    )
-    
-    if aggregator:
-        system_instructions += "3) Use aggregateWindow(every: 1h, fn: mean, createEmpty: false) to compute the aggregator.\n"
-    if sort == "desc":
-        system_instructions += "4) After pivoting, use top(n: 1, columns: [\"co2\"]) to get the highest value.\n"
-    elif sort == "asc":
-        system_instructions += "4) After pivoting, use bottom(n: 1, columns: [\"co2\"]) to get the lowest value.\n"
-    elif sort == "desc" and "latest" in user_query.lower():
-        system_instructions += "4) After pivoting, sort by _time in descending order and limit to 1 to get the latest record.\n"
-    else:
-        system_instructions += "4) Do not apply explicit top() or bottom() functions.\n"
-    
-    system_instructions += (
-        "5) Pivot the result so that _time, co2, sound_level, no2, latitude, and longitude become columns.\n"
-        "6) Keep (_time plus all sensor fields) in the final table.\n"
-        "7) Return ONLY the Flux query as a single-line plain text string (no code fences, no extra explanation).\n"
-        "8) Even if the user references only one field (e.g. co2), include all sensor fields if available.\n"
-    )
-    
-    messages = [
-        {"role": "system", "content": system_instructions},
-        {"role": "user", "content": user_query}
-    ]
-    headers_llm = {
-        "Content-Type": "application/json",
-        "Authorization": f"Bearer {HYPERBOLIC_API_KEY}"
-    }
-    payload = {
-        "messages": messages,
-        "model": "deepseek-ai/DeepSeek-V3",
-        "max_tokens": 512,
-        "temperature": 0.0,
-        "top_p": 1.0
-    }
-    
-    try:
-        response = requests.post(HYPERBOLIC_URL, json=payload, headers=headers_llm)
-        response.raise_for_status()
-        response_data = response.json()
-        flux_query = response_data.get("choices", [{}])[0].get("message", {}).get("content", "")
-        flux_query = flux_query.replace("```flux", "").replace("```", "").strip()
-        flux_query = sanitize_flux_query(flux_query)
-        flux_query = flux_query.replace("'", '"')  # force double quotes
-        return flux_query
-    except requests.RequestException as e:
-        logging.error(f"Error generating Flux query: {e}")
-        fallback = (
-            'from(bucket: "sensordb_influx") '
-            '|> range(start: -1d) '
-            '|> filter(fn: (r) => r._measurement == "kafka_consumer") '
-            '|> filter(fn: (r) => r._field == "co2") '
-            '|> aggregateWindow(every: 1h, fn: mean, createEmpty: false) '
-            '|> yield(name: "mean")'
-        )
-        return force_ascii_single_line_flux(fallback)
-
-# ---------------- Nominatim Reverse Geocoding ----------------
-
-def get_nominatim_address(lat: float, lon: float) -> Dict:
-    """
-    Uses the Nominatim API to perform a reverse geocode lookup based on
-    the given latitude and longitude.
-    Returns the JSON response as a dictionary if successful, or an empty dict.
-    """
-    url = "https://nominatim.openstreetmap.org/reverse"
-    params = {
-        "format": "json",
-        "lat": lat,
-        "lon": lon,
-        "addressdetails": 1
-    }
-    headers = {
-        "User-Agent": "DigitalTwinDebBosch/1.0 (daniel@edigitaltwindenbosch.com"  # Replace with your app details
-    }
-    try:
-        response = requests.get(url, params=params, headers=headers, timeout=10)
-        response.raise_for_status()
-        return response.json()
-    except requests.RequestException as e:
-        logging.error(f"Error fetching Nominatim address: {e}")
-        return {}
-
-# ---------------- LLM: Explanation ----------------
-
-def explain_results(user_query: str, influx_data: List[Dict], nominatim_data: Dict) -> str:
-    """
-    Calls an LLM to generate a concise explanation that references the user query,
-    the sensor data from InfluxDB, and uses the reverse geocoded Nominatim data
-    to resolve the coordinates into a human-readable place name.
-    """
-    place_hint = ""
-    if nominatim_data:
-        # Use the 'display_name' from Nominatim as the short place name.
-        place = nominatim_data.get("display_name")
-        if place:
-            place_hint = f" The coordinates correspond to: {place}."
-    
-    prompt = f"""
-User question: "{user_query}"
-
-Sensor data (InfluxDB):
-{json.dumps(influx_data, indent=2)}
-
-Nominatim reverse geocode info:
-{json.dumps(nominatim_data, indent=2)}
-
-Produce a concise answer that:
-1) Summarizes how the sensor data addresses the question.
-2) Resolves the provided latitude and longitude into a human-readable place name.
-3) Incorporates the resolved place name in your explanation.
-{place_hint}
-"""
-    headers_llm = {
-        "Content-Type": "application/json",
-        "Authorization": f"Bearer {HYPERBOLIC_API_KEY}"
-    }
-    payload = {
-        "messages": [{"role": "user", "content": prompt}],
-        "model": "deepseek-ai/DeepSeek-V3",
-        "max_tokens": 512,
-        "temperature": 0.1,
-        "top_p": 0.9
-    }
-    try:
-        response = requests.post(HYPERBOLIC_URL, headers=headers_llm, json=payload)
-        response.raise_for_status()
-        response_data = response.json()
-        return response_data.get("choices", [{}])[0].get("message", {}).get("content", "").strip()
-    except requests.RequestException as e:
-        return f"Error generating final explanation: {e}"
-
-# ---------------- Main Workflow ----------------
-
+# ---------------- Main handler ----------------
 def handle_query(user_query: str) -> str:
-    """
-    1) If the query is off-topic, return a simple answer.
-    2) Otherwise, generate a Flux query via the LLM (with dynamic adjustments).
-    3) Sanitize and force the query into a single ASCII line.
-    4) Query InfluxDB.
-    5) Parse the sensor records.
-    6) Use Nominatim to reverse geocode the coordinates into address data.
-    7) Generate a final explanation via the LLM that includes the resolved place name.
-    """
-    if is_off_topic(user_query):
-        return f"You asked: '{user_query}'. It doesn't seem related to our sensor data. How can I help?"
-    
-    flux_query = generate_flux_query(user_query)
-    if not flux_query:
-        return "No valid Flux query generated. Your query may be off-topic or ambiguous."
-    
-    logging.info(f"Generated Flux Query: {flux_query}")
-    logging.debug(f"Flux Query BEFORE forcing: {repr(flux_query)}")
-    flux_query = force_ascii_single_line_flux(flux_query)
-    logging.debug(f"Flux Query AFTER forcing: {repr(flux_query)}")
-    
-    client = None
+    if is_offtopic(user_query):
+        return ("Out of scope for CO₂/NO₂/PM2.5/noise data. "
+                "Try: 'Show noise for sensor S-I1 last hour'.")
+
+    intent = parse_intent(user_query)
+    flux = build_flux_from_intent(intent)
+
+    if not flux:
+        flux = llm_flux_fallback(user_query)
+    if not flux:
+        return "I couldn't construct a valid Flux query for that request."
+
+    logging.info(f"Flux: {flux}")
+
     try:
         client = InfluxDBClient(url=INFLUX_URL, token=INFLUX_TOKEN, org=INFLUX_ORG)
-        tables = client.query_api().query(query=flux_query)
-        
-        records = []
-        for table in tables:
-            for rec in table.records:
-                time_val = rec.get_time() if hasattr(rec, "get_time") else rec.values.get("_time")
-                row = {
-                    "time": time_val.isoformat() if time_val else None,
-                    "co2": rec.values.get("co2"),
-                    "sound_level": rec.values.get("sound_level"),
-                    "no2": rec.values.get("no2"),
-                    "pm25": rec.values.get("pm25"),
-                    "latitude": rec.values.get("latitude"),
-                    "longitude": rec.values.get("longitude")
-                }
-                records.append(row)
-        
-        if not records:
-            return "No sensor data returned by the query."
-        
-        # Use the first record's coordinates for reverse geocoding via Nominatim
-        primary_lat = records[0].get("latitude")
-        primary_lon = records[0].get("longitude")
-        nominatim_data = {}
-        if primary_lat is not None and primary_lon is not None:
-            nominatim_data = get_nominatim_address(primary_lat, primary_lon)
-        
-        return explain_results(user_query, records[:5], nominatim_data)
-    
+        tables = client.query_api().query(query=flux)
     except Exception as e:
-        logging.error(f"Error in handle_query: {e}")
-        return f"❌ Error in handle_query: {e}"
-    finally:
-        if client is not None:
-            client.close()
+        return f"InfluxDB query failed: {e}"
 
-# ---------------- Example Usage ----------------
+    rows: List[Dict[str, Any]] = []
+    for table in tables:
+        for rec in table.records:
+            vals = rec.values
+            t = rec.get_time() or vals.get("_time")
+            if hasattr(t, "isoformat"):
+                t = t.isoformat()
+            rows.append({
+                "time": t,
+                "sensor_id": vals.get("sensor_id"),
+                "zone": vals.get("zone"),
+                "co2_ppm": vals.get("co2_ppm"),
+                "no2_ppb": vals.get("no2_ppb"),
+                "pm25_ugm3": vals.get("pm25_ugm3"),
+                "noise_db": vals.get("noise_db"),
+                "latitude": vals.get("latitude"),
+                "longitude": vals.get("longitude"),
+                "_field": vals.get("_field"),
+                "_value": vals.get("_value"),
+            })
 
+    if not rows:
+        return "No data matched your request."
+
+    # Quick human summary
+    r0 = rows[0]
+    summary = f"Returned {len(rows)} row(s). Example @ {r0.get('time')} sensor={r0.get('sensor_id')} zone={r0.get('zone')}"
+    parts = []
+    for f in ["co2_ppm", "no2_ppb", "pm25_ugm3", "noise_db"]:
+        if r0.get(f) is not None:
+            parts.append(f"{f}={r0[f]}")
+    if parts:
+        summary += " | " + ", ".join(parts)
+    return summary
+
+# ---------------- CLI quick test ----------------
 if __name__ == "__main__":
-    # Example query: "What is the average CO2 level in the last day?"
-    user_q = "What is the average CO2 level in the last day?"
-    print("USER QUERY:", user_q)
-    answer = handle_query(user_q)
-    print("Final Answer:\n", answer)
+    q = "Show me noise for sensor S-I1 last hour"
+    print("Q:", q)
+    print(handle_query(q))

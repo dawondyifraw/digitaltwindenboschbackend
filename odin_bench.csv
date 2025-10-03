@@ -1,0 +1,371 @@
+ts,run_label,idx,type,query,status_code,latency_ms,valid,engine,preview
+2025-10-02T03:35:34.162328,hybrid_v1,1,lookup,What was the CO2 level in construction zone yesterday?,200,4726.6,True,,"{""response"": ""Response to: No sensor data returned by the query.""}"
+2025-10-02T03:35:34.441227,hybrid_v1,2,timeseries,Show me noise levels for sensor S-I1 last hour,200,2.71,True,,"{""response"": ""Response to: You asked: 'Show me noise levels for sensor S-I1 last hour'. It doesn't seem related to our sensor data. How can I help?""}"
+2025-10-02T03:35:34.708649,hybrid_v1,3,aggregate,Compare PM2.5 across all zones last 24 hours,200,4.9,True,,"{""response"": ""Response to: You asked: 'Compare PM2.5 across all zones last 24 hours'. It doesn't seem related to our sensor data. How can I help?""}"
+2025-10-02T03:35:38.443287,hybrid_v1,4,aggregate,What was the maximum CO2 reading this week?,200,3497.0,True,,"{""response"": ""Response to: No sensor data returned by the query.""}"
+2025-10-02T03:35:41.527561,hybrid_v1,5,aggregate,Show average noise levels by zone,200,2877.94,True,,"{""response"": ""Response to: No sensor data returned by the query.""}"
+2025-10-02T03:35:45.211752,hybrid_v1,6,threshold,When did CO2 exceed 1000 ppm in construction zone?,200,3468.43,True,,"{""response"": ""Response to: No sensor data returned by the query.""}"
+2025-10-02T03:35:48.467590,hybrid_v1,7,lookup,Latest CO2 readings from all sensors,200,3026.27,True,,"{""response"": ""Response to: No sensor data returned by the query.""}"
+2025-10-02T03:35:48.713116,hybrid_v1,8,unsupported,What is current temperature?,200,1.75,True,,"{""response"": ""Response to: You asked: 'What is current temperature?'. It doesn't seem related to our sensor data. How can I help?""}"
+2025-10-02T03:35:51.459872,hybrid_v1,9,invalid,Plot CO2 for sensor XYZ,200,2505.66,True,,"{""response"": ""Response to: No sensor data returned by the query.""}"
+2025-10-02T03:35:51.761586,hybrid_v1,10,unsupported,How is the weather today?,200,4.59,True,,"{""response"": ""Response to: You asked: 'How is the weather today?'. It doesn't seem related to our sensor data. How can I help?""}"
+2025-10-02T03:41:51.340507,hybrid_v1,1,lookup,What was the CO2 level in construction zone yesterday?,0,0.0,False,,"exception: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+2025-10-02T03:41:52.017111,hybrid_v1,2,timeseries,Show me noise levels for sensor S-I1 last hour,200,450.78,True,,"{""response"": ""Response to: You asked: 'Show me noise levels for sensor S-I1 last hour'. It doesn't seem related to our sensor data. How can I help?""}"
+2025-10-02T03:41:52.316703,hybrid_v1,3,aggregate,Compare PM2.5 across all zones last 24 hours,200,2.19,True,,"{""response"": ""Response to: You asked: 'Compare PM2.5 across all zones last 24 hours'. It doesn't seem related to our sensor data. How can I help?""}"
+2025-10-02T03:41:56.217746,hybrid_v1,4,aggregate,What was the maximum CO2 reading this week?,200,3697.34,True,,"{""response"": ""Response to: No sensor data returned by the query.""}"
+2025-10-02T03:42:02.667320,hybrid_v1,5,aggregate,Show average noise levels by zone,200,6191.67,True,,"{""response"": ""Response to: No sensor data returned by the query.""}"
+2025-10-02T03:42:06.164547,hybrid_v1,6,threshold,When did CO2 exceed 1000 ppm in construction zone?,200,3197.23,True,,"{""response"": ""Response to: No sensor data returned by the query.""}"
+2025-10-02T03:42:08.897364,hybrid_v1,7,lookup,Latest CO2 readings from all sensors,200,2451.25,True,,"{""response"": ""Response to: No sensor data returned by the query.""}"
+2025-10-02T03:42:09.156162,hybrid_v1,8,unsupported,What is current temperature?,200,1.89,True,,"{""response"": ""Response to: You asked: 'What is current temperature?'. It doesn't seem related to our sensor data. How can I help?""}"
+2025-10-02T03:42:14.465243,hybrid_v1,9,invalid,Plot CO2 for sensor XYZ,200,5065.78,True,,"{""response"": ""Response to: No sensor data returned by the query.""}"
+2025-10-02T03:42:14.703884,hybrid_v1,10,unsupported,How is the weather today?,200,1.92,True,,"{""response"": ""Response to: You asked: 'How is the weather today?'. It doesn't seem related to our sensor data. How can I help?""}"
+2025-10-02T03:43:46.739738,hybrid_v1,1,lookup,What was the CO2 level in construction zone yesterday?,0,0.0,False,,"exception: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+2025-10-02T03:43:47.400919,hybrid_v1,2,timeseries,Show me noise levels for sensor S-I1 last hour,200,368.2,True,,"{""response"": ""Response to: You asked: 'Show me noise levels for sensor S-I1 last hour'. It doesn't seem related to our sensor data. How can I help?""}"
+2025-10-02T03:43:47.641352,hybrid_v1,3,aggregate,Compare PM2.5 across all zones last 24 hours,200,3.15,True,,"{""response"": ""Response to: You asked: 'Compare PM2.5 across all zones last 24 hours'. It doesn't seem related to our sensor data. How can I help?""}"
+2025-10-02T03:43:51.164230,hybrid_v1,4,aggregate,What was the maximum CO2 reading this week?,200,3284.21,True,,"{""response"": ""Response to: No sensor data returned by the query.""}"
+2025-10-02T03:43:54.401716,hybrid_v1,5,aggregate,Show average noise levels by zone,200,3035.83,True,,"{""response"": ""Response to: No sensor data returned by the query.""}"
+2025-10-02T03:43:59.328353,hybrid_v1,6,threshold,When did CO2 exceed 1000 ppm in construction zone?,200,4691.25,True,,"{""response"": ""Response to: No sensor data returned by the query.""}"
+2025-10-02T03:44:01.947165,hybrid_v1,7,lookup,Latest CO2 readings from all sensors,200,2393.58,True,,"{""response"": ""Response to: No sensor data returned by the query.""}"
+2025-10-02T03:44:02.238819,hybrid_v1,8,unsupported,What is current temperature?,200,1.93,True,,"{""response"": ""Response to: You asked: 'What is current temperature?'. It doesn't seem related to our sensor data. How can I help?""}"
+2025-10-02T03:44:05.583959,hybrid_v1,9,invalid,Plot CO2 for sensor XYZ,200,3056.03,True,,"{""response"": ""Response to: No sensor data returned by the query.""}"
+2025-10-02T03:44:05.815348,hybrid_v1,10,unsupported,How is the weather today?,200,2.05,True,,"{""response"": ""Response to: You asked: 'How is the weather today?'. It doesn't seem related to our sensor data. How can I help?""}"
+2025-10-02T03:45:29.361140,hybrid_v1,1,lookup,What was the CO2 level in construction zone yesterday?,0,0.0,False,,"exception: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+2025-10-02T03:45:30.077470,hybrid_v1,2,timeseries,Show me noise levels for sensor S-I1 last hour,200,449.4,True,,"{""response"": ""Response to: You asked: 'Show me noise levels for sensor S-I1 last hour'. It doesn't seem related to our sensor data. How can I help?""}"
+2025-10-02T03:45:30.328410,hybrid_v1,3,aggregate,Compare PM2.5 across all zones last 24 hours,200,1.97,True,,"{""response"": ""Response to: You asked: 'Compare PM2.5 across all zones last 24 hours'. It doesn't seem related to our sensor data. How can I help?""}"
+2025-10-02T03:45:33.902008,hybrid_v1,4,aggregate,What was the maximum CO2 reading this week?,200,3295.68,True,,"{""response"": ""Response to: No sensor data returned by the query.""}"
+2025-10-02T03:45:38.576868,hybrid_v1,5,aggregate,Show average noise levels by zone,200,4406.31,True,,"{""response"": ""Response to: No sensor data returned by the query.""}"
+2025-10-02T03:45:42.239449,hybrid_v1,6,threshold,When did CO2 exceed 1000 ppm in construction zone?,200,3452.82,True,,"{""response"": ""Response to: No sensor data returned by the query.""}"
+2025-10-02T03:45:46.070817,hybrid_v1,7,lookup,Latest CO2 readings from all sensors,200,3540.81,True,,"{""response"": ""Response to: No sensor data returned by the query.""}"
+2025-10-02T03:45:46.293761,hybrid_v1,8,unsupported,What is current temperature?,200,1.91,True,,"{""response"": ""Response to: You asked: 'What is current temperature?'. It doesn't seem related to our sensor data. How can I help?""}"
+2025-10-02T03:45:49.108510,hybrid_v1,9,invalid,Plot CO2 for sensor XYZ,200,2575.97,True,,"{""response"": ""Response to: No sensor data returned by the query.""}"
+2025-10-02T03:45:49.369337,hybrid_v1,10,unsupported,How is the weather today?,200,2.1,True,,"{""response"": ""Response to: You asked: 'How is the weather today?'. It doesn't seem related to our sensor data. How can I help?""}"
+2025-10-02T03:51:31.492425,hybrid_v1,1,lookup,What was the CO2 level in construction zone yesterday?,0,0.0,False,,"exception: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+2025-10-02T03:51:32.191777,hybrid_v1,2,timeseries,Show me noise levels for sensor S-I1 last hour,200,485.19,True,,"{""response"": ""Response to: You asked: 'Show me noise levels for sensor S-I1 last hour'. It doesn't seem related to our sensor data. How can I help?""}"
+2025-10-02T03:51:32.431204,hybrid_v1,3,aggregate,Compare PM2.5 across all zones last 24 hours,200,6.21,True,,"{""response"": ""Response to: You asked: 'Compare PM2.5 across all zones last 24 hours'. It doesn't seem related to our sensor data. How can I help?""}"
+2025-10-02T03:51:34.655459,hybrid_v1,4,aggregate,What was the maximum CO2 reading this week?,200,1958.73,False,,"{""response"": ""Response to: \u274c Error in handle_query: (400)\nReason: Bad Request\nHTTP response headers: HTTPHeaderDict({'Content-Type': 'application/json; charset=utf-8', 'Vary': 'Accept-Encoding'"
+2025-10-02T03:51:37.197297,hybrid_v1,5,aggregate,Show average noise levels by zone,200,2317.67,False,,"{""response"": ""Response to: \u274c Error in handle_query: (400)\nReason: Bad Request\nHTTP response headers: HTTPHeaderDict({'Content-Type': 'application/json; charset=utf-8', 'Vary': 'Accept-Encoding'"
+2025-10-02T03:51:39.359309,hybrid_v1,6,threshold,When did CO2 exceed 1000 ppm in construction zone?,200,1918.29,False,,"{""response"": ""Response to: \u274c Error in handle_query: (400)\nReason: Bad Request\nHTTP response headers: HTTPHeaderDict({'Content-Type': 'application/json; charset=utf-8', 'Vary': 'Accept-Encoding'"
+2025-10-02T03:51:41.754111,hybrid_v1,7,lookup,Latest CO2 readings from all sensors,200,2113.96,False,,"{""response"": ""Response to: \u274c Error in handle_query: (400)\nReason: Bad Request\nHTTP response headers: HTTPHeaderDict({'Content-Type': 'application/json; charset=utf-8', 'Vary': 'Accept-Encoding'"
+2025-10-02T03:51:42.029185,hybrid_v1,8,unsupported,What is current temperature?,200,2.13,True,,"{""response"": ""Response to: You asked: 'What is current temperature?'. It doesn't seem related to our sensor data. How can I help?""}"
+2025-10-02T03:51:44.407548,hybrid_v1,9,invalid,Plot CO2 for sensor XYZ,200,2145.56,False,,"{""response"": ""Response to: \u274c Error in handle_query: (400)\nReason: Bad Request\nHTTP response headers: HTTPHeaderDict({'Content-Type': 'application/json; charset=utf-8', 'Vary': 'Accept-Encoding'"
+2025-10-02T03:51:44.664804,hybrid_v1,10,unsupported,How is the weather today?,200,3.97,True,,"{""response"": ""Response to: You asked: 'How is the weather today?'. It doesn't seem related to our sensor data. How can I help?""}"
+2025-10-02T03:52:17.240046+00:00,hybrid_v1,1,lookup,What was the CO2 level in construction zone yesterday?,0,0.0,False,,"exception: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+2025-10-02T03:52:17.858249+00:00,hybrid_v1,2,timeseries,Show me noise levels for sensor S-I1 last hour,200,413.27,True,,"{""response"": ""Response to: You asked: 'Show me noise levels for sensor S-I1 last hour'. It doesn't seem related to our sensor data. How can I help?""}"
+2025-10-02T03:52:18.118467+00:00,hybrid_v1,3,aggregate,Compare PM2.5 across all zones last 24 hours,200,3.58,True,,"{""response"": ""Response to: You asked: 'Compare PM2.5 across all zones last 24 hours'. It doesn't seem related to our sensor data. How can I help?""}"
+2025-10-02T03:52:20.241485+00:00,hybrid_v1,4,aggregate,What was the maximum CO2 reading this week?,200,1918.06,False,,"{""response"": ""Response to: \u274c Error in handle_query: (400)\nReason: Bad Request\nHTTP response headers: HTTPHeaderDict({'Content-Type': 'application/json; charset=utf-8', 'Vary': 'Accept-Encoding'"
+2025-10-02T03:52:22.335521+00:00,hybrid_v1,5,aggregate,Show average noise levels by zone,200,1893.73,False,,"{""response"": ""Response to: \u274c Error in handle_query: (400)\nReason: Bad Request\nHTTP response headers: HTTPHeaderDict({'Content-Type': 'application/json; charset=utf-8', 'Vary': 'Accept-Encoding'"
+2025-10-02T03:52:24.484025+00:00,hybrid_v1,6,threshold,When did CO2 exceed 1000 ppm in construction zone?,200,1892.29,False,,"{""response"": ""Response to: \u274c Error in handle_query: (400)\nReason: Bad Request\nHTTP response headers: HTTPHeaderDict({'Content-Type': 'application/json; charset=utf-8', 'Vary': 'Accept-Encoding'"
+2025-10-02T03:52:26.590087+00:00,hybrid_v1,7,lookup,Latest CO2 readings from all sensors,200,1903.94,False,,"{""response"": ""Response to: \u274c Error in handle_query: (400)\nReason: Bad Request\nHTTP response headers: HTTPHeaderDict({'Content-Type': 'application/json; charset=utf-8', 'Vary': 'Accept-Encoding'"
+2025-10-02T03:52:26.887514+00:00,hybrid_v1,8,unsupported,What is current temperature?,200,5.36,True,,"{""response"": ""Response to: You asked: 'What is current temperature?'. It doesn't seem related to our sensor data. How can I help?""}"
+2025-10-02T03:52:29.094906+00:00,hybrid_v1,9,invalid,Plot CO2 for sensor XYZ,200,1923.57,False,,"{""response"": ""Response to: \u274c Error in handle_query: (400)\nReason: Bad Request\nHTTP response headers: HTTPHeaderDict({'Content-Type': 'application/json; charset=utf-8', 'Vary': 'Accept-Encoding'"
+2025-10-02T03:52:29.371088+00:00,hybrid_v1,10,unsupported,How is the weather today?,200,4.25,True,,"{""response"": ""Response to: You asked: 'How is the weather today?'. It doesn't seem related to our sensor data. How can I help?""}"
+2025-10-02T03:53:26.049358+00:00,hybrid_v1,1,lookup,What was the CO2 level in construction zone yesterday?,0,0.0,False,,"exception: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+2025-10-02T03:53:26.743863+00:00,hybrid_v1,2,timeseries,Show me noise levels for sensor S-I1 last hour,200,476.32,True,,"{""response"": ""Response to: You asked: 'Show me noise levels for sensor S-I1 last hour'. It doesn't seem related to our sensor data. How can I help?""}"
+2025-10-02T03:53:26.946221+00:00,hybrid_v1,3,aggregate,Compare PM2.5 across all zones last 24 hours,200,2.01,True,,"{""response"": ""Response to: You asked: 'Compare PM2.5 across all zones last 24 hours'. It doesn't seem related to our sensor data. How can I help?""}"
+2025-10-02T03:53:31.455613+00:00,hybrid_v1,4,aggregate,What was the maximum CO2 reading this week?,200,4279.65,True,,"{""response"": ""Response to: No sensor data returned by the query.""}"
+2025-10-02T03:53:34.764198+00:00,hybrid_v1,5,aggregate,Show average noise levels by zone,200,3016.11,True,,"{""response"": ""Response to: No sensor data returned by the query.""}"
+2025-10-02T03:53:37.996907+00:00,hybrid_v1,6,threshold,When did CO2 exceed 1000 ppm in construction zone?,200,3019.4,True,,"{""response"": ""Response to: No sensor data returned by the query.""}"
+2025-10-02T03:53:40.939349+00:00,hybrid_v1,7,lookup,Latest CO2 readings from all sensors,200,2717.83,True,,"{""response"": ""Response to: No sensor data returned by the query.""}"
+2025-10-02T03:53:41.246187+00:00,hybrid_v1,8,unsupported,What is current temperature?,200,6.65,True,,"{""response"": ""Response to: You asked: 'What is current temperature?'. It doesn't seem related to our sensor data. How can I help?""}"
+2025-10-02T03:53:44.263698+00:00,hybrid_v1,9,invalid,Plot CO2 for sensor XYZ,200,2720.85,True,,"{""response"": ""Response to: No sensor data returned by the query.""}"
+2025-10-02T03:53:44.511268+00:00,hybrid_v1,10,unsupported,How is the weather today?,200,2.06,True,,"{""response"": ""Response to: You asked: 'How is the weather today?'. It doesn't seem related to our sensor data. How can I help?""}"
+2025-10-02T04:08:44.857210+00:00,hybrid_v1,1,lookup,What was the CO2 level in construction zone yesterday?,200,15.91,True,,"{""response"": ""Response to: InfluxDB query failed: (401)\nReason: Unauthorized\nHTTP response headers: HTTPHeaderDict({'Content-Type': 'application/json; charset=utf-8', 'X-Influxdb-Build': 'OSS', 'X-I"
+2025-10-02T04:08:45.542568+00:00,hybrid_v1,2,timeseries,Show me noise levels for sensor S-I1 last hour,200,469.83,True,,"{""response"": ""Response to: InfluxDB query failed: (401)\nReason: Unauthorized\nHTTP response headers: HTTPHeaderDict({'Content-Type': 'application/json; charset=utf-8', 'X-Influxdb-Build': 'OSS', 'X-I"
+2025-10-02T04:08:45.781901+00:00,hybrid_v1,3,aggregate,Compare PM2.5 across all zones last 24 hours,200,9.29,True,,"{""response"": ""Response to: InfluxDB query failed: (401)\nReason: Unauthorized\nHTTP response headers: HTTPHeaderDict({'Content-Type': 'application/json; charset=utf-8', 'X-Influxdb-Build': 'OSS', 'X-I"
+2025-10-02T04:08:46.045228+00:00,hybrid_v1,4,aggregate,What was the maximum CO2 reading this week?,200,3.46,True,,"{""response"": ""Response to: InfluxDB query failed: (401)\nReason: Unauthorized\nHTTP response headers: HTTPHeaderDict({'Content-Type': 'application/json; charset=utf-8', 'X-Influxdb-Build': 'OSS', 'X-I"
+2025-10-02T04:08:46.331505+00:00,hybrid_v1,5,aggregate,Show average noise levels by zone,200,3.69,True,,"{""response"": ""Response to: InfluxDB query failed: (401)\nReason: Unauthorized\nHTTP response headers: HTTPHeaderDict({'Content-Type': 'application/json; charset=utf-8', 'X-Influxdb-Build': 'OSS', 'X-I"
+2025-10-02T04:08:46.545741+00:00,hybrid_v1,6,threshold,When did CO2 exceed 1000 ppm in construction zone?,200,3.39,True,,"{""response"": ""Response to: InfluxDB query failed: (401)\nReason: Unauthorized\nHTTP response headers: HTTPHeaderDict({'Content-Type': 'application/json; charset=utf-8', 'X-Influxdb-Build': 'OSS', 'X-I"
+2025-10-02T04:08:46.763646+00:00,hybrid_v1,7,lookup,Latest CO2 readings from all sensors,200,3.41,True,,"{""response"": ""Response to: InfluxDB query failed: (401)\nReason: Unauthorized\nHTTP response headers: HTTPHeaderDict({'Content-Type': 'application/json; charset=utf-8', 'X-Influxdb-Build': 'OSS', 'X-I"
+2025-10-02T04:08:47.058622+00:00,hybrid_v1,8,unsupported,What is current temperature?,200,2.5,True,,"{""response"": ""Response to: Your question appears out of scope for CO\u2082/NO\u2082/PM2.5/noise data in the UDT. Try e.g., 'Show me CO2 in the construction zone last hour'.""}"
+2025-10-02T04:08:47.267631+00:00,hybrid_v1,9,invalid,Plot CO2 for sensor XYZ,200,3.48,True,,"{""response"": ""Response to: InfluxDB query failed: (401)\nReason: Unauthorized\nHTTP response headers: HTTPHeaderDict({'Content-Type': 'application/json; charset=utf-8', 'X-Influxdb-Build': 'OSS', 'X-I"
+2025-10-02T04:08:47.492514+00:00,hybrid_v1,10,unsupported,How is the weather today?,200,2.24,True,,"{""response"": ""Response to: Your question appears out of scope for CO\u2082/NO\u2082/PM2.5/noise data in the UDT. Try e.g., 'Show me CO2 in the construction zone last hour'.""}"
+2025-10-02T04:12:20.566853+00:00,hybrid_v1,1,lookup,What was the CO2 level in construction zone yesterday?,200,53.76,True,,"{""response"": ""Response to: Returned 533 rows. Example @ 2025-10-02T00:45:00.647296+00:00: co2=536.87, no2=None, pm25=None, noise=None.""}"
+2025-10-02T04:12:21.345340+00:00,hybrid_v1,2,timeseries,Show me noise levels for sensor S-I1 last hour,200,565.61,False,,"{""response"": ""Response to: No data matched your request.""}"
+2025-10-02T04:12:21.628201+00:00,hybrid_v1,3,aggregate,Compare PM2.5 across all zones last 24 hours,200,26.34,True,,"{""response"": ""Response to: Returned 1595 rows. Example @ 2025-10-02T00:45:00.647296+00:00: co2=None, no2=None, pm25=9.52, noise=None.""}"
+2025-10-02T04:12:21.858568+00:00,hybrid_v1,4,aggregate,What was the maximum CO2 reading this week?,200,22.36,True,,"{""response"": ""Response to: Returned 6 rows. Example @ 2025-10-02T01:00:00+00:00: co2=595.96, no2=None, pm25=None, noise=None.""}"
+2025-10-02T04:12:22.119496+00:00,hybrid_v1,5,aggregate,Show average noise levels by zone,200,13.6,True,,"{""response"": ""Response to: Returned 6 rows. Example @ 2025-10-02T01:00:00+00:00: co2=None, no2=None, pm25=None, noise=69.78665105386423.""}"
+2025-10-02T04:12:22.402236+00:00,hybrid_v1,6,threshold,When did CO2 exceed 1000 ppm in construction zone?,200,20.21,False,,"{""response"": ""Response to: No data matched your request.""}"
+2025-10-02T04:12:22.635361+00:00,hybrid_v1,7,lookup,Latest CO2 readings from all sensors,200,10.81,False,,"{""response"": ""Response to: No data matched your request.""}"
+2025-10-02T04:12:22.843367+00:00,hybrid_v1,8,unsupported,What is current temperature?,200,2.55,True,,"{""response"": ""Response to: Your question appears out of scope for CO\u2082/NO\u2082/PM2.5/noise data in the UDT. Try e.g., 'Show me CO2 in the construction zone last hour'.""}"
+2025-10-02T04:12:23.144586+00:00,hybrid_v1,9,invalid,Plot CO2 for sensor XYZ,200,9.06,False,,"{""response"": ""Response to: No data matched your request.""}"
+2025-10-02T04:12:23.357894+00:00,hybrid_v1,10,unsupported,How is the weather today?,200,1.92,True,,"{""response"": ""Response to: Your question appears out of scope for CO\u2082/NO\u2082/PM2.5/noise data in the UDT. Try e.g., 'Show me CO2 in the construction zone last hour'.""}"
+2025-10-02T04:13:08.798878+00:00,hybrid_v1,1,lookup,What was the CO2 level in construction zone yesterday?,200,12.75,True,,"{""response"": ""Response to: Returned 533 rows. Example @ 2025-10-02T00:45:00.647296+00:00: co2=536.87, no2=None, pm25=None, noise=None.""}"
+2025-10-02T04:13:09.072487+00:00,hybrid_v1,2,timeseries,Show me noise levels for sensor S-I1 last hour,200,7.51,False,,"{""response"": ""Response to: No data matched your request.""}"
+2025-10-02T04:13:09.341670+00:00,hybrid_v1,3,aggregate,Compare PM2.5 across all zones last 24 hours,200,16.4,True,,"{""response"": ""Response to: Returned 1595 rows. Example @ 2025-10-02T00:45:00.647296+00:00: co2=None, no2=None, pm25=9.52, noise=None.""}"
+2025-10-02T04:13:09.975348+00:00,hybrid_v1,4,aggregate,What was the maximum CO2 reading this week?,200,374.28,True,,"{""response"": ""Response to: Returned 6 rows. Example @ 2025-10-02T01:00:00+00:00: co2=595.96, no2=None, pm25=None, noise=None.""}"
+2025-10-02T04:13:10.237123+00:00,hybrid_v1,5,aggregate,Show average noise levels by zone,200,12.59,True,,"{""response"": ""Response to: Returned 6 rows. Example @ 2025-10-02T01:00:00+00:00: co2=None, no2=None, pm25=None, noise=69.78665105386423.""}"
+2025-10-02T04:13:10.482285+00:00,hybrid_v1,6,threshold,When did CO2 exceed 1000 ppm in construction zone?,200,12.0,False,,"{""response"": ""Response to: No data matched your request.""}"
+2025-10-02T04:13:10.718443+00:00,hybrid_v1,7,lookup,Latest CO2 readings from all sensors,200,10.62,False,,"{""response"": ""Response to: No data matched your request.""}"
+2025-10-02T04:13:10.998425+00:00,hybrid_v1,8,unsupported,What is current temperature?,200,2.22,True,,"{""response"": ""Response to: Your question appears out of scope for CO\u2082/NO\u2082/PM2.5/noise data in the UDT. Try e.g., 'Show me CO2 in the construction zone last hour'.""}"
+2025-10-02T04:13:11.223550+00:00,hybrid_v1,9,invalid,Plot CO2 for sensor XYZ,200,8.37,False,,"{""response"": ""Response to: No data matched your request.""}"
+2025-10-02T04:13:11.486339+00:00,hybrid_v1,10,unsupported,How is the weather today?,200,1.91,True,,"{""response"": ""Response to: Your question appears out of scope for CO\u2082/NO\u2082/PM2.5/noise data in the UDT. Try e.g., 'Show me CO2 in the construction zone last hour'.""}"
+2025-10-02T04:16:08.443223+00:00,hybrid_v1,1,lookup,What was the CO2 level in construction zone yesterday?,500,13.15,False,,"<!doctype html>
+<html lang=en>
+  <head>
+    <title>NameError: name 'BUCKET' is not defined
+ // Werkzeug Debugger</title>
+    <link rel=""stylesheet"" href=""?__debugger__=yes&amp;cmd=resource&amp;f=style"
+2025-10-02T04:16:08.651134+00:00,hybrid_v1,2,timeseries,Show me noise levels for sensor S-I1 last hour,500,4.48,False,,"<!doctype html>
+<html lang=en>
+  <head>
+    <title>NameError: name 'BUCKET' is not defined
+ // Werkzeug Debugger</title>
+    <link rel=""stylesheet"" href=""?__debugger__=yes&amp;cmd=resource&amp;f=style"
+2025-10-02T04:16:08.872770+00:00,hybrid_v1,3,aggregate,Compare PM2.5 across all zones last 24 hours,500,11.96,False,,"<!doctype html>
+<html lang=en>
+  <head>
+    <title>NameError: name 'BUCKET' is not defined
+ // Werkzeug Debugger</title>
+    <link rel=""stylesheet"" href=""?__debugger__=yes&amp;cmd=resource&amp;f=style"
+2025-10-02T04:16:09.717023+00:00,hybrid_v1,4,aggregate,What was the maximum CO2 reading this week?,500,562.83,False,,"<!doctype html>
+<html lang=en>
+  <head>
+    <title>NameError: name 'BUCKET' is not defined
+ // Werkzeug Debugger</title>
+    <link rel=""stylesheet"" href=""?__debugger__=yes&amp;cmd=resource&amp;f=style"
+2025-10-02T04:16:10.019182+00:00,hybrid_v1,5,aggregate,Show average noise levels by zone,500,4.28,False,,"<!doctype html>
+<html lang=en>
+  <head>
+    <title>NameError: name 'BUCKET' is not defined
+ // Werkzeug Debugger</title>
+    <link rel=""stylesheet"" href=""?__debugger__=yes&amp;cmd=resource&amp;f=style"
+2025-10-02T04:16:10.282141+00:00,hybrid_v1,6,threshold,When did CO2 exceed 1000 ppm in construction zone?,500,4.07,False,,"<!doctype html>
+<html lang=en>
+  <head>
+    <title>NameError: name 'BUCKET' is not defined
+ // Werkzeug Debugger</title>
+    <link rel=""stylesheet"" href=""?__debugger__=yes&amp;cmd=resource&amp;f=style"
+2025-10-02T04:16:10.555344+00:00,hybrid_v1,7,lookup,Latest CO2 readings from all sensors,500,3.96,False,,"<!doctype html>
+<html lang=en>
+  <head>
+    <title>NameError: name 'BUCKET' is not defined
+ // Werkzeug Debugger</title>
+    <link rel=""stylesheet"" href=""?__debugger__=yes&amp;cmd=resource&amp;f=style"
+2025-10-02T04:16:11.299743+00:00,hybrid_v1,8,unsupported,What is current temperature?,200,483.21,True,,"{""response"": ""Response to: Your question appears out of scope for CO\u2082/NO\u2082/PM2.5/noise data in the UDT. Try e.g., 'Show me CO2 in the construction zone last hour'.""}"
+2025-10-02T04:16:11.565821+00:00,hybrid_v1,9,invalid,Plot CO2 for sensor XYZ,500,8.64,False,,"<!doctype html>
+<html lang=en>
+  <head>
+    <title>NameError: name 'BUCKET' is not defined
+ // Werkzeug Debugger</title>
+    <link rel=""stylesheet"" href=""?__debugger__=yes&amp;cmd=resource&amp;f=style"
+2025-10-02T04:16:11.797588+00:00,hybrid_v1,10,unsupported,How is the weather today?,200,3.92,True,,"{""response"": ""Response to: Your question appears out of scope for CO\u2082/NO\u2082/PM2.5/noise data in the UDT. Try e.g., 'Show me CO2 in the construction zone last hour'.""}"
+2025-10-02T04:16:47.814396+00:00,hybrid_v1,1,lookup,What was the CO2 level in construction zone yesterday?,500,9.85,False,,"<!doctype html>
+<html lang=en>
+  <head>
+    <title>NameError: name 'BUCKET' is not defined
+ // Werkzeug Debugger</title>
+    <link rel=""stylesheet"" href=""?__debugger__=yes&amp;cmd=resource&amp;f=style"
+2025-10-02T04:16:48.082872+00:00,hybrid_v1,2,timeseries,Show me noise levels for sensor S-I1 last hour,500,9.58,False,,"<!doctype html>
+<html lang=en>
+  <head>
+    <title>NameError: name 'BUCKET' is not defined
+ // Werkzeug Debugger</title>
+    <link rel=""stylesheet"" href=""?__debugger__=yes&amp;cmd=resource&amp;f=style"
+2025-10-02T04:16:48.369912+00:00,hybrid_v1,3,aggregate,Compare PM2.5 across all zones last 24 hours,500,4.51,False,,"<!doctype html>
+<html lang=en>
+  <head>
+    <title>NameError: name 'BUCKET' is not defined
+ // Werkzeug Debugger</title>
+    <link rel=""stylesheet"" href=""?__debugger__=yes&amp;cmd=resource&amp;f=style"
+2025-10-02T04:16:49.089192+00:00,hybrid_v1,4,aggregate,What was the maximum CO2 reading this week?,500,481.79,False,,"<!doctype html>
+<html lang=en>
+  <head>
+    <title>NameError: name 'BUCKET' is not defined
+ // Werkzeug Debugger</title>
+    <link rel=""stylesheet"" href=""?__debugger__=yes&amp;cmd=resource&amp;f=style"
+2025-10-02T04:16:49.311952+00:00,hybrid_v1,5,aggregate,Show average noise levels by zone,500,10.33,False,,"<!doctype html>
+<html lang=en>
+  <head>
+    <title>NameError: name 'BUCKET' is not defined
+ // Werkzeug Debugger</title>
+    <link rel=""stylesheet"" href=""?__debugger__=yes&amp;cmd=resource&amp;f=style"
+2025-10-02T04:16:49.583252+00:00,hybrid_v1,6,threshold,When did CO2 exceed 1000 ppm in construction zone?,500,3.78,False,,"<!doctype html>
+<html lang=en>
+  <head>
+    <title>NameError: name 'BUCKET' is not defined
+ // Werkzeug Debugger</title>
+    <link rel=""stylesheet"" href=""?__debugger__=yes&amp;cmd=resource&amp;f=style"
+2025-10-02T04:16:49.812664+00:00,hybrid_v1,7,lookup,Latest CO2 readings from all sensors,500,8.81,False,,"<!doctype html>
+<html lang=en>
+  <head>
+    <title>NameError: name 'BUCKET' is not defined
+ // Werkzeug Debugger</title>
+    <link rel=""stylesheet"" href=""?__debugger__=yes&amp;cmd=resource&amp;f=style"
+2025-10-02T04:16:50.072115+00:00,hybrid_v1,8,unsupported,What is current temperature?,200,2.02,True,,"{""response"": ""Response to: Your question appears out of scope for CO\u2082/NO\u2082/PM2.5/noise data in the UDT. Try e.g., 'Show me CO2 in the construction zone last hour'.""}"
+2025-10-02T04:16:50.677221+00:00,hybrid_v1,9,invalid,Plot CO2 for sensor XYZ,500,368.11,False,,"<!doctype html>
+<html lang=en>
+  <head>
+    <title>NameError: name 'BUCKET' is not defined
+ // Werkzeug Debugger</title>
+    <link rel=""stylesheet"" href=""?__debugger__=yes&amp;cmd=resource&amp;f=style"
+2025-10-02T04:16:50.973841+00:00,hybrid_v1,10,unsupported,How is the weather today?,200,2.11,True,,"{""response"": ""Response to: Your question appears out of scope for CO\u2082/NO\u2082/PM2.5/noise data in the UDT. Try e.g., 'Show me CO2 in the construction zone last hour'.""}"
+2025-10-02T04:17:08.084944+00:00,hybrid_v1,1,lookup,What was the CO2 level in construction zone yesterday?,500,9.75,False,,"<!doctype html>
+<html lang=en>
+  <head>
+    <title>NameError: name 'BUCKET' is not defined
+ // Werkzeug Debugger</title>
+    <link rel=""stylesheet"" href=""?__debugger__=yes&amp;cmd=resource&amp;f=style"
+2025-10-02T04:17:08.754454+00:00,hybrid_v1,2,timeseries,Show me noise levels for sensor S-I1 last hour,500,401.46,False,,"<!doctype html>
+<html lang=en>
+  <head>
+    <title>NameError: name 'BUCKET' is not defined
+ // Werkzeug Debugger</title>
+    <link rel=""stylesheet"" href=""?__debugger__=yes&amp;cmd=resource&amp;f=style"
+2025-10-02T04:17:09.000731+00:00,hybrid_v1,3,aggregate,Compare PM2.5 across all zones last 24 hours,500,4.25,False,,"<!doctype html>
+<html lang=en>
+  <head>
+    <title>NameError: name 'BUCKET' is not defined
+ // Werkzeug Debugger</title>
+    <link rel=""stylesheet"" href=""?__debugger__=yes&amp;cmd=resource&amp;f=style"
+2025-10-02T04:17:09.214404+00:00,hybrid_v1,4,aggregate,What was the maximum CO2 reading this week?,500,4.04,False,,"<!doctype html>
+<html lang=en>
+  <head>
+    <title>NameError: name 'BUCKET' is not defined
+ // Werkzeug Debugger</title>
+    <link rel=""stylesheet"" href=""?__debugger__=yes&amp;cmd=resource&amp;f=style"
+2025-10-02T04:17:09.436821+00:00,hybrid_v1,5,aggregate,Show average noise levels by zone,500,5.97,False,,"<!doctype html>
+<html lang=en>
+  <head>
+    <title>NameError: name 'BUCKET' is not defined
+ // Werkzeug Debugger</title>
+    <link rel=""stylesheet"" href=""?__debugger__=yes&amp;cmd=resource&amp;f=style"
+2025-10-02T04:17:09.730116+00:00,hybrid_v1,6,threshold,When did CO2 exceed 1000 ppm in construction zone?,500,7.93,False,,"<!doctype html>
+<html lang=en>
+  <head>
+    <title>NameError: name 'BUCKET' is not defined
+ // Werkzeug Debugger</title>
+    <link rel=""stylesheet"" href=""?__debugger__=yes&amp;cmd=resource&amp;f=style"
+2025-10-02T04:17:10.313702+00:00,hybrid_v1,7,lookup,Latest CO2 readings from all sensors,500,349.7,False,,"<!doctype html>
+<html lang=en>
+  <head>
+    <title>NameError: name 'BUCKET' is not defined
+ // Werkzeug Debugger</title>
+    <link rel=""stylesheet"" href=""?__debugger__=yes&amp;cmd=resource&amp;f=style"
+2025-10-02T04:17:10.543766+00:00,hybrid_v1,8,unsupported,What is current temperature?,200,2.33,True,,"{""response"": ""Response to: Your question appears out of scope for CO\u2082/NO\u2082/PM2.5/noise data in the UDT. Try e.g., 'Show me CO2 in the construction zone last hour'.""}"
+2025-10-02T04:17:10.817307+00:00,hybrid_v1,9,invalid,Plot CO2 for sensor XYZ,500,5.57,False,,"<!doctype html>
+<html lang=en>
+  <head>
+    <title>NameError: name 'BUCKET' is not defined
+ // Werkzeug Debugger</title>
+    <link rel=""stylesheet"" href=""?__debugger__=yes&amp;cmd=resource&amp;f=style"
+2025-10-02T04:17:11.052097+00:00,hybrid_v1,10,unsupported,How is the weather today?,200,2.17,True,,"{""response"": ""Response to: Your question appears out of scope for CO\u2082/NO\u2082/PM2.5/noise data in the UDT. Try e.g., 'Show me CO2 in the construction zone last hour'.""}"
+2025-10-02T04:18:31.031117+00:00,hybrid_v1,1,lookup,What was the CO2 level in construction zone yesterday?,200,67.79,True,,"{""response"": ""Response to: Returned 7564 rows. Example @ 2025-10-02T02:03:44.031904+00:00: co2=600.65, no2=None, pm25=None, noise=None.""}"
+2025-10-02T04:18:31.546537+00:00,hybrid_v1,2,timeseries,Show me noise levels for sensor S-I1 last hour,200,241.34,False,,"{""response"": ""Response to: No data matched your request.""}"
+2025-10-02T04:18:31.925911+00:00,hybrid_v1,3,aggregate,Compare PM2.5 across all zones last 24 hours,200,141.18,True,,"{""response"": ""Response to: Returned 22674 rows. Example @ 2025-10-02T02:03:44.031904+00:00: co2=None, no2=None, pm25=12.12, noise=None.""}"
+2025-10-02T04:18:32.183971+00:00,hybrid_v1,4,aggregate,What was the maximum CO2 reading this week?,200,8.71,True,,"{""response"": ""Response to: Returned 9 rows. Example @ 2025-10-02T03:00:00+00:00: co2=2592.68, no2=None, pm25=None, noise=None.""}"
+2025-10-02T04:18:32.416946+00:00,hybrid_v1,5,aggregate,Show average noise levels by zone,200,10.3,True,,"{""response"": ""Response to: Returned 9 rows. Example @ 2025-10-02T03:00:00+00:00: co2=None, no2=None, pm25=None, noise=72.37368246602577.""}"
+2025-10-02T04:18:32.736279+00:00,hybrid_v1,6,threshold,When did CO2 exceed 1000 ppm in construction zone?,200,28.82,True,,"{""response"": ""Response to: Returned 287 rows. Example @ 2025-10-02T02:30:00.197100+00:00: co2=2449.72, no2=None, pm25=None, noise=None.""}"
+2025-10-02T04:18:33.011123+00:00,hybrid_v1,7,lookup,Latest CO2 readings from all sensors,200,7.69,False,,"{""response"": ""Response to: No data matched your request.""}"
+2025-10-02T04:18:33.299709+00:00,hybrid_v1,8,unsupported,What is current temperature?,200,1.95,True,,"{""response"": ""Response to: Your question appears out of scope for CO\u2082/NO\u2082/PM2.5/noise data in the UDT. Try e.g., 'Show me CO2 in the construction zone last hour'.""}"
+2025-10-02T04:18:33.555344+00:00,hybrid_v1,9,invalid,Plot CO2 for sensor XYZ,200,7.84,False,,"{""response"": ""Response to: No data matched your request.""}"
+2025-10-02T04:18:33.854552+00:00,hybrid_v1,10,unsupported,How is the weather today?,200,2.84,True,,"{""response"": ""Response to: Your question appears out of scope for CO\u2082/NO\u2082/PM2.5/noise data in the UDT. Try e.g., 'Show me CO2 in the construction zone last hour'.""}"
+2025-10-02T04:19:44.238211+00:00,hybrid_v1,1,lookup,What was the CO2 level in construction zone yesterday?,200,589.53,True,,"{""response"": ""Response to: Returned 7636 rows. Example @ 2025-10-02T02:03:44.031904+00:00: co2=600.65, no2=None, pm25=None, noise=None.""}"
+2025-10-02T04:19:44.505784+00:00,hybrid_v1,2,timeseries,Show me noise levels for sensor S-I1 last hour,200,8.15,False,,"{""response"": ""Response to: No data matched your request.""}"
+2025-10-02T04:19:44.918490+00:00,hybrid_v1,3,aggregate,Compare PM2.5 across all zones last 24 hours,200,140.57,True,,"{""response"": ""Response to: Returned 22893 rows. Example @ 2025-10-02T02:03:44.031904+00:00: co2=None, no2=None, pm25=12.12, noise=None.""}"
+2025-10-02T04:19:45.141831+00:00,hybrid_v1,4,aggregate,What was the maximum CO2 reading this week?,200,8.55,True,,"{""response"": ""Response to: Returned 9 rows. Example @ 2025-10-02T03:00:00+00:00: co2=2592.68, no2=None, pm25=None, noise=None.""}"
+2025-10-02T04:19:45.385159+00:00,hybrid_v1,5,aggregate,Show average noise levels by zone,200,8.73,True,,"{""response"": ""Response to: Returned 9 rows. Example @ 2025-10-02T03:00:00+00:00: co2=None, no2=None, pm25=None, noise=72.37368246602577.""}"
+2025-10-02T04:19:45.652441+00:00,hybrid_v1,6,threshold,When did CO2 exceed 1000 ppm in construction zone?,200,30.95,True,,"{""response"": ""Response to: Returned 290 rows. Example @ 2025-10-02T02:30:00.197100+00:00: co2=2449.72, no2=None, pm25=None, noise=None.""}"
+2025-10-02T04:19:45.867126+00:00,hybrid_v1,7,lookup,Latest CO2 readings from all sensors,200,8.49,False,,"{""response"": ""Response to: No data matched your request.""}"
+2025-10-02T04:19:46.125962+00:00,hybrid_v1,8,unsupported,What is current temperature?,200,1.93,True,,"{""response"": ""Response to: Your question appears out of scope for CO\u2082/NO\u2082/PM2.5/noise data in the UDT. Try e.g., 'Show me CO2 in the construction zone last hour'.""}"
+2025-10-02T04:19:46.428732+00:00,hybrid_v1,9,invalid,Plot CO2 for sensor XYZ,200,9.69,False,,"{""response"": ""Response to: No data matched your request.""}"
+2025-10-02T04:19:46.657508+00:00,hybrid_v1,10,unsupported,How is the weather today?,200,2.62,True,,"{""response"": ""Response to: Your question appears out of scope for CO\u2082/NO\u2082/PM2.5/noise data in the UDT. Try e.g., 'Show me CO2 in the construction zone last hour'.""}"
+2025-10-02T04:24:16.966318+00:00,hybrid_v1,1,lookup,What was the CO2 level in construction zone yesterday?,0,0.0,False,,"exception: HTTPConnectionPool(host='127.0.0.1', port=5050): Max retries exceeded with url: /query (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f0d813f9100>: Failed to establish a new connection: [Errno 111] Connection refused'))"
+2025-10-02T04:24:17.249754+00:00,hybrid_v1,2,timeseries,Show me noise levels for sensor S-I1 last hour,0,0.0,False,,"exception: HTTPConnectionPool(host='127.0.0.1', port=5050): Max retries exceeded with url: /query (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f0d813f9910>: Failed to establish a new connection: [Errno 111] Connection refused'))"
+2025-10-02T04:24:17.457647+00:00,hybrid_v1,3,aggregate,Compare PM2.5 across all zones last 24 hours,0,0.0,False,,"exception: HTTPConnectionPool(host='127.0.0.1', port=5050): Max retries exceeded with url: /query (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f0d813fa120>: Failed to establish a new connection: [Errno 111] Connection refused'))"
+2025-10-02T04:24:17.724194+00:00,hybrid_v1,4,aggregate,What was the maximum CO2 reading this week?,0,0.0,False,,"exception: HTTPConnectionPool(host='127.0.0.1', port=5050): Max retries exceeded with url: /query (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f0d813fa990>: Failed to establish a new connection: [Errno 111] Connection refused'))"
+2025-10-02T04:24:17.978371+00:00,hybrid_v1,5,aggregate,Show average noise levels by zone,0,0.0,False,,"exception: HTTPConnectionPool(host='127.0.0.1', port=5050): Max retries exceeded with url: /query (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f0d813f9a90>: Failed to establish a new connection: [Errno 111] Connection refused'))"
+2025-10-02T04:24:18.181844+00:00,hybrid_v1,6,threshold,When did CO2 exceed 1000 ppm in construction zone?,0,0.0,False,,"exception: HTTPConnectionPool(host='127.0.0.1', port=5050): Max retries exceeded with url: /query (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f0d813f93d0>: Failed to establish a new connection: [Errno 111] Connection refused'))"
+2025-10-02T04:24:18.451835+00:00,hybrid_v1,7,lookup,Latest CO2 readings from all sensors,0,0.0,False,,"exception: HTTPConnectionPool(host='127.0.0.1', port=5050): Max retries exceeded with url: /query (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f0d813f9130>: Failed to establish a new connection: [Errno 111] Connection refused'))"
+2025-10-02T04:24:18.681870+00:00,hybrid_v1,8,unsupported,What is current temperature?,0,0.0,False,,"exception: HTTPConnectionPool(host='127.0.0.1', port=5050): Max retries exceeded with url: /query (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f0d813f8770>: Failed to establish a new connection: [Errno 111] Connection refused'))"
+2025-10-02T04:24:18.936572+00:00,hybrid_v1,9,invalid,Plot CO2 for sensor XYZ,0,0.0,False,,"exception: HTTPConnectionPool(host='127.0.0.1', port=5050): Max retries exceeded with url: /query (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f0d813fafc0>: Failed to establish a new connection: [Errno 111] Connection refused'))"
+2025-10-02T04:24:19.182145+00:00,hybrid_v1,10,unsupported,How is the weather today?,0,0.0,False,,"exception: HTTPConnectionPool(host='127.0.0.1', port=5050): Max retries exceeded with url: /query (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f0d813fb980>: Failed to establish a new connection: [Errno 111] Connection refused'))"
+2025-10-02T04:25:13.013827+00:00,hybrid_v1,1,lookup,What was the CO2 level in construction zone yesterday?,200,63.45,True,,"{""response"": ""Response to: Returned 7962 rows. Example @ 2025-10-02T02:03:44.031904+00:00: co2=600.65, no2=None, pm25=None, noise=None.""}"
+2025-10-02T04:25:13.565277+00:00,hybrid_v1,2,timeseries,Show me noise levels for sensor S-I1 last hour,200,268.04,False,,"{""response"": ""Response to: No data matched your request.""}"
+2025-10-02T04:25:14.011573+00:00,hybrid_v1,3,aggregate,Compare PM2.5 across all zones last 24 hours,200,149.25,True,,"{""response"": ""Response to: Returned 23871 rows. Example @ 2025-10-02T02:03:44.031904+00:00: co2=None, no2=None, pm25=12.12, noise=None.""}"
+2025-10-02T04:25:14.305547+00:00,hybrid_v1,4,aggregate,What was the maximum CO2 reading this week?,200,11.0,True,,"{""response"": ""Response to: Returned 9 rows. Example @ 2025-10-02T03:00:00+00:00: co2=2592.68, no2=None, pm25=None, noise=None.""}"
+2025-10-02T04:25:14.573889+00:00,hybrid_v1,5,aggregate,Show average noise levels by zone,200,8.27,True,,"{""response"": ""Response to: Returned 9 rows. Example @ 2025-10-02T03:00:00+00:00: co2=None, no2=None, pm25=None, noise=72.37368246602577.""}"
+2025-10-02T04:25:14.863004+00:00,hybrid_v1,6,threshold,When did CO2 exceed 1000 ppm in construction zone?,200,30.01,True,,"{""response"": ""Response to: Returned 309 rows. Example @ 2025-10-02T02:30:00.197100+00:00: co2=2449.72, no2=None, pm25=None, noise=None.""}"
+2025-10-02T04:25:15.103240+00:00,hybrid_v1,7,lookup,Latest CO2 readings from all sensors,200,7.98,False,,"{""response"": ""Response to: No data matched your request.""}"
+2025-10-02T04:25:15.395811+00:00,hybrid_v1,8,unsupported,What is current temperature?,200,2.04,True,,"{""response"": ""Response to: Your question appears out of scope for CO\u2082/NO\u2082/PM2.5/noise data in the UDT. Try e.g., 'Show me CO2 in the construction zone last hour'.""}"
+2025-10-02T04:25:15.659660+00:00,hybrid_v1,9,invalid,Plot CO2 for sensor XYZ,200,7.9,False,,"{""response"": ""Response to: No data matched your request.""}"
+2025-10-02T04:25:15.935305+00:00,hybrid_v1,10,unsupported,How is the weather today?,200,1.94,True,,"{""response"": ""Response to: Your question appears out of scope for CO\u2082/NO\u2082/PM2.5/noise data in the UDT. Try e.g., 'Show me CO2 in the construction zone last hour'.""}"
+2025-10-02T04:40:12.544805+00:00,hybrid_v1,1,lookup,What was the CO2 level in construction zone yesterday?,200,468.69,True,,"{""response"": ""Response to: InfluxDB query failed: (401)\nReason: Unauthorized\nHTTP response headers: HTTPHeaderDict({'Content-Type': 'application/json; charset=utf-8', 'X-Influxdb-Build': 'OSS', 'X-I"
+2025-10-02T04:40:12.774043+00:00,hybrid_v1,2,timeseries,Show me noise levels for sensor S-I1 last hour,200,6.36,True,,"{""response"": ""Response to: InfluxDB query failed: (401)\nReason: Unauthorized\nHTTP response headers: HTTPHeaderDict({'Content-Type': 'application/json; charset=utf-8', 'X-Influxdb-Build': 'OSS', 'X-I"
+2025-10-02T04:40:13.007932+00:00,hybrid_v1,3,aggregate,Compare PM2.5 across all zones last 24 hours,200,3.5,True,,"{""response"": ""Response to: InfluxDB query failed: (401)\nReason: Unauthorized\nHTTP response headers: HTTPHeaderDict({'Content-Type': 'application/json; charset=utf-8', 'X-Influxdb-Build': 'OSS', 'X-I"
+2025-10-02T04:40:13.250853+00:00,hybrid_v1,4,aggregate,What was the maximum CO2 reading this week?,200,5.53,True,,"{""response"": ""Response to: InfluxDB query failed: (401)\nReason: Unauthorized\nHTTP response headers: HTTPHeaderDict({'Content-Type': 'application/json; charset=utf-8', 'X-Influxdb-Build': 'OSS', 'X-I"
+2025-10-02T04:40:13.458225+00:00,hybrid_v1,5,aggregate,Show average noise levels by zone,200,3.45,True,,"{""response"": ""Response to: InfluxDB query failed: (401)\nReason: Unauthorized\nHTTP response headers: HTTPHeaderDict({'Content-Type': 'application/json; charset=utf-8', 'X-Influxdb-Build': 'OSS', 'X-I"
+2025-10-02T04:40:13.743227+00:00,hybrid_v1,6,threshold,When did CO2 exceed 1000 ppm in construction zone?,200,4.01,True,,"{""response"": ""Response to: InfluxDB query failed: (401)\nReason: Unauthorized\nHTTP response headers: HTTPHeaderDict({'Content-Type': 'application/json; charset=utf-8', 'X-Influxdb-Build': 'OSS', 'X-I"
+2025-10-02T04:40:13.988842+00:00,hybrid_v1,7,lookup,Latest CO2 readings from all sensors,200,6.27,True,,"{""response"": ""Response to: InfluxDB query failed: (401)\nReason: Unauthorized\nHTTP response headers: HTTPHeaderDict({'Content-Type': 'application/json; charset=utf-8', 'X-Influxdb-Build': 'OSS', 'X-I"
+2025-10-02T04:40:14.237272+00:00,hybrid_v1,8,unsupported,What is current temperature?,200,2.3,True,,"{""response"": ""Response to: Out of scope for CO\u2082/NO\u2082/PM2.5/noise data. Try: 'Show noise for sensor S-I1 last hour'.""}"
+2025-10-02T04:40:14.524019+00:00,hybrid_v1,9,invalid,Plot CO2 for sensor XYZ,200,3.37,True,,"{""response"": ""Response to: InfluxDB query failed: (401)\nReason: Unauthorized\nHTTP response headers: HTTPHeaderDict({'Content-Type': 'application/json; charset=utf-8', 'X-Influxdb-Build': 'OSS', 'X-I"
+2025-10-02T04:40:14.820916+00:00,hybrid_v1,10,unsupported,How is the weather today?,200,6.1,True,,"{""response"": ""Response to: Out of scope for CO\u2082/NO\u2082/PM2.5/noise data. Try: 'Show noise for sensor S-I1 last hour'.""}"
+2025-10-02T04:40:32.073073+00:00,hybrid_v1,1,lookup,What was the CO2 level in construction zone yesterday?,200,4.08,True,,"{""response"": ""Response to: InfluxDB query failed: (401)\nReason: Unauthorized\nHTTP response headers: HTTPHeaderDict({'Content-Type': 'application/json; charset=utf-8', 'X-Influxdb-Build': 'OSS', 'X-I"
+2025-10-02T04:40:32.341131+00:00,hybrid_v1,2,timeseries,Show me noise levels for sensor S-I1 last hour,200,3.47,True,,"{""response"": ""Response to: InfluxDB query failed: (401)\nReason: Unauthorized\nHTTP response headers: HTTPHeaderDict({'Content-Type': 'application/json; charset=utf-8', 'X-Influxdb-Build': 'OSS', 'X-I"
+2025-10-02T04:40:33.132642+00:00,hybrid_v1,3,aggregate,Compare PM2.5 across all zones last 24 hours,200,531.51,True,,"{""response"": ""Response to: InfluxDB query failed: (401)\nReason: Unauthorized\nHTTP response headers: HTTPHeaderDict({'Content-Type': 'application/json; charset=utf-8', 'X-Influxdb-Build': 'OSS', 'X-I"
+2025-10-02T04:40:33.394923+00:00,hybrid_v1,4,aggregate,What was the maximum CO2 reading this week?,200,5.36,True,,"{""response"": ""Response to: InfluxDB query failed: (401)\nReason: Unauthorized\nHTTP response headers: HTTPHeaderDict({'Content-Type': 'application/json; charset=utf-8', 'X-Influxdb-Build': 'OSS', 'X-I"
+2025-10-02T04:40:33.643651+00:00,hybrid_v1,5,aggregate,Show average noise levels by zone,200,4.07,True,,"{""response"": ""Response to: InfluxDB query failed: (401)\nReason: Unauthorized\nHTTP response headers: HTTPHeaderDict({'Content-Type': 'application/json; charset=utf-8', 'X-Influxdb-Build': 'OSS', 'X-I"
+2025-10-02T04:40:33.871310+00:00,hybrid_v1,6,threshold,When did CO2 exceed 1000 ppm in construction zone?,200,3.62,True,,"{""response"": ""Response to: InfluxDB query failed: (401)\nReason: Unauthorized\nHTTP response headers: HTTPHeaderDict({'Content-Type': 'application/json; charset=utf-8', 'X-Influxdb-Build': 'OSS', 'X-I"
+2025-10-02T04:40:34.147292+00:00,hybrid_v1,7,lookup,Latest CO2 readings from all sensors,200,3.69,True,,"{""response"": ""Response to: InfluxDB query failed: (401)\nReason: Unauthorized\nHTTP response headers: HTTPHeaderDict({'Content-Type': 'application/json; charset=utf-8', 'X-Influxdb-Build': 'OSS', 'X-I"
+2025-10-02T04:40:34.426146+00:00,hybrid_v1,8,unsupported,What is current temperature?,200,2.05,True,,"{""response"": ""Response to: Out of scope for CO\u2082/NO\u2082/PM2.5/noise data. Try: 'Show noise for sensor S-I1 last hour'.""}"
+2025-10-02T04:40:34.713956+00:00,hybrid_v1,9,invalid,Plot CO2 for sensor XYZ,200,5.04,True,,"{""response"": ""Response to: InfluxDB query failed: (401)\nReason: Unauthorized\nHTTP response headers: HTTPHeaderDict({'Content-Type': 'application/json; charset=utf-8', 'X-Influxdb-Build': 'OSS', 'X-I"
+2025-10-02T04:40:34.981697+00:00,hybrid_v1,10,unsupported,How is the weather today?,200,1.98,True,,"{""response"": ""Response to: Out of scope for CO\u2082/NO\u2082/PM2.5/noise data. Try: 'Show noise for sensor S-I1 last hour'.""}"
+2025-10-02T04:41:39.131065+00:00,hybrid_v1,1,lookup,What was the CO2 level in construction zone yesterday?,200,520.66,True,,"{""response"": ""Response to: InfluxDB query failed: (401)\nReason: Unauthorized\nHTTP response headers: HTTPHeaderDict({'Content-Type': 'application/json; charset=utf-8', 'X-Influxdb-Build': 'OSS', 'X-I"
+2025-10-02T04:41:39.382311+00:00,hybrid_v1,2,timeseries,Show me noise levels for sensor S-I1 last hour,200,3.88,True,,"{""response"": ""Response to: InfluxDB query failed: (401)\nReason: Unauthorized\nHTTP response headers: HTTPHeaderDict({'Content-Type': 'application/json; charset=utf-8', 'X-Influxdb-Build': 'OSS', 'X-I"
+2025-10-02T04:41:39.639262+00:00,hybrid_v1,3,aggregate,Compare PM2.5 across all zones last 24 hours,200,4.05,True,,"{""response"": ""Response to: InfluxDB query failed: (401)\nReason: Unauthorized\nHTTP response headers: HTTPHeaderDict({'Content-Type': 'application/json; charset=utf-8', 'X-Influxdb-Build': 'OSS', 'X-I"
+2025-10-02T04:41:39.850623+00:00,hybrid_v1,4,aggregate,What was the maximum CO2 reading this week?,200,5.69,True,,"{""response"": ""Response to: InfluxDB query failed: (401)\nReason: Unauthorized\nHTTP response headers: HTTPHeaderDict({'Content-Type': 'application/json; charset=utf-8', 'X-Influxdb-Build': 'OSS', 'X-I"
+2025-10-02T04:41:40.074557+00:00,hybrid_v1,5,aggregate,Show average noise levels by zone,200,3.98,True,,"{""response"": ""Response to: InfluxDB query failed: (401)\nReason: Unauthorized\nHTTP response headers: HTTPHeaderDict({'Content-Type': 'application/json; charset=utf-8', 'X-Influxdb-Build': 'OSS', 'X-I"
+2025-10-02T04:41:40.293533+00:00,hybrid_v1,6,threshold,When did CO2 exceed 1000 ppm in construction zone?,200,6.87,True,,"{""response"": ""Response to: InfluxDB query failed: (401)\nReason: Unauthorized\nHTTP response headers: HTTPHeaderDict({'Content-Type': 'application/json; charset=utf-8', 'X-Influxdb-Build': 'OSS', 'X-I"
+2025-10-02T04:41:40.589319+00:00,hybrid_v1,7,lookup,Latest CO2 readings from all sensors,200,3.68,True,,"{""response"": ""Response to: InfluxDB query failed: (401)\nReason: Unauthorized\nHTTP response headers: HTTPHeaderDict({'Content-Type': 'application/json; charset=utf-8', 'X-Influxdb-Build': 'OSS', 'X-I"
+2025-10-02T04:41:40.846614+00:00,hybrid_v1,8,unsupported,What is current temperature?,200,2.13,True,,"{""response"": ""Response to: Out of scope for CO\u2082/NO\u2082/PM2.5/noise data. Try: 'Show noise for sensor S-I1 last hour'.""}"
+2025-10-02T04:41:41.135054+00:00,hybrid_v1,9,invalid,Plot CO2 for sensor XYZ,200,3.85,True,,"{""response"": ""Response to: InfluxDB query failed: (401)\nReason: Unauthorized\nHTTP response headers: HTTPHeaderDict({'Content-Type': 'application/json; charset=utf-8', 'X-Influxdb-Build': 'OSS', 'X-I"
+2025-10-02T04:41:41.354320+00:00,hybrid_v1,10,unsupported,How is the weather today?,200,3.51,True,,"{""response"": ""Response to: Out of scope for CO\u2082/NO\u2082/PM2.5/noise data. Try: 'Show noise for sensor S-I1 last hour'.""}"
+2025-10-02T05:19:08.513635+00:00,hybrid_v1,1,lookup,What was the CO2 level in construction zone yesterday?,200,3.9,True,,"{""response"": ""Response to: InfluxDB query failed: (401)\nReason: Unauthorized\nHTTP response headers: HTTPHeaderDict({'Content-Type': 'application/json; charset=utf-8', 'X-Influxdb-Build': 'OSS', 'X-I"
+2025-10-02T05:19:08.779534+00:00,hybrid_v1,2,timeseries,Show me noise levels for sensor S-I1 last hour,200,3.84,True,,"{""response"": ""Response to: InfluxDB query failed: (401)\nReason: Unauthorized\nHTTP response headers: HTTPHeaderDict({'Content-Type': 'application/json; charset=utf-8', 'X-Influxdb-Build': 'OSS', 'X-I"
+2025-10-02T05:19:11.220951+00:00,hybrid_v1,3,aggregate,Compare PM2.5 across all zones last 24 hours,200,2143.09,True,,"{""response"": ""Response to: InfluxDB query failed: (401)\nReason: Unauthorized\nHTTP response headers: HTTPHeaderDict({'Content-Type': 'application/json; charset=utf-8', 'X-Influxdb-Build': 'OSS', 'X-I"
+2025-10-02T05:19:11.467411+00:00,hybrid_v1,4,aggregate,What was the maximum CO2 reading this week?,200,4.17,True,,"{""response"": ""Response to: InfluxDB query failed: (401)\nReason: Unauthorized\nHTTP response headers: HTTPHeaderDict({'Content-Type': 'application/json; charset=utf-8', 'X-Influxdb-Build': 'OSS', 'X-I"
+2025-10-02T05:19:11.704583+00:00,hybrid_v1,5,aggregate,Show average noise levels by zone,200,7.05,True,,"{""response"": ""Response to: InfluxDB query failed: (401)\nReason: Unauthorized\nHTTP response headers: HTTPHeaderDict({'Content-Type': 'application/json; charset=utf-8', 'X-Influxdb-Build': 'OSS', 'X-I"
+2025-10-02T05:19:11.969777+00:00,hybrid_v1,6,threshold,When did CO2 exceed 1000 ppm in construction zone?,200,9.81,True,,"{""response"": ""Response to: InfluxDB query failed: (401)\nReason: Unauthorized\nHTTP response headers: HTTPHeaderDict({'Content-Type': 'application/json; charset=utf-8', 'X-Influxdb-Build': 'OSS', 'X-I"
+2025-10-02T05:19:12.174216+00:00,hybrid_v1,7,lookup,Latest CO2 readings from all sensors,200,3.47,True,,"{""response"": ""Response to: InfluxDB query failed: (401)\nReason: Unauthorized\nHTTP response headers: HTTPHeaderDict({'Content-Type': 'application/json; charset=utf-8', 'X-Influxdb-Build': 'OSS', 'X-I"
+2025-10-02T05:19:12.433520+00:00,hybrid_v1,8,unsupported,What is current temperature?,200,6.27,True,,"{""response"": ""Response to: Out of scope for CO\u2082/NO\u2082/PM2.5/noise data. Try: 'Show noise for sensor S-I1 last hour'.""}"
+2025-10-02T05:19:12.668606+00:00,hybrid_v1,9,invalid,Plot CO2 for sensor XYZ,200,4.22,True,,"{""response"": ""Response to: InfluxDB query failed: (401)\nReason: Unauthorized\nHTTP response headers: HTTPHeaderDict({'Content-Type': 'application/json; charset=utf-8', 'X-Influxdb-Build': 'OSS', 'X-I"
+2025-10-02T05:19:12.920909+00:00,hybrid_v1,10,unsupported,How is the weather today?,200,2.43,True,,"{""response"": ""Response to: Out of scope for CO\u2082/NO\u2082/PM2.5/noise data. Try: 'Show noise for sensor S-I1 last hour'.""}"
+2025-10-02T05:21:35.834329+00:00,hybrid_v1,1,lookup,What was the CO2 level in construction zone yesterday?,200,22.75,False,,"{""response"": ""Response to: InfluxDB query failed: (404)\nReason: Not Found\nHTTP response headers: HTTPHeaderDict({'Content-Type': 'application/json; charset=utf-8', 'Vary': 'Accept-Encoding', 'X-Infl"
+2025-10-02T05:21:36.056807+00:00,hybrid_v1,2,timeseries,Show me noise levels for sensor S-I1 last hour,200,15.5,False,,"{""response"": ""Response to: InfluxDB query failed: (404)\nReason: Not Found\nHTTP response headers: HTTPHeaderDict({'Content-Type': 'application/json; charset=utf-8', 'Vary': 'Accept-Encoding', 'X-Infl"
+2025-10-02T05:21:36.285207+00:00,hybrid_v1,3,aggregate,Compare PM2.5 across all zones last 24 hours,200,9.82,False,,"{""response"": ""Response to: InfluxDB query failed: (404)\nReason: Not Found\nHTTP response headers: HTTPHeaderDict({'Content-Type': 'application/json; charset=utf-8', 'Vary': 'Accept-Encoding', 'X-Infl"
+2025-10-02T05:21:36.527089+00:00,hybrid_v1,4,aggregate,What was the maximum CO2 reading this week?,200,11.51,False,,"{""response"": ""Response to: InfluxDB query failed: (404)\nReason: Not Found\nHTTP response headers: HTTPHeaderDict({'Content-Type': 'application/json; charset=utf-8', 'Vary': 'Accept-Encoding', 'X-Infl"
+2025-10-02T05:21:37.091424+00:00,hybrid_v1,5,aggregate,Show average noise levels by zone,200,327.74,False,,"{""response"": ""Response to: InfluxDB query failed: (404)\nReason: Not Found\nHTTP response headers: HTTPHeaderDict({'Content-Type': 'application/json; charset=utf-8', 'Vary': 'Accept-Encoding', 'X-Infl"
+2025-10-02T05:21:37.359417+00:00,hybrid_v1,6,threshold,When did CO2 exceed 1000 ppm in construction zone?,200,14.62,False,,"{""response"": ""Response to: InfluxDB query failed: (404)\nReason: Not Found\nHTTP response headers: HTTPHeaderDict({'Content-Type': 'application/json; charset=utf-8', 'Vary': 'Accept-Encoding', 'X-Infl"
+2025-10-02T05:21:37.632910+00:00,hybrid_v1,7,lookup,Latest CO2 readings from all sensors,200,10.65,False,,"{""response"": ""Response to: InfluxDB query failed: (404)\nReason: Not Found\nHTTP response headers: HTTPHeaderDict({'Content-Type': 'application/json; charset=utf-8', 'Vary': 'Accept-Encoding', 'X-Infl"
+2025-10-02T05:21:37.878226+00:00,hybrid_v1,8,unsupported,What is current temperature?,200,1.87,True,,"{""response"": ""Response to: Out of scope for CO\u2082/NO\u2082/PM2.5/noise data. Try: 'Show noise for sensor S-I1 last hour'.""}"
+2025-10-02T05:21:38.141880+00:00,hybrid_v1,9,invalid,Plot CO2 for sensor XYZ,200,11.5,False,,"{""response"": ""Response to: InfluxDB query failed: (404)\nReason: Not Found\nHTTP response headers: HTTPHeaderDict({'Content-Type': 'application/json; charset=utf-8', 'Vary': 'Accept-Encoding', 'X-Infl"
+2025-10-02T05:21:38.384094+00:00,hybrid_v1,10,unsupported,How is the weather today?,200,2.04,True,,"{""response"": ""Response to: Out of scope for CO\u2082/NO\u2082/PM2.5/noise data. Try: 'Show noise for sensor S-I1 last hour'.""}"
+2025-10-02T05:22:09.058692+00:00,hybrid_v1,1,lookup,What was the CO2 level in construction zone yesterday?,200,104.7,True,,"{""response"": ""Response to: Returned 11349 row(s). Example @ 2025-10-02T02:03:44.031904+00:00 sensor=S-C1 zone=construction""}"
+2025-10-02T05:22:09.357104+00:00,hybrid_v1,2,timeseries,Show me noise levels for sensor S-I1 last hour,200,48.29,True,,"{""response"": ""Response to: Returned 3570 row(s). Example @ 2025-10-02T04:22:09.709093+00:00 sensor=S-I1 zone=industrial""}"
+2025-10-02T05:22:10.358004+00:00,hybrid_v1,3,aggregate,Compare PM2.5 across all zones last 24 hours,200,710.26,True,,"{""response"": ""Response to: Returned 34032 row(s). Example @ 2025-10-02T02:03:44.031904+00:00 sensor=S-C1 zone=construction""}"
+2025-10-02T05:22:10.671922+00:00,hybrid_v1,4,aggregate,What was the maximum CO2 reading this week?,200,15.68,True,,"{""response"": ""Response to: Returned 12 row(s). Example @ 2025-10-02T03:00:00+00:00 sensor=S-C1 zone=construction | co2_ppm=2592.68""}"
+2025-10-02T05:22:10.976957+00:00,hybrid_v1,5,aggregate,Show average noise levels by zone,200,11.61,True,,"{""response"": ""Response to: Returned 12 row(s). Example @ 2025-10-02T03:00:00+00:00 sensor=S-C1 zone=construction | noise_db=72.37368246602577""}"
+2025-10-02T05:22:11.276470+00:00,hybrid_v1,6,threshold,When did CO2 exceed 1000 ppm in construction zone?,200,44.74,True,,"{""response"": ""Response to: Returned 493 row(s). Example @ 2025-10-02T02:30:00.197100+00:00 sensor=S-C1 zone=construction | co2_ppm=2449.72""}"
+2025-10-02T05:22:11.536546+00:00,hybrid_v1,7,lookup,Latest CO2 readings from all sensors,200,10.42,False,,"{""response"": ""Response to: No data matched your request.""}"
+2025-10-02T05:22:11.760309+00:00,hybrid_v1,8,unsupported,What is current temperature?,200,2.15,True,,"{""response"": ""Response to: Out of scope for CO\u2082/NO\u2082/PM2.5/noise data. Try: 'Show noise for sensor S-I1 last hour'.""}"
+2025-10-02T05:22:11.977951+00:00,hybrid_v1,9,invalid,Plot CO2 for sensor XYZ,200,8.83,False,,"{""response"": ""Response to: No data matched your request.""}"
+2025-10-02T05:22:12.215001+00:00,hybrid_v1,10,unsupported,How is the weather today?,200,1.9,True,,"{""response"": ""Response to: Out of scope for CO\u2082/NO\u2082/PM2.5/noise data. Try: 'Show noise for sensor S-I1 last hour'.""}"
+2025-10-02T05:39:33.168487+00:00,hybrid_v1,1,lookup,What was the CO2 level in construction zone yesterday?,200,74.53,True,,"{""response"": ""Response to: Returned 12384 row(s). Example @ 2025-10-02T02:03:44.031904+00:00 sensor=S-C1 zone=construction""}"
+2025-10-02T05:39:33.591632+00:00,hybrid_v1,2,timeseries,Show me noise levels for sensor S-I1 last hour,0,0.0,False,,"exception: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+2025-10-02T05:39:34.988348+00:00,hybrid_v1,3,aggregate,Compare PM2.5 across all zones last 24 hours,200,1157.3,True,,"{""response"": ""Response to: Returned 37137 row(s). Example @ 2025-10-02T02:03:44.031904+00:00 sensor=S-C1 zone=construction""}"
+2025-10-02T05:39:35.269471+00:00,hybrid_v1,4,aggregate,What was the maximum CO2 reading this week?,200,31.06,True,,"{""response"": ""Response to: Returned 12 row(s). Example @ 2025-10-02T03:00:00+00:00 sensor=S-C1 zone=construction | co2_ppm=2592.68""}"
+2025-10-02T05:39:35.559174+00:00,hybrid_v1,5,aggregate,Show average noise levels by zone,200,14.62,True,,"{""response"": ""Response to: Returned 12 row(s). Example @ 2025-10-02T03:00:00+00:00 sensor=S-C1 zone=construction | noise_db=72.37368246602577""}"
+2025-10-02T05:39:35.866096+00:00,hybrid_v1,6,threshold,When did CO2 exceed 1000 ppm in construction zone?,200,61.18,True,,"{""response"": ""Response to: Returned 543 row(s). Example @ 2025-10-02T02:30:00.197100+00:00 sensor=S-C1 zone=construction | co2_ppm=2449.72""}"
+2025-10-02T05:39:36.175116+00:00,hybrid_v1,7,lookup,Latest CO2 readings from all sensors,200,9.51,False,,"{""response"": ""Response to: No data matched your request.""}"
+2025-10-02T05:39:36.412710+00:00,hybrid_v1,8,unsupported,What is current temperature?,200,5.4,True,,"{""response"": ""Response to: Out of scope for CO\u2082/NO\u2082/PM2.5/noise data. Try: 'Show noise for sensor S-I1 last hour'.""}"
+2025-10-02T05:39:36.671782+00:00,hybrid_v1,9,invalid,Plot CO2 for sensor XYZ,200,14.44,False,,"{""response"": ""Response to: No data matched your request.""}"
+2025-10-02T05:39:36.929552+00:00,hybrid_v1,10,unsupported,How is the weather today?,200,2.06,True,,"{""response"": ""Response to: Out of scope for CO\u2082/NO\u2082/PM2.5/noise data. Try: 'Show noise for sensor S-I1 last hour'.""}"
+2025-10-02T05:41:27.274046+00:00,hybrid_v1,1,lookup,What was the CO2 level in construction zone yesterday?,200,83.0,True,,"{""response"": ""Response to: Returned 12497 row(s). Example @ 2025-10-02T02:03:44.031904+00:00 sensor=S-C1 zone=construction""}"
+2025-10-02T05:41:28.128565+00:00,hybrid_v1,2,timeseries,Show me noise levels for sensor S-I1 last hour,200,556.27,True,,"{""response"": ""Response to: Returned 3569 row(s). Example @ 2025-10-02T04:41:28.126687+00:00 sensor=S-I1 zone=industrial""}"
+2025-10-02T05:41:28.575382+00:00,hybrid_v1,3,aggregate,Compare PM2.5 across all zones last 24 hours,200,200.92,True,,"{""response"": ""Response to: Returned 37476 row(s). Example @ 2025-10-02T02:03:44.031904+00:00 sensor=S-C1 zone=construction""}"
+2025-10-02T05:41:28.826338+00:00,hybrid_v1,4,aggregate,What was the maximum CO2 reading this week?,200,9.68,True,,"{""response"": ""Response to: Returned 12 row(s). Example @ 2025-10-02T03:00:00+00:00 sensor=S-C1 zone=construction | co2_ppm=2592.68""}"
+2025-10-02T05:41:29.077256+00:00,hybrid_v1,5,aggregate,Show average noise levels by zone,200,10.41,True,,"{""response"": ""Response to: Returned 12 row(s). Example @ 2025-10-02T03:00:00+00:00 sensor=S-C1 zone=construction | noise_db=72.37368246602577""}"
+2025-10-02T05:41:29.328092+00:00,hybrid_v1,6,threshold,When did CO2 exceed 1000 ppm in construction zone?,200,47.54,True,,"{""response"": ""Response to: Returned 549 row(s). Example @ 2025-10-02T02:30:00.197100+00:00 sensor=S-C1 zone=construction | co2_ppm=2449.72""}"
+2025-10-02T05:41:29.630709+00:00,hybrid_v1,7,lookup,Latest CO2 readings from all sensors,200,9.46,False,,"{""response"": ""Response to: No data matched your request.""}"
+2025-10-02T05:41:29.915853+00:00,hybrid_v1,8,unsupported,What is current temperature?,200,8.1,True,,"{""response"": ""Response to: Out of scope for CO\u2082/NO\u2082/PM2.5/noise data. Try: 'Show noise for sensor S-I1 last hour'.""}"
+2025-10-02T05:41:30.195884+00:00,hybrid_v1,9,invalid,Plot CO2 for sensor XYZ,200,18.11,False,,"{""response"": ""Response to: No data matched your request.""}"
+2025-10-02T05:41:30.419157+00:00,hybrid_v1,10,unsupported,How is the weather today?,200,6.38,True,,"{""response"": ""Response to: Out of scope for CO\u2082/NO\u2082/PM2.5/noise data. Try: 'Show noise for sensor S-I1 last hour'.""}"
