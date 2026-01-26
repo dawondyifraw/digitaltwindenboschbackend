@@ -1,3 +1,11 @@
+#!/usr/bin/env python3
+"""
+WebSocket Server Emitter
+AUTHOR: Daniel Wondyifraw DataTwinLabs.nl
+
+WebSocket server that consumes Kafka messages and emits them to connected clients.
+"""
+
 import eventlet
 eventlet.monkey_patch()
 

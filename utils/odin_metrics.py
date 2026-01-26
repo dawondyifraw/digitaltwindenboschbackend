@@ -1,4 +1,11 @@
 #!/usr/bin/env python3
+"""
+ODIN Metrics Collection
+AUTHOR: Daniel Wondyifraw DataTwinLabs.nl
+
+Collects and analyzes performance metrics for ODIN query processing.
+"""
+
 import os, time, csv, json, random
 from datetime import datetime
 import requests
@@ -24,7 +31,7 @@ TEST_QUERIES = [
     ("unsupported", "How is the weather today?")
 ]
 
-CSV_PATH = os.getenv("CSV_PATH", "odin_bench.csv")
+CSV_PATH = os.getenv("CSV_PATH", "odin/odin_bench.csv")
 
 def percentile(values, p):
     if not values: return float("nan")
@@ -110,6 +117,7 @@ def main():
         time.sleep(0.2 + random.random()*0.1)
 
     # Persist CSV (append/create)
+    os.makedirs(os.path.dirname(CSV_PATH), exist_ok=True)
     write_header = not os.path.exists(CSV_PATH)
     with open(CSV_PATH, "a", newline="") as f:
         w = csv.DictWriter(f, fieldnames=list(rows[0].keys()))
