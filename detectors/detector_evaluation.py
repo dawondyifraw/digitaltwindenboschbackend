@@ -1,4 +1,11 @@
 #!/usr/bin/env python3
+"""
+Anomaly Detector Evaluation
+AUTHOR: Daniel Wondyifraw DataTwinLabs.nl
+
+Evaluates anomaly detection algorithms against historical sensor data.
+"""
+
 import os, time, csv, json, asyncio
 from datetime import datetime, timezone, timedelta
 from typing import Dict, List, Tuple
@@ -8,10 +15,10 @@ try:
 except ImportError:
     websockets = None
 
-INFLUX_URL   = "http://localhost:8086"
-INFLUX_ORG   = "DenBosch"
-INFLUX_TOKEN = "vQZH5VT3VRUrDBdX4oyDO5BV7kWN4NvRvUJUSvkOGEz-cL3huzmpkBo5ywMVBioDXNQ0UfHc3afinUpxFnLmA=="
-BUCKET       = "sensors_db"
+INFLUX_URL   = os.getenv("INFLUX_URL", "http://localhost:8086")
+INFLUX_ORG   = os.getenv("INFLUX_ORG", "DenBosch")
+INFLUX_TOKEN = os.getenv("INFLUX_TOKEN")  # Must be set in environment
+BUCKET       = os.getenv("BUCKET", "sensors_db")
 
 # thresholds for simple rule-based detector
 CO2_THRESH   = 750.0    # Slightly lower to catch more weak anomalies
@@ -24,7 +31,7 @@ POLL_EVERY   = 1.0
 # optional WebSocket broadcast (set to ws://host:port/path or leave empty)
 WS_ENDPOINT  = os.getenv("WS_ALERT_URL", "ws://localhost:6790")
 
-CSV_OUT = "detector_eval.csv"
+CSV_OUT = "evaluation/detector_eval.csv"
 
 def iso_utc(dt: datetime) -> str:
     if dt.tzinfo is None:
@@ -35,6 +42,9 @@ def now_utc() -> datetime:
     return datetime.now(timezone.utc)
 
 def ensure_csv(path: str):
+    # Ensure directory exists
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+
     exists = os.path.exists(path)
     fh = open(path, "a", newline="")
     wr = csv.writer(fh)

@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """
 ODIN (Hybrid) — Local intent + LLM fallback for Flux query construction.
+AUTHOR: Daniel Wondyifraw DataTwinLabs.nl
 
 Schema (as produced by your direct-to-Influx writer):
   bucket:       sensordb_influx
@@ -17,16 +18,25 @@ from datetime import datetime, timezone
 from typing import Dict, Any, List, Optional
 from influxdb_client import InfluxDBClient
 
+import os
+import re
+import json
+import logging
+import requests
+from datetime import datetime, timezone
+from typing import Dict, Any, List, Optional
+from influxdb_client import InfluxDBClient
+
 # =============== CONFIG ===============
-HYPERBOLIC_URL = "https://api.hyperbolic.xyz/v1/chat/completions"
+HYPERBOLIC_URL = os.getenv("HYPERBOLIC_URL", "https://api.hyperbolic.xyz/v1/chat/completions")
 #HYPERBOLIC_URL = "http://localhost:11434/v1/chat/completions"  # Update the port/path as needed.
 
 LOCAL_URL = "http://ollama:11434"
 
-HYPERBOLIC_API_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0dHJhY2V4QGdtYWlsLmNvbSIsImlhdCI6MTczODU5MjE4NX0.04OL3D0p9kh4nlJmccZ2gQGDTE8D2FE06TY3ytSbBW0"  # Replace with your actual API key
-INFLUX_URL = "http://localhost:8086"
-INFLUX_TOKEN = "vQZH5VT3VRUrDBdX4oyDO5BV7kWN4NvRvUJUSvkOGEz-cL3huzmpkBo5ywMVBioDXNQ0UfHc3afinUpxFnLmA==" ##replace
-INFLUX_ORG = "DenBosch"
+HYPERBOLIC_API_KEY = os.getenv("HYPERBOLIC_API_KEY", "")  # Load from environment
+INFLUX_URL = os.getenv("INFLUX_URL", "http://localhost:8086")
+INFLUX_TOKEN = os.getenv("INFLUX_TOKEN", "")  # Load from environment
+INFLUX_ORG = os.getenv("INFLUX_ORG", "DenBosch")
 KADASTER_API_URL = "https://api.pdok.nl/kadaster/brk-percelen/v1/percelen"
 LOCATIESERVER_URL = "https://geodata.nationaalgeoregister.nl/locatieserver/v3/search"
 BUCKET_NAME = "sensors_db"
