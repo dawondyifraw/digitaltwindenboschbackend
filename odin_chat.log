@@ -1,0 +1,812 @@
+2025-11-27 20:32:03,503 | ODIN | INFO | Starting Enhanced ODIN Chat Service
+2025-11-27 20:32:05,263 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 20:32:05] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-27 20:32:05,267 | ODIN | INFO | [0f7a7deb] Received chat request
+2025-11-27 20:32:10,804 | ODIN | INFO | [0f7a7deb] Response generated in 5.537s
+2025-11-27 20:32:10,804 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 20:32:10] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-27 20:32:14,218 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 20:32:14] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-27 20:32:14,223 | ODIN | INFO | [87b924d3] Received chat request
+2025-11-27 20:32:17,497 | ODIN | INFO | [87b924d3] Response generated in 3.275s
+2025-11-27 20:32:17,498 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 20:32:17] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-27 20:32:35,323 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 20:32:35] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-27 20:32:35,326 | ODIN | INFO | [efa66843] Received chat request
+2025-11-27 20:32:35,328 | ODIN | INFO | Executing Flux query: from(bucket: "sensors_db") |> range(start: -24h) |> filter(fn: (r) => r._measurement == "environment") |> filter(fn: (r) => r._field == "co2_ppm") |> group(columns: ["sensor_id", "_field"]) |> keep(columns: ["_time", "_value", "_field", "sensor_id", "zone"])
+2025-11-27 20:32:37,794 | ODIN | INFO | [efa66843] Response generated in 2.468s
+2025-11-27 20:32:37,795 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 20:32:37] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-27 20:35:12,851 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 20:35:12] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-27 20:35:12,856 | ODIN | INFO | [aa4efe81] Received chat request
+2025-11-27 20:35:16,684 | ODIN | INFO | [aa4efe81] Response generated in 3.828s
+2025-11-27 20:35:16,684 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 20:35:16] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-27 20:35:37,614 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 20:35:37] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-27 20:35:37,621 | ODIN | INFO | [a8b34930] Received chat request
+2025-11-27 20:35:40,752 | ODIN | INFO | [a8b34930] Response generated in 3.13s
+2025-11-27 20:35:40,752 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 20:35:40] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-27 20:36:03,289 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 20:36:03] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-27 20:36:03,293 | ODIN | INFO | [4e608abb] Received chat request
+2025-11-27 20:36:03,294 | ODIN | INFO | Executing Flux query: from(bucket: "sensors_db") |> range(start: -7d) |> filter(fn: (r) => r._measurement == "environment") |> filter(fn: (r) => r._field == "co2_ppm") |> group(columns: ["sensor_id"]) |> sort(columns: ["_time"], desc: true) |> limit(n: 1) |> keep(columns: ["_time", "_value", "sensor_id", "zone"])
+2025-11-27 20:36:03,395 | ODIN | INFO | [4e608abb] Response generated in 0.102s
+2025-11-27 20:36:03,395 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 20:36:03] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-27 20:36:12,425 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 20:36:12] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-27 20:36:12,429 | ODIN | INFO | [7652b5a7] Received chat request
+2025-11-27 20:36:25,599 | ODIN | INFO | [7652b5a7] Response generated in 13.169s
+2025-11-27 20:36:25,599 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 20:36:25] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-27 20:36:58,598 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 20:36:58] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-27 20:36:58,601 | ODIN | INFO | [e5e35639] Received chat request
+2025-11-27 20:37:12,378 | ODIN | INFO | [e5e35639] Response generated in 13.777s
+2025-11-27 20:37:12,379 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 20:37:12] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-27 20:37:27,171 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 20:37:27] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-27 20:37:27,174 | ODIN | INFO | [2bef96f9] Received chat request
+2025-11-27 20:37:27,973 | ODIN | ERROR | LLM API error: 400 Client Error: Bad Request for url: https://api.hyperbolic.xyz/v1/chat/completions
+2025-11-27 20:37:27,973 | ODIN | INFO | [2bef96f9] Response generated in 0.799s
+2025-11-27 20:37:27,973 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 20:37:27] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-27 20:37:54,279 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 20:37:54] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-27 20:37:54,282 | ODIN | INFO | [5a6aa190] Received chat request
+2025-11-27 20:37:54,283 | ODIN | INFO | [5a6aa190] Response generated in 0.0s
+2025-11-27 20:37:54,283 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 20:37:54] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-27 20:38:03,784 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 20:38:03] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-27 20:38:03,790 | ODIN | INFO | [1a601bd2] Received chat request
+2025-11-27 20:38:03,790 | ODIN | INFO | Executing Flux query: from(bucket: "sensors_db") |> range(start: -24h) |> filter(fn: (r) => r._measurement == "environment") |> filter(fn: (r) => r._field == "pm25_ugm3") |> group(columns: ["sensor_id", "_field"]) |> keep(columns: ["_time", "_value", "_field", "sensor_id", "zone"])
+2025-11-27 20:38:06,393 | ODIN | INFO | [1a601bd2] Response generated in 2.603s
+2025-11-27 20:38:06,393 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 20:38:06] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-27 20:38:18,063 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 20:38:18] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-27 20:38:18,069 | ODIN | INFO | [63a8d2ae] Received chat request
+2025-11-27 20:38:37,671 | ODIN | INFO | [63a8d2ae] Response generated in 19.603s
+2025-11-27 20:38:37,672 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 20:38:37] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-27 20:39:24,704 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 20:39:24] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-27 20:39:24,713 | ODIN | INFO | [1b70b396] Received chat request
+2025-11-27 20:39:24,714 | ODIN | INFO | Executing Flux query: from(bucket: "sensors_db") |> range(start: -24h) |> filter(fn: (r) => r._measurement == "environment") |> filter(fn: (r) => r._field == "pm25_ugm3") |> group(columns: ["sensor_id", "_field"]) |> keep(columns: ["_time", "_value", "_field", "sensor_id", "zone"])
+2025-11-27 20:39:27,035 | ODIN | INFO | [1b70b396] Response generated in 2.322s
+2025-11-27 20:39:27,036 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 20:39:27] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-27 20:39:39,885 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 20:39:39] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-27 20:39:39,890 | ODIN | INFO | [4b539216] Received chat request
+2025-11-27 20:39:39,891 | ODIN | INFO | Executing Flux query: from(bucket: "sensors_db") |> range(start: -7d) |> filter(fn: (r) => r._measurement == "environment") |> filter(fn: (r) => r._field == "pm25_ugm3") |> group(columns: ["sensor_id"]) |> sort(columns: ["_time"], desc: true) |> limit(n: 1) |> keep(columns: ["_time", "_value", "sensor_id", "zone"])
+2025-11-27 20:39:39,983 | ODIN | INFO | [4b539216] Response generated in 0.093s
+2025-11-27 20:39:39,984 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 20:39:39] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-27 20:39:56,382 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 20:39:56] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-27 20:39:56,386 | ODIN | INFO | [6349e914] Received chat request
+2025-11-27 20:39:56,386 | ODIN | INFO | Executing Flux query: from(bucket: "sensors_db") |> range(start: -24h) |> filter(fn: (r) => r._measurement == "environment") |> filter(fn: (r) => r._field == "co2_ppm" or r._field == "no2_ppb" or r._field == "pm25_ugm3" or r._field == "noise_db") |> aggregateWindow(every: 1h, fn: max, createEmpty: false) |> pivot(rowKey: ["_time"], columnKey: ["_field"], valueColumn: "_value") |> keep(columns: ["_time", "co2_ppm", "no2_ppb", "pm25_ugm3", "noise_db", "sensor_id", "zone"])
+2025-11-27 20:39:56,556 | ODIN | INFO | [6349e914] Response generated in 0.17s
+2025-11-27 20:39:56,556 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 20:39:56] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-27 20:40:15,717 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 20:40:15] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-27 20:40:15,721 | ODIN | INFO | [3d6e1d83] Received chat request
+2025-11-27 20:40:15,722 | ODIN | INFO | Executing Flux query: from(bucket: "sensors_db") |> range(start: -24h) |> filter(fn: (r) => r._measurement == "environment") |> filter(fn: (r) => r._field == "co2_ppm" or r._field == "no2_ppb" or r._field == "pm25_ugm3" or r._field == "noise_db") |> aggregateWindow(every: 1h, fn: max, createEmpty: false) |> pivot(rowKey: ["_time"], columnKey: ["_field"], valueColumn: "_value") |> keep(columns: ["_time", "co2_ppm", "no2_ppb", "pm25_ugm3", "noise_db", "sensor_id", "zone"])
+2025-11-27 20:40:15,768 | ODIN | INFO | [3d6e1d83] Response generated in 0.047s
+2025-11-27 20:40:15,768 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 20:40:15] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-27 20:40:30,730 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 20:40:30] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-27 20:40:30,733 | ODIN | INFO | [c685e368] Received chat request
+2025-11-27 20:40:30,734 | ODIN | INFO | Executing Flux query: from(bucket: "sensors_db") |> range(start: -24h) |> filter(fn: (r) => r._measurement == "environment") |> filter(fn: (r) => r._field == "pm25_ugm3") |> aggregateWindow(every: 1h, fn: max, createEmpty: false) |> pivot(rowKey: ["_time"], columnKey: ["_field"], valueColumn: "_value") |> keep(columns: ["_time", "pm25_ugm3", "sensor_id", "zone"])
+2025-11-27 20:40:30,750 | ODIN | INFO | [c685e368] Response generated in 0.017s
+2025-11-27 20:40:30,750 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 20:40:30] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-27 20:40:37,246 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 20:40:37] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-27 20:40:37,251 | ODIN | INFO | [ac9fbbe5] Received chat request
+2025-11-27 20:40:37,252 | ODIN | INFO | Executing Flux query: from(bucket: "sensors_db") |> range(start: -24h) |> filter(fn: (r) => r._measurement == "environment") |> filter(fn: (r) => r._field == "co2_ppm" or r._field == "no2_ppb" or r._field == "pm25_ugm3" or r._field == "noise_db") |> group(columns: ["sensor_id", "_field"]) |> keep(columns: ["_time", "_value", "_field", "sensor_id", "zone"])
+2025-11-27 20:40:46,439 | ODIN | INFO | [ac9fbbe5] Response generated in 9.188s
+2025-11-27 20:40:46,440 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 20:40:46] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-27 20:40:56,797 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 20:40:56] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-27 20:40:56,804 | ODIN | INFO | [6356e196] Received chat request
+2025-11-27 20:40:56,805 | ODIN | INFO | Executing Flux query: from(bucket: "sensors_db") |> range(start: -24h) |> filter(fn: (r) => r._measurement == "environment") |> filter(fn: (r) => r._field == "co2_ppm" or r._field == "no2_ppb" or r._field == "pm25_ugm3" or r._field == "noise_db") |> aggregateWindow(every: 1h, fn: max, createEmpty: false) |> pivot(rowKey: ["_time"], columnKey: ["_field"], valueColumn: "_value") |> keep(columns: ["_time", "co2_ppm", "no2_ppb", "pm25_ugm3", "noise_db", "sensor_id", "zone"])
+2025-11-27 20:40:56,846 | ODIN | INFO | [6356e196] Response generated in 0.042s
+2025-11-27 20:40:56,847 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 20:40:56] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-27 20:41:53,982 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 20:41:53] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-27 20:41:53,987 | ODIN | INFO | [a940c354] Received chat request
+2025-11-27 20:41:53,987 | ODIN | INFO | Executing Flux query: from(bucket: "sensors_db") |> range(start: -7d) |> filter(fn: (r) => r._measurement == "environment") |> filter(fn: (r) => r._field == "co2_ppm") |> group(columns: ["sensor_id"]) |> sort(columns: ["_time"], desc: true) |> limit(n: 1) |> keep(columns: ["_time", "_value", "sensor_id", "zone"])
+2025-11-27 20:41:54,079 | ODIN | INFO | [a940c354] Response generated in 0.092s
+2025-11-27 20:41:54,080 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 20:41:54] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-27 20:44:52,374 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 20:44:52] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-27 20:44:52,379 | ODIN | INFO | [8a1ac44b] Received chat request
+2025-11-27 20:44:57,290 | ODIN | INFO | [8a1ac44b] Response generated in 4.912s
+2025-11-27 20:44:57,292 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 20:44:57] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-27 20:45:09,317 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 20:45:09] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-27 20:45:09,327 | ODIN | INFO | [1b2f7dc4] Received chat request
+2025-11-27 20:45:11,908 | ODIN | INFO | [1b2f7dc4] Response generated in 2.58s
+2025-11-27 20:45:11,908 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 20:45:11] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-27 20:45:21,024 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 20:45:21] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-27 20:45:21,029 | ODIN | INFO | [401c0e13] Received chat request
+2025-11-27 20:45:21,030 | ODIN | INFO | [401c0e13] Response generated in 0.0s
+2025-11-27 20:45:21,030 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 20:45:21] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-27 20:45:33,683 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 20:45:33] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-27 20:45:33,688 | ODIN | INFO | [6f9ccb85] Received chat request
+2025-11-27 20:45:33,688 | ODIN | INFO | Executing Flux query: from(bucket: "sensors_db") |> range(start: -24h) |> filter(fn: (r) => r._measurement == "environment") |> filter(fn: (r) => r._field == "pm25_ugm3") |> filter(fn: (r) => r.zone == "residential") |> aggregateWindow(every: 1h, fn: mean, createEmpty: false) |> pivot(rowKey: ["_time"], columnKey: ["_field"], valueColumn: "_value") |> keep(columns: ["_time", "pm25_ugm3", "sensor_id", "zone"])
+2025-11-27 20:45:33,706 | ODIN | INFO | [6f9ccb85] Response generated in 0.018s
+2025-11-27 20:45:33,706 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 20:45:33] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-27 20:49:23,959 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 20:49:23] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-27 20:49:23,963 | ODIN | INFO | [c0dc6cf9] Received chat request
+2025-11-27 20:49:29,224 | ODIN | INFO | [c0dc6cf9] Response generated in 5.26s
+2025-11-27 20:49:29,224 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 20:49:29] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-27 20:49:55,217 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 20:49:55] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-27 20:49:55,222 | ODIN | INFO | [2703461e] Received chat request
+2025-11-27 20:49:58,964 | ODIN | INFO | [2703461e] Response generated in 3.742s
+2025-11-27 20:49:58,965 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 20:49:58] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-27 20:50:02,361 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 20:50:02] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-27 20:50:02,365 | ODIN | INFO | [45eba12b] Received chat request
+2025-11-27 20:50:06,250 | ODIN | INFO | [45eba12b] Response generated in 3.885s
+2025-11-27 20:50:06,250 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 20:50:06] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-27 20:50:12,021 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 20:50:12] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-27 20:50:12,026 | ODIN | INFO | [9fd7a52a] Received chat request
+2025-11-27 20:50:12,027 | ODIN | INFO | Executing Flux query: from(bucket: "sensors_db") |> range(start: -24h) |> filter(fn: (r) => r._measurement == "environment") |> filter(fn: (r) => r._field == "co2_ppm") |> group(columns: ["sensor_id", "_field"]) |> keep(columns: ["_time", "_value", "_field", "sensor_id", "zone"])
+2025-11-27 20:50:14,082 | ODIN | INFO | [9fd7a52a] Response generated in 2.056s
+2025-11-27 20:50:14,083 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 20:50:14] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-27 20:50:19,130 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 20:50:19] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-27 20:50:19,136 | ODIN | INFO | [64231e4a] Received chat request
+2025-11-27 20:50:28,912 | ODIN | INFO | [64231e4a] Response generated in 9.775s
+2025-11-27 20:50:28,912 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 20:50:28] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-27 20:50:34,480 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 20:50:34] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-27 20:50:34,494 | ODIN | INFO | [f0012c06] Received chat request
+2025-11-27 20:50:34,494 | ODIN | INFO | Executing Flux query: from(bucket: "sensors_db") |> range(start: -7d) |> filter(fn: (r) => r._measurement == "environment") |> filter(fn: (r) => r._field == "co2_ppm") |> group(columns: ["sensor_id"]) |> sort(columns: ["_time"], desc: true) |> limit(n: 1) |> keep(columns: ["_time", "_value", "sensor_id", "zone"])
+2025-11-27 20:50:34,612 | ODIN | INFO | [f0012c06] Response generated in 0.118s
+2025-11-27 20:50:34,612 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 20:50:34] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-27 20:50:40,412 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 20:50:40] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-27 20:50:40,420 | ODIN | INFO | [994accce] Received chat request
+2025-11-27 20:50:40,420 | ODIN | INFO | Executing Flux query: from(bucket: "sensors_db") |> range(start: -24h) |> filter(fn: (r) => r._measurement == "environment") |> filter(fn: (r) => r._field == "co2_ppm") |> aggregateWindow(every: 1h, fn: max, createEmpty: false) |> pivot(rowKey: ["_time"], columnKey: ["_field"], valueColumn: "_value") |> keep(columns: ["_time", "co2_ppm", "sensor_id", "zone"])
+2025-11-27 20:50:40,441 | ODIN | INFO | [994accce] Response generated in 0.021s
+2025-11-27 20:50:40,441 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 20:50:40] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-27 20:50:52,963 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 20:50:52] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-27 20:50:52,967 | ODIN | INFO | [2afb3150] Received chat request
+2025-11-27 20:51:12,544 | ODIN | INFO | [2afb3150] Response generated in 19.577s
+2025-11-27 20:51:12,544 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 20:51:12] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-27 20:52:55,648 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 20:52:55] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-27 20:52:55,652 | ODIN | INFO | [d68a9325] Received chat request
+2025-11-27 20:52:55,653 | ODIN | INFO | Executing Flux query: from(bucket: "sensors_db") |> range(start: -24h) |> filter(fn: (r) => r._measurement == "environment") |> filter(fn: (r) => r._field == "pm25_ugm3") |> aggregateWindow(every: 1h, fn: max, createEmpty: false) |> pivot(rowKey: ["_time"], columnKey: ["_field"], valueColumn: "_value") |> keep(columns: ["_time", "pm25_ugm3", "sensor_id", "zone"])
+2025-11-27 20:52:55,671 | ODIN | INFO | [d68a9325] Response generated in 0.018s
+2025-11-27 20:52:55,671 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 20:52:55] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-27 20:53:05,746 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 20:53:05] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-27 20:53:05,750 | ODIN | INFO | [62cb7e41] Received chat request
+2025-11-27 20:53:05,750 | ODIN | INFO | Executing Flux query: from(bucket: "sensors_db") |> range(start: -24h) |> filter(fn: (r) => r._measurement == "environment") |> filter(fn: (r) => r._field == "pm25_ugm3") |> aggregateWindow(every: 1h, fn: max, createEmpty: false) |> pivot(rowKey: ["_time"], columnKey: ["_field"], valueColumn: "_value") |> keep(columns: ["_time", "pm25_ugm3", "sensor_id", "zone"])
+2025-11-27 20:53:05,768 | ODIN | INFO | [62cb7e41] Response generated in 0.018s
+2025-11-27 20:53:05,768 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 20:53:05] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-27 20:53:20,065 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 20:53:20] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-27 20:53:20,071 | ODIN | INFO | [791ba35a] Received chat request
+2025-11-27 20:53:20,072 | ODIN | INFO | Executing Flux query: from(bucket: "sensors_db") |> range(start: -7d) |> filter(fn: (r) => r._measurement == "environment") |> filter(fn: (r) => r._field == "pm25_ugm3") |> group(columns: ["sensor_id"]) |> sort(columns: ["_time"], desc: true) |> limit(n: 1) |> keep(columns: ["_time", "_value", "sensor_id", "zone"])
+2025-11-27 20:53:20,175 | ODIN | INFO | [791ba35a] Response generated in 0.104s
+2025-11-27 20:53:20,176 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 20:53:20] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-27 20:53:29,272 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 20:53:29] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-27 20:53:29,277 | ODIN | INFO | [7dc08a92] Received chat request
+2025-11-27 20:53:29,278 | ODIN | INFO | Executing Flux query: from(bucket: "sensors_db") |> range(start: -24h) |> filter(fn: (r) => r._measurement == "environment") |> filter(fn: (r) => r._field == "co2_ppm" or r._field == "no2_ppb" or r._field == "pm25_ugm3" or r._field == "noise_db") |> group(columns: ["sensor_id", "_field"]) |> keep(columns: ["_time", "_value", "_field", "sensor_id", "zone"])
+2025-11-27 20:53:38,269 | ODIN | INFO | [7dc08a92] Response generated in 8.992s
+2025-11-27 20:53:38,269 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 20:53:38] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-27 20:53:55,093 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 20:53:55] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-27 20:53:55,103 | ODIN | INFO | [ed5fa129] Received chat request
+2025-11-27 20:53:55,103 | ODIN | INFO | Executing Flux query: from(bucket: "sensors_db") |> range(start: -7d) |> filter(fn: (r) => r._measurement == "environment") |> filter(fn: (r) => r._field == "pm25_ugm3") |> group(columns: ["sensor_id"]) |> sort(columns: ["_time"], desc: true) |> limit(n: 1) |> keep(columns: ["_time", "_value", "sensor_id", "zone"])
+2025-11-27 20:53:55,209 | ODIN | INFO | [ed5fa129] Response generated in 0.106s
+2025-11-27 20:53:55,210 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 20:53:55] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-27 20:54:16,395 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 20:54:16] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-27 20:54:16,399 | ODIN | INFO | [e3d39a45] Received chat request
+2025-11-27 20:54:16,399 | ODIN | INFO | Executing Flux query: from(bucket: "sensors_db") |> range(start: -24h) |> filter(fn: (r) => r._measurement == "environment") |> filter(fn: (r) => r._field == "pm25_ugm3") |> group(columns: ["sensor_id", "_field"]) |> keep(columns: ["_time", "_value", "_field", "sensor_id", "zone"])
+2025-11-27 20:54:18,902 | ODIN | INFO | [e3d39a45] Response generated in 2.503s
+2025-11-27 20:54:18,902 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 20:54:18] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-27 20:54:32,206 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 20:54:32] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-27 20:54:32,210 | ODIN | INFO | [2226e345] Received chat request
+2025-11-27 20:54:32,211 | ODIN | INFO | Executing Flux query: from(bucket: "sensors_db") |> range(start: -24h) |> filter(fn: (r) => r._measurement == "environment") |> filter(fn: (r) => r._field == "noise_db") |> group(columns: ["sensor_id", "_field"]) |> keep(columns: ["_time", "_value", "_field", "sensor_id", "zone"])
+2025-11-27 20:54:34,508 | ODIN | INFO | [2226e345] Response generated in 2.298s
+2025-11-27 20:54:34,509 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 20:54:34] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-27 20:59:56,562 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 20:59:56] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-27 20:59:56,566 | ODIN | INFO | [681a5d94] Received chat request
+2025-11-27 20:59:56,567 | ODIN | INFO | Executing Flux query: from(bucket: "sensors_db") |> range(start: -24h) |> filter(fn: (r) => r._measurement == "environment") |> filter(fn: (r) => r._field == "co2_ppm" or r._field == "no2_ppb" or r._field == "pm25_ugm3" or r._field == "noise_db") |> filter(fn: (r) => r.sensor_id == "s") |> group(columns: ["sensor_id", "_field"]) |> keep(columns: ["_time", "_value", "_field", "sensor_id", "zone"])
+2025-11-27 20:59:56,576 | ODIN | INFO | [681a5d94] Response generated in 0.01s
+2025-11-27 20:59:56,577 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 20:59:56] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-27 21:00:05,096 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 21:00:05] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-27 21:00:05,099 | ODIN | INFO | [e4bcde43] Received chat request
+2025-11-27 21:00:05,100 | ODIN | INFO | Executing Flux query: from(bucket: "sensors_db") |> range(start: -24h) |> filter(fn: (r) => r._measurement == "environment") |> filter(fn: (r) => r._field == "co2_ppm" or r._field == "no2_ppb" or r._field == "pm25_ugm3" or r._field == "noise_db") |> filter(fn: (r) => r.sensor_id == "locations") |> group(columns: ["sensor_id", "_field"]) |> keep(columns: ["_time", "_value", "_field", "sensor_id", "zone"])
+2025-11-27 21:00:05,107 | ODIN | INFO | [e4bcde43] Response generated in 0.007s
+2025-11-27 21:00:05,107 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 21:00:05] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-27 21:04:39,186 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 21:04:39] "[33mGET /odin/debug/sensors HTTP/1.1[0m" 404 -
+2025-11-27 21:04:39,434 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 21:04:39] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-11-27 21:05:02,683 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 21:05:02] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-27 21:05:02,687 | ODIN | INFO | [6792817f] Received chat request
+2025-11-27 21:05:02,688 | ODIN | INFO | Executing Flux query: from(bucket: "sensors_db") |> range(start: -24h) |> filter(fn: (r) => r._measurement == "environment") |> filter(fn: (r) => r._field == "co2_ppm" or r._field == "no2_ppb" or r._field == "pm25_ugm3" or r._field == "noise_db") |> filter(fn: (r) => r.sensor_id == "s") |> group(columns: ["sensor_id", "_field"]) |> keep(columns: ["_time", "_value", "_field", "sensor_id", "zone"])
+2025-11-27 21:05:02,695 | ODIN | INFO | [6792817f] Response generated in 0.008s
+2025-11-27 21:05:02,695 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 21:05:02] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-27 21:05:09,429 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 21:05:09] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-27 21:05:09,432 | ODIN | INFO | [338ce37d] Received chat request
+2025-11-27 21:05:09,433 | ODIN | INFO | Executing Flux query: from(bucket: "sensors_db") |> range(start: -24h) |> filter(fn: (r) => r._measurement == "environment") |> filter(fn: (r) => r._field == "co2_ppm" or r._field == "no2_ppb" or r._field == "pm25_ugm3" or r._field == "noise_db") |> filter(fn: (r) => r.sensor_id == "s") |> group(columns: ["sensor_id", "_field"]) |> keep(columns: ["_time", "_value", "_field", "sensor_id", "zone"])
+2025-11-27 21:05:09,438 | ODIN | INFO | [338ce37d] Response generated in 0.006s
+2025-11-27 21:05:09,439 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 21:05:09] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-27 21:05:20,438 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 21:05:20] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-27 21:05:20,442 | ODIN | INFO | [d39acfcd] Received chat request
+2025-11-27 21:05:20,442 | ODIN | INFO | Executing Flux query: from(bucket: "sensors_db") |> range(start: -24h) |> filter(fn: (r) => r._measurement == "environment") |> filter(fn: (r) => r._field == "co2_ppm" or r._field == "no2_ppb" or r._field == "pm25_ugm3" or r._field == "noise_db") |> filter(fn: (r) => r.sensor_id == "s") |> group(columns: ["sensor_id", "_field"]) |> keep(columns: ["_time", "_value", "_field", "sensor_id", "zone"])
+2025-11-27 21:05:20,450 | ODIN | INFO | [d39acfcd] Response generated in 0.008s
+2025-11-27 21:05:20,451 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 21:05:20] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-27 21:09:56,611 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 21:09:56] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-27 21:09:56,616 | ODIN | INFO | [5bdcabe6] Received chat request
+2025-11-27 21:09:56,616 | ODIN | INFO | Executing Flux query: from(bucket: "sensors_db") |> range(start: -24h) |> filter(fn: (r) => r._measurement == "environment") |> filter(fn: (r) => r._field == "co2_ppm" or r._field == "no2_ppb" or r._field == "pm25_ugm3" or r._field == "noise_db") |> filter(fn: (r) => r.sensor_id == "s") |> group(columns: ["sensor_id", "_field"]) |> keep(columns: ["_time", "_value", "_field", "sensor_id", "zone"])
+2025-11-27 21:09:56,624 | ODIN | INFO | [5bdcabe6] Response generated in 0.008s
+2025-11-27 21:09:56,624 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 21:09:56] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-27 21:10:04,024 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 21:10:04] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-27 21:10:04,029 | ODIN | INFO | [cd62c3ed] Received chat request
+2025-11-27 21:10:04,030 | ODIN | INFO | Executing Flux query: from(bucket: "sensors_db") |> range(start: -24h) |> filter(fn: (r) => r._measurement == "environment") |> filter(fn: (r) => r._field == "co2_ppm" or r._field == "no2_ppb" or r._field == "pm25_ugm3" or r._field == "noise_db") |> filter(fn: (r) => r.sensor_id == "s") |> group(columns: ["sensor_id", "_field"]) |> keep(columns: ["_time", "_value", "_field", "sensor_id", "zone"])
+2025-11-27 21:10:04,035 | ODIN | INFO | [cd62c3ed] Response generated in 0.006s
+2025-11-27 21:10:04,036 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 21:10:04] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-27 21:10:10,241 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 21:10:10] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-27 21:10:10,247 | ODIN | INFO | [2b35a158] Received chat request
+2025-11-27 21:10:10,247 | ODIN | INFO | Executing Flux query: from(bucket: "sensors_db") |> range(start: -24h) |> filter(fn: (r) => r._measurement == "environment") |> filter(fn: (r) => r._field == "co2_ppm" or r._field == "no2_ppb" or r._field == "pm25_ugm3" or r._field == "noise_db") |> filter(fn: (r) => r.sensor_id == "s") |> group(columns: ["sensor_id", "_field"]) |> keep(columns: ["_time", "_value", "_field", "sensor_id", "zone"])
+2025-11-27 21:10:10,255 | ODIN | INFO | [2b35a158] Response generated in 0.008s
+2025-11-27 21:10:10,255 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 21:10:10] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-27 21:10:17,823 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 21:10:17] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-27 21:10:17,827 | ODIN | INFO | [cf7c0278] Received chat request
+2025-11-27 21:10:17,827 | ODIN | INFO | Executing Flux query: from(bucket: "sensors_db") |> range(start: -24h) |> filter(fn: (r) => r._measurement == "environment") |> filter(fn: (r) => r._field == "co2_ppm" or r._field == "no2_ppb" or r._field == "pm25_ugm3" or r._field == "noise_db") |> filter(fn: (r) => r.sensor_id == "s") |> group(columns: ["sensor_id", "_field"]) |> keep(columns: ["_time", "_value", "_field", "sensor_id", "zone"])
+2025-11-27 21:10:17,833 | ODIN | INFO | [cf7c0278] Response generated in 0.006s
+2025-11-27 21:10:17,833 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 21:10:17] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-27 21:10:24,988 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 21:10:24] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-27 21:10:24,993 | ODIN | INFO | [fc59e25b] Received chat request
+2025-11-27 21:10:24,994 | ODIN | INFO | Executing Flux query: from(bucket: "sensors_db") |> range(start: -7d) |> filter(fn: (r) => r._measurement == "environment") |> filter(fn: (r) => r._field == "pm25_ugm3") |> group(columns: ["sensor_id"]) |> sort(columns: ["_time"], desc: true) |> limit(n: 1) |> keep(columns: ["_time", "_value", "sensor_id", "zone"])
+2025-11-27 21:10:25,115 | ODIN | INFO | [fc59e25b] Response generated in 0.122s
+2025-11-27 21:10:25,116 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 21:10:25] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-27 21:10:44,108 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 21:10:44] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-27 21:10:44,112 | ODIN | INFO | [e8526470] Received chat request
+2025-11-27 21:10:44,112 | ODIN | INFO | Executing Flux query: from(bucket: "sensors_db") |> range(start: -7d) |> filter(fn: (r) => r._measurement == "environment") |> filter(fn: (r) => r._field == "co2_ppm") |> group(columns: ["sensor_id"]) |> sort(columns: ["_time"], desc: true) |> limit(n: 1) |> keep(columns: ["_time", "_value", "sensor_id", "zone"])
+2025-11-27 21:10:44,236 | ODIN | INFO | [e8526470] Response generated in 0.125s
+2025-11-27 21:10:44,237 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 21:10:44] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-27 21:10:53,564 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 21:10:53] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-27 21:10:53,568 | ODIN | INFO | [a6822bf0] Received chat request
+2025-11-27 21:10:53,568 | ODIN | INFO | Executing Flux query: from(bucket: "sensors_db") |> range(start: -7d) |> filter(fn: (r) => r._measurement == "environment") |> filter(fn: (r) => r._field == "co2_ppm") |> group(columns: ["sensor_id"]) |> sort(columns: ["_time"], desc: true) |> limit(n: 1) |> keep(columns: ["_time", "_value", "sensor_id", "zone"])
+2025-11-27 21:10:53,651 | ODIN | INFO | [a6822bf0] Response generated in 0.084s
+2025-11-27 21:10:53,652 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 21:10:53] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-27 21:11:00,173 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 21:11:00] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-27 21:11:00,177 | ODIN | INFO | [3f55abdb] Received chat request
+2025-11-27 21:11:03,683 | ODIN | INFO | [3f55abdb] Response generated in 3.507s
+2025-11-27 21:11:03,684 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 21:11:03] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-27 21:11:18,328 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 21:11:18] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-27 21:11:18,334 | ODIN | INFO | [ac0c3b8e] Received chat request
+2025-11-27 21:11:18,334 | ODIN | INFO | Executing Flux query: from(bucket: "sensors_db") |> range(start: -7d) |> filter(fn: (r) => r._measurement == "environment") |> filter(fn: (r) => r._field == "co2_ppm") |> group(columns: ["sensor_id", "_field"]) |> keep(columns: ["_time", "_value", "_field", "sensor_id", "zone"])
+2025-11-27 21:11:21,816 | ODIN | INFO | [ac0c3b8e] Response generated in 3.482s
+2025-11-27 21:11:21,816 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 21:11:21] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-27 21:11:41,070 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 21:11:41] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-27 21:11:41,075 | ODIN | INFO | [ae695787] Received chat request
+2025-11-27 21:11:41,075 | ODIN | INFO | Executing Flux query: from(bucket: "sensors_db") |> range(start: -24h) |> filter(fn: (r) => r._measurement == "environment") |> filter(fn: (r) => r._field == "co2_ppm") |> aggregateWindow(every: 1h, fn: max, createEmpty: false) |> pivot(rowKey: ["_time"], columnKey: ["_field"], valueColumn: "_value") |> keep(columns: ["_time", "co2_ppm", "sensor_id", "zone"])
+2025-11-27 21:11:41,091 | ODIN | INFO | [ae695787] Response generated in 0.016s
+2025-11-27 21:11:41,091 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 21:11:41] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-27 21:11:48,512 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 21:11:48] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-27 21:11:48,515 | ODIN | INFO | [63479f79] Received chat request
+2025-11-27 21:11:48,516 | ODIN | INFO | Executing Flux query: from(bucket: "sensors_db") |> range(start: -24h) |> filter(fn: (r) => r._measurement == "environment") |> filter(fn: (r) => r._field == "co2_ppm") |> group(columns: ["sensor_id", "_field"]) |> keep(columns: ["_time", "_value", "_field", "sensor_id", "zone"])
+2025-11-27 21:11:50,773 | ODIN | INFO | [63479f79] Response generated in 2.257s
+2025-11-27 21:11:50,773 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 21:11:50] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-27 21:33:52,978 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 21:33:52] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-27 21:33:52,993 | ODIN | INFO | [3b3e3bc5] Received chat request
+2025-11-27 21:33:57,012 | ODIN | INFO | [3b3e3bc5] Response generated in 4.021s
+2025-11-27 21:33:57,015 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 21:33:57] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-27 21:34:07,105 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 21:34:07] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-27 21:34:07,111 | ODIN | INFO | [c24e435f] Received chat request
+2025-11-27 21:34:14,691 | ODIN | INFO | Executing Flux query: Here's the Flux query to get the latest CO2 trend from the specified bucket and measurement:
+
+```flux
+from(bucket: "sensors_db")
+  |> range(start: -1h)
+  |> filter(fn: (r) => r._measurement == "environment" and r._field == "co2_ppm")
+  |> sort(columns: ["_time"], desc: true)
+  |> limit(n: 10)
+```
+2025-11-27 21:34:14,714 | ODIN | ERROR | InfluxDB query error: (400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Content-Type': 'application/json; charset=utf-8', 'Vary': 'Accept-Encoding', 'X-Influxdb-Build': 'OSS', 'X-Influxdb-Version': 'v2.7.11', 'X-Platform-Error-Code': 'invalid', 'Date': 'Thu, 27 Nov 2025 20:34:14 GMT', 'Transfer-Encoding': 'chunked'})
+HTTP response body: b'{"code":"invalid","message":"compilation failed: error @1:5-1:6: invalid statement: \'\\n\\nerror @1:92-1:93: invalid statement: :\\n\\nerror @3:1-3:2: invalid statement: `\\n\\nerror @3:2-3:3: invalid statement: `\\n\\nerror @3:3-3:4: invalid statement: `\\n\\nerror @9:1-9:2: invalid statement: `\\n\\nerror @9:2-9:3: invalid statement: `\\n\\nerror @9:3-9:4: invalid statement: `"}'
+
+2025-11-27 21:34:14,714 | ODIN | ERROR | Sensor query failed: (400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Content-Type': 'application/json; charset=utf-8', 'Vary': 'Accept-Encoding', 'X-Influxdb-Build': 'OSS', 'X-Influxdb-Version': 'v2.7.11', 'X-Platform-Error-Code': 'invalid', 'Date': 'Thu, 27 Nov 2025 20:34:14 GMT', 'Transfer-Encoding': 'chunked'})
+HTTP response body: b'{"code":"invalid","message":"compilation failed: error @1:5-1:6: invalid statement: \'\\n\\nerror @1:92-1:93: invalid statement: :\\n\\nerror @3:1-3:2: invalid statement: `\\n\\nerror @3:2-3:3: invalid statement: `\\n\\nerror @3:3-3:4: invalid statement: `\\n\\nerror @9:1-9:2: invalid statement: `\\n\\nerror @9:2-9:3: invalid statement: `\\n\\nerror @9:3-9:4: invalid statement: `"}'
+
+2025-11-27 21:34:14,714 | ODIN | INFO | [c24e435f] Response generated in 7.604s
+2025-11-27 21:34:14,715 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 21:34:14] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-27 21:34:51,024 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 21:34:51] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-27 21:34:51,029 | ODIN | INFO | [58783517] Received chat request
+2025-11-27 21:34:56,016 | ODIN | INFO | [58783517] Response generated in 4.987s
+2025-11-27 21:34:56,017 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 21:34:56] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-27 21:35:05,075 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 21:35:05] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-27 21:35:05,079 | ODIN | INFO | [83cbf5c5] Received chat request
+2025-11-27 21:35:05,079 | ODIN | INFO | Executing Flux query: from(bucket: "sensors_db") |> range(start: -7d) |> filter(fn: (r) => r._measurement == "environment") |> filter(fn: (r) => r._field == "co2_ppm") |> group(columns: ["sensor_id"]) |> sort(columns: ["_time"], desc: true) |> limit(n: 1) |> keep(columns: ["_time", "_value", "sensor_id", "zone"])
+2025-11-27 21:35:05,239 | ODIN | INFO | [83cbf5c5] Response generated in 0.16s
+2025-11-27 21:35:05,239 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 21:35:05] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-27 21:35:17,552 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 21:35:17] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-27 21:35:17,556 | ODIN | INFO | [17dcd3d6] Received chat request
+2025-11-27 21:35:21,010 | ODIN | INFO | [17dcd3d6] Response generated in 3.453s
+2025-11-27 21:35:21,010 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 21:35:21] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-27 21:40:26,953 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 21:40:26] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-27 21:40:26,957 | ODIN | INFO | [abe09c98] Received chat request
+2025-11-27 21:40:33,293 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 21:40:33] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-27 21:40:33,298 | ODIN | INFO | [db2135e7] Received chat request
+2025-11-27 21:40:33,995 | ODIN | INFO | [abe09c98] Response generated in 7.038s
+2025-11-27 21:40:33,995 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 21:40:33] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-27 21:40:37,615 | ODIN | INFO | [db2135e7] Response generated in 4.317s
+2025-11-27 21:40:37,615 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 21:40:37] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-27 21:40:45,226 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 21:40:45] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-27 21:40:45,230 | ODIN | INFO | [d5c09cae] Received chat request
+2025-11-27 21:40:45,230 | ODIN | INFO | Executing Flux query: from(bucket: "sensors_db") |> range(start: -7d) |> filter(fn: (r) => r._measurement == "environment") |> filter(fn: (r) => r._field == "co2_ppm") |> group(columns: ["sensor_id"]) |> sort(columns: ["_time"], desc: true) |> limit(n: 1) |> keep(columns: ["_time", "_value", "sensor_id", "zone"])
+2025-11-27 21:40:45,335 | ODIN | INFO | [d5c09cae] Response generated in 0.106s
+2025-11-27 21:40:45,336 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 21:40:45] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-27 21:41:01,554 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 21:41:01] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-27 21:41:01,565 | ODIN | INFO | [cfb875eb] Received chat request
+2025-11-27 21:41:01,566 | ODIN | INFO | Executing Flux query: from(bucket: "sensors_db") |> range(start: -24h) |> filter(fn: (r) => r._measurement == "environment") |> filter(fn: (r) => r._field == "co2_ppm" or r._field == "no2_ppb" or r._field == "pm25_ugm3" or r._field == "noise_db") |> aggregateWindow(every: 1h, fn: mean, createEmpty: false) |> pivot(rowKey: ["_time"], columnKey: ["_field"], valueColumn: "_value") |> keep(columns: ["_time", "co2_ppm", "no2_ppb", "pm25_ugm3", "noise_db", "sensor_id", "zone"])
+2025-11-27 21:41:01,799 | ODIN | INFO | [cfb875eb] Response generated in 0.234s
+2025-11-27 21:41:01,800 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 21:41:01] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-27 21:41:10,157 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 21:41:10] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-27 21:41:10,161 | ODIN | INFO | [7c742fbc] Received chat request
+2025-11-27 21:41:14,115 | ODIN | INFO | [7c742fbc] Response generated in 3.953s
+2025-11-27 21:41:14,115 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 21:41:14] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-27 21:41:25,486 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 21:41:25] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-27 21:41:25,490 | ODIN | INFO | [d3fdb605] Received chat request
+2025-11-27 21:41:25,491 | ODIN | INFO | Executing Flux query: from(bucket: "sensors_db") |> range(start: -7d) |> filter(fn: (r) => r._measurement == "environment") |> filter(fn: (r) => r._field == "co2_ppm") |> group(columns: ["sensor_id"]) |> sort(columns: ["_time"], desc: true) |> limit(n: 1) |> keep(columns: ["_time", "_value", "sensor_id", "zone"])
+2025-11-27 21:41:25,590 | ODIN | INFO | [d3fdb605] Response generated in 0.1s
+2025-11-27 21:41:25,590 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 21:41:25] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-27 21:41:33,141 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 21:41:33] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-27 21:41:33,152 | ODIN | INFO | [d6c8b16b] Received chat request
+2025-11-27 21:41:33,153 | ODIN | INFO | Executing Flux query: from(bucket: "sensors_db") |> range(start: -7d) |> filter(fn: (r) => r._measurement == "environment") |> filter(fn: (r) => r._field == "pm25_ugm3") |> group(columns: ["sensor_id"]) |> sort(columns: ["_time"], desc: true) |> limit(n: 1) |> keep(columns: ["_time", "_value", "sensor_id", "zone"])
+2025-11-27 21:41:33,266 | ODIN | INFO | [d6c8b16b] Response generated in 0.114s
+2025-11-27 21:41:33,267 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 21:41:33] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-27 21:41:39,409 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 21:41:39] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-27 21:41:39,415 | ODIN | INFO | [f58f8f51] Received chat request
+2025-11-27 21:41:44,469 | ODIN | INFO | [f58f8f51] Response generated in 5.054s
+2025-11-27 21:41:44,470 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 21:41:44] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-27 21:42:37,897 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 21:42:37] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-27 21:42:37,904 | ODIN | INFO | [a5e283d2] Received chat request
+2025-11-27 21:42:37,904 | ODIN | INFO | Executing Flux query: from(bucket: "sensors_db") |> range(start: -24h) |> filter(fn: (r) => r._measurement == "environment") |> filter(fn: (r) => r._field == "co2_ppm") |> group(columns: ["sensor_id", "_field"]) |> keep(columns: ["_time", "_value", "_field", "sensor_id", "zone"])
+2025-11-27 21:42:41,041 | ODIN | INFO | [a5e283d2] Response generated in 3.137s
+2025-11-27 21:42:41,042 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 21:42:41] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-27 21:42:46,267 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 21:42:46] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-27 21:42:46,271 | ODIN | INFO | [0855166e] Received chat request
+2025-11-27 21:42:46,271 | ODIN | INFO | Executing Flux query: from(bucket: "sensors_db") |> range(start: -24h) |> filter(fn: (r) => r._measurement == "environment") |> filter(fn: (r) => r._field == "noise_db") |> group(columns: ["sensor_id", "_field"]) |> keep(columns: ["_time", "_value", "_field", "sensor_id", "zone"])
+2025-11-27 21:42:48,811 | ODIN | INFO | [0855166e] Response generated in 2.54s
+2025-11-27 21:42:48,812 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 21:42:48] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-27 21:43:03,742 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 21:43:03] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-27 21:43:03,747 | ODIN | INFO | [2a94f83f] Received chat request
+2025-11-27 21:43:03,748 | ODIN | INFO | Executing Flux query: from(bucket: "sensors_db") |> range(start: -7d) |> filter(fn: (r) => r._measurement == "environment") |> filter(fn: (r) => r._field == "pm25_ugm3") |> group(columns: ["sensor_id"]) |> sort(columns: ["_time"], desc: true) |> limit(n: 1) |> keep(columns: ["_time", "_value", "sensor_id", "zone"])
+2025-11-27 21:43:03,857 | ODIN | INFO | [2a94f83f] Response generated in 0.109s
+2025-11-27 21:43:03,857 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 21:43:03] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-27 21:43:10,490 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 21:43:10] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-27 21:43:10,497 | ODIN | INFO | [de0b8c0c] Received chat request
+2025-11-27 21:43:10,497 | ODIN | INFO | Executing Flux query: from(bucket: "sensors_db") |> range(start: -7d) |> filter(fn: (r) => r._measurement == "environment") |> filter(fn: (r) => r._field == "noise_db") |> group(columns: ["sensor_id", "_field"]) |> keep(columns: ["_time", "_value", "_field", "sensor_id", "zone"])
+2025-11-27 21:43:13,194 | ODIN | INFO | [de0b8c0c] Response generated in 2.698s
+2025-11-27 21:43:13,195 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 21:43:13] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-27 21:43:24,757 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 21:43:24] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-27 21:43:24,763 | ODIN | INFO | [d45694d5] Received chat request
+2025-11-27 21:43:24,763 | ODIN | INFO | Executing Flux query: from(bucket: "sensors_db") |> range(start: -24h) |> filter(fn: (r) => r._measurement == "environment") |> filter(fn: (r) => r._field == "co2_ppm") |> group(columns: ["sensor_id", "_field"]) |> keep(columns: ["_time", "_value", "_field", "sensor_id", "zone"])
+2025-11-27 21:43:27,343 | ODIN | INFO | [d45694d5] Response generated in 2.58s
+2025-11-27 21:43:27,343 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 21:43:27] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-27 21:43:41,832 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 21:43:41] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-27 21:43:41,836 | ODIN | INFO | [13591d51] Received chat request
+2025-11-27 21:43:41,836 | ODIN | INFO | Executing Flux query: from(bucket: "sensors_db") |> range(start: -24h) |> filter(fn: (r) => r._measurement == "environment") |> filter(fn: (r) => r._field == "co2_ppm" or r._field == "no2_ppb" or r._field == "pm25_ugm3" or r._field == "noise_db") |> group(columns: ["sensor_id", "_field"]) |> keep(columns: ["_time", "_value", "_field", "sensor_id", "zone"])
+2025-11-27 21:43:57,578 | ODIN | INFO | [13591d51] Response generated in 15.743s
+2025-11-27 21:43:57,579 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 21:43:57] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-27 23:29:09,777 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 23:29:09] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-27 23:29:09,784 | ODIN | INFO | [b834138a] Received chat request
+2025-11-27 23:29:12,794 | ODIN | INFO | [b834138a] Response generated in 3.011s
+2025-11-27 23:29:12,795 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 23:29:12] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-27 23:29:18,786 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 23:29:18] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-27 23:29:18,790 | ODIN | INFO | [0c95e486] Received chat request
+2025-11-27 23:29:20,546 | ODIN | INFO | [0c95e486] Response generated in 1.756s
+2025-11-27 23:29:20,546 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 23:29:20] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-27 23:29:32,005 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 23:29:32] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-27 23:29:32,009 | ODIN | INFO | [05bcb2ad] Received chat request
+2025-11-27 23:29:36,526 | ODIN | INFO | Executing Flux query: ```flux
+from(bucket: "sensors_db")
+  |> range(start: -1h)
+  |> filter(fn: (r) => r._measurement == "environment" and r._field == "co2_ppm")
+  |> aggregateWindow(every: 1m, fn: mean)
+```
+2025-11-27 23:29:36,540 | ODIN | ERROR | InfluxDB query error: (400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Content-Type': 'application/json; charset=utf-8', 'Vary': 'Accept-Encoding', 'X-Influxdb-Build': 'OSS', 'X-Influxdb-Version': 'v2.7.11', 'X-Platform-Error-Code': 'invalid', 'Date': 'Thu, 27 Nov 2025 22:29:36 GMT', 'Transfer-Encoding': 'chunked'})
+HTTP response body: b'{"code":"invalid","message":"compilation failed: error @1:1-1:2: invalid statement: `\\n\\nerror @1:2-1:3: invalid statement: `\\n\\nerror @1:3-1:4: invalid statement: `\\n\\nerror @6:1-6:2: invalid statement: `\\n\\nerror @6:2-6:3: invalid statement: `\\n\\nerror @6:3-6:4: invalid statement: `"}'
+
+2025-11-27 23:29:36,540 | ODIN | ERROR | Sensor query failed: (400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Content-Type': 'application/json; charset=utf-8', 'Vary': 'Accept-Encoding', 'X-Influxdb-Build': 'OSS', 'X-Influxdb-Version': 'v2.7.11', 'X-Platform-Error-Code': 'invalid', 'Date': 'Thu, 27 Nov 2025 22:29:36 GMT', 'Transfer-Encoding': 'chunked'})
+HTTP response body: b'{"code":"invalid","message":"compilation failed: error @1:1-1:2: invalid statement: `\\n\\nerror @1:2-1:3: invalid statement: `\\n\\nerror @1:3-1:4: invalid statement: `\\n\\nerror @6:1-6:2: invalid statement: `\\n\\nerror @6:2-6:3: invalid statement: `\\n\\nerror @6:3-6:4: invalid statement: `"}'
+
+2025-11-27 23:29:36,540 | ODIN | INFO | [05bcb2ad] Response generated in 4.531s
+2025-11-27 23:29:36,541 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 23:29:36] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-27 23:34:32,505 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 23:34:32] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-27 23:34:32,511 | ODIN | INFO | [23107310] Received chat request
+2025-11-27 23:34:34,688 | ODIN | INFO | [23107310] Response generated in 2.177s
+2025-11-27 23:34:34,688 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 23:34:34] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-27 23:34:40,819 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 23:34:40] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-27 23:34:40,824 | ODIN | INFO | [86d3a4ad] Received chat request
+2025-11-27 23:34:42,609 | ODIN | INFO | [86d3a4ad] Response generated in 1.786s
+2025-11-27 23:34:42,610 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 23:34:42] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-27 23:34:58,489 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 23:34:58] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-27 23:34:58,495 | ODIN | INFO | [21ad7c1c] Received chat request
+2025-11-27 23:34:58,496 | ODIN | INFO | Executing Flux query: from(bucket: "sensors_db") |> range(start: -24h) |> filter(fn: (r) => r._measurement == "environment") |> filter(fn: (r) => r._field == "co2_ppm") |> filter(fn: (r) => r.sensor_id == "data") |> group(columns: ["sensor_id", "_field"]) |> keep(columns: ["_time", "_value", "_field", "sensor_id", "zone"])
+2025-11-27 23:34:58,510 | ODIN | INFO | [21ad7c1c] Response generated in 0.016s
+2025-11-27 23:34:58,511 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 23:34:58] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-27 23:41:49,455 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 23:41:49] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-27 23:41:49,459 | ODIN | INFO | [4227f5d5] Received chat request
+2025-11-27 23:41:49,460 | ODIN | INFO | Executing Flux query: from(bucket: "sensors_db") |> range(start: -7d) |> filter(fn: (r) => r._measurement == "environment") |> filter(fn: (r) => r._field == "co2_ppm") |> group(columns: ["sensor_id"]) |> sort(columns: ["_time"], desc: true) |> limit(n: 1) |> keep(columns: ["_time", "_value", "sensor_id", "zone"])
+2025-11-27 23:41:49,653 | ODIN | INFO | [4227f5d5] Response generated in 0.194s
+2025-11-27 23:41:49,654 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 23:41:49] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-27 23:50:03,432 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 23:50:03] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-27 23:50:03,437 | ODIN | INFO | [08b8fa25] Received chat request
+2025-11-27 23:50:06,831 | ODIN | INFO | [08b8fa25] Response generated in 3.394s
+2025-11-27 23:50:06,831 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 23:50:06] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-27 23:50:16,416 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 23:50:16] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-27 23:50:16,422 | ODIN | INFO | [678f1fc1] Received chat request
+2025-11-27 23:50:36,490 | ODIN | INFO | [678f1fc1] Response generated in 20.069s
+2025-11-27 23:50:36,491 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 23:50:36] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-27 23:50:50,968 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 23:50:50] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-27 23:50:50,971 | ODIN | INFO | [ebe4c68c] Received chat request
+2025-11-27 23:51:21,065 | ODIN | ERROR | LLM API error: HTTPSConnectionPool(host='api.hyperbolic.xyz', port=443): Read timed out. (read timeout=30)
+2025-11-27 23:51:21,065 | ODIN | INFO | [ebe4c68c] Response generated in 30.094s
+2025-11-27 23:51:21,066 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 23:51:21] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-27 23:51:30,820 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 23:51:30] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-27 23:51:30,824 | ODIN | INFO | [ffde59bd] Received chat request
+2025-11-27 23:51:37,597 | ODIN | INFO | Executing Flux query: Here's the Flux query to analyze the CO2 trend for today from the specified bucket and measurement:
+
+```flux
+from(bucket: "sensors_db")
+  |> range(start: today(), stop: now())
+  |> filter(fn: (r) => r._measurement == "environment" and r._field == "co2_ppm")
+  |> aggregateWindow(every: 1h, fn: mean)
+  |> yield(name: "co2_trend")
+```
+2025-11-27 23:51:37,603 | ODIN | ERROR | InfluxDB query error: (400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Content-Type': 'application/json; charset=utf-8', 'Vary': 'Accept-Encoding', 'X-Influxdb-Build': 'OSS', 'X-Influxdb-Version': 'v2.7.11', 'X-Platform-Error-Code': 'invalid', 'Date': 'Thu, 27 Nov 2025 22:51:37 GMT', 'Transfer-Encoding': 'chunked'})
+HTTP response body: b'{"code":"invalid","message":"compilation failed: error @1:5-1:6: invalid statement: \'\\n\\nerror @1:99-1:100: invalid statement: :\\n\\nerror @3:1-3:2: invalid statement: `\\n\\nerror @3:2-3:3: invalid statement: `\\n\\nerror @3:3-3:4: invalid statement: `\\n\\nerror @9:1-9:2: invalid statement: `\\n\\nerror @9:2-9:3: invalid statement: `\\n\\nerror @9:3-9:4: invalid statement: `"}'
+
+2025-11-27 23:51:37,603 | ODIN | ERROR | Sensor query failed: (400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Content-Type': 'application/json; charset=utf-8', 'Vary': 'Accept-Encoding', 'X-Influxdb-Build': 'OSS', 'X-Influxdb-Version': 'v2.7.11', 'X-Platform-Error-Code': 'invalid', 'Date': 'Thu, 27 Nov 2025 22:51:37 GMT', 'Transfer-Encoding': 'chunked'})
+HTTP response body: b'{"code":"invalid","message":"compilation failed: error @1:5-1:6: invalid statement: \'\\n\\nerror @1:99-1:100: invalid statement: :\\n\\nerror @3:1-3:2: invalid statement: `\\n\\nerror @3:2-3:3: invalid statement: `\\n\\nerror @3:3-3:4: invalid statement: `\\n\\nerror @9:1-9:2: invalid statement: `\\n\\nerror @9:2-9:3: invalid statement: `\\n\\nerror @9:3-9:4: invalid statement: `"}'
+
+2025-11-27 23:51:37,603 | ODIN | INFO | [ffde59bd] Response generated in 6.78s
+2025-11-27 23:51:37,604 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 23:51:37] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-27 23:51:50,205 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 23:51:50] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-27 23:51:50,209 | ODIN | INFO | [0829a46c] Received chat request
+2025-11-27 23:51:50,209 | ODIN | INFO | Executing Flux query: from(bucket: "sensors_db") |> range(start: -7d) |> filter(fn: (r) => r._measurement == "environment") |> filter(fn: (r) => r._field == "co2_ppm") |> group(columns: ["sensor_id"]) |> sort(columns: ["_time"], desc: true) |> limit(n: 1) |> keep(columns: ["_time", "_value", "sensor_id", "zone"])
+2025-11-27 23:51:50,342 | ODIN | INFO | [0829a46c] Response generated in 0.134s
+2025-11-27 23:51:50,343 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 23:51:50] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-27 23:51:57,452 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 23:51:57] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-27 23:51:57,457 | ODIN | INFO | [a2c9a7dc] Received chat request
+2025-11-27 23:51:57,457 | ODIN | INFO | Executing Flux query: from(bucket: "sensors_db") |> range(start: -7d) |> filter(fn: (r) => r._measurement == "environment") |> filter(fn: (r) => r._field == "co2_ppm") |> group(columns: ["sensor_id"]) |> sort(columns: ["_time"], desc: true) |> limit(n: 1) |> keep(columns: ["_time", "_value", "sensor_id", "zone"])
+2025-11-27 23:51:57,585 | ODIN | INFO | [a2c9a7dc] Response generated in 0.128s
+2025-11-27 23:51:57,586 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 23:51:57] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-27 23:52:02,053 | ODIN | INFO | [50d162b4] Received chat request
+2025-11-27 23:52:07,662 | ODIN | INFO | [50d162b4] Response generated in 5.61s
+2025-11-27 23:52:07,664 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 23:52:07] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-27 23:52:18,331 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 23:52:18] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-27 23:52:18,338 | ODIN | INFO | [9da43512] Received chat request
+2025-11-27 23:52:18,338 | ODIN | INFO | Executing Flux query: from(bucket: "sensors_db") |> range(start: -24h) |> filter(fn: (r) => r._measurement == "environment") |> filter(fn: (r) => r._field == "noise_db") |> group(columns: ["sensor_id", "_field"]) |> keep(columns: ["_time", "_value", "_field", "sensor_id", "zone"])
+2025-11-27 23:52:22,108 | ODIN | INFO | [9da43512] Response generated in 3.77s
+2025-11-27 23:52:22,109 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 23:52:22] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-27 23:52:31,118 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 23:52:31] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-27 23:52:31,122 | ODIN | INFO | [183ae5ef] Received chat request
+2025-11-27 23:52:31,122 | ODIN | INFO | Executing Flux query: from(bucket: "sensors_db") |> range(start: -24h) |> filter(fn: (r) => r._measurement == "environment") |> filter(fn: (r) => r._field == "noise_db") |> group(columns: ["sensor_id", "_field"]) |> keep(columns: ["_time", "_value", "_field", "sensor_id", "zone"])
+2025-11-27 23:52:34,165 | ODIN | INFO | [183ae5ef] Response generated in 3.043s
+2025-11-27 23:52:34,165 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 23:52:34] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-27 23:52:42,753 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 23:52:42] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-27 23:52:42,757 | ODIN | INFO | [25dad837] Received chat request
+2025-11-27 23:52:42,758 | ODIN | INFO | Executing Flux query: from(bucket: "sensors_db") |> range(start: -24h) |> filter(fn: (r) => r._measurement == "environment") |> filter(fn: (r) => r._field == "noise_db") |> group(columns: ["sensor_id", "_field"]) |> keep(columns: ["_time", "_value", "_field", "sensor_id", "zone"])
+2025-11-27 23:52:45,653 | ODIN | INFO | [25dad837] Response generated in 2.895s
+2025-11-27 23:52:45,653 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 23:52:45] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-27 23:56:13,898 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 23:56:13] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-27 23:56:13,901 | ODIN | INFO | [6d16d267] Received chat request
+2025-11-27 23:56:15,739 | ODIN | INFO | [6d16d267] Response generated in 1.837s
+2025-11-27 23:56:15,739 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 23:56:15] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-27 23:56:42,254 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 23:56:42] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-27 23:56:42,259 | ODIN | INFO | [cee67233] Received chat request
+2025-11-27 23:56:43,987 | ODIN | INFO | [cee67233] Response generated in 1.728s
+2025-11-27 23:56:43,988 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 23:56:43] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-27 23:59:31,386 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 23:59:31] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-27 23:59:31,390 | ODIN | INFO | [5770e61f] Received chat request
+2025-11-27 23:59:36,773 | ODIN | INFO | [5770e61f] Response generated in 5.383s
+2025-11-27 23:59:36,774 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 23:59:36] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-27 23:59:51,128 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 23:59:51] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-27 23:59:51,132 | ODIN | INFO | [a22330fc] Received chat request
+2025-11-27 23:59:51,132 | ODIN | INFO | Executing Flux query: from(bucket: "sensors_db") |> range(start: -7d) |> filter(fn: (r) => r._measurement == "environment") |> filter(fn: (r) => r._field == "co2_ppm") |> group(columns: ["sensor_id"]) |> sort(columns: ["_time"], desc: true) |> limit(n: 1) |> keep(columns: ["_time", "_value", "sensor_id", "zone"])
+2025-11-27 23:59:51,260 | ODIN | INFO | [a22330fc] Response generated in 0.128s
+2025-11-27 23:59:51,261 | werkzeug | INFO | 127.0.0.1 - - [27/Nov/2025 23:59:51] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-28 00:00:08,365 | werkzeug | INFO | 127.0.0.1 - - [28/Nov/2025 00:00:08] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-28 00:00:08,369 | ODIN | INFO | [98761c99] Received chat request
+2025-11-28 00:00:08,369 | ODIN | INFO | Executing Flux query: from(bucket: "sensors_db") |> range(start: -24h) |> filter(fn: (r) => r._measurement == "environment") |> filter(fn: (r) => r._field == "co2_ppm") |> group(columns: ["sensor_id", "_field"]) |> keep(columns: ["_time", "_value", "_field", "sensor_id", "zone"])
+2025-11-28 00:00:12,312 | ODIN | INFO | [98761c99] Response generated in 3.943s
+2025-11-28 00:00:12,312 | werkzeug | INFO | 127.0.0.1 - - [28/Nov/2025 00:00:12] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-28 00:02:27,232 | werkzeug | INFO | 127.0.0.1 - - [28/Nov/2025 00:02:27] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-28 00:02:27,237 | ODIN | INFO | [013380a3] Received chat request
+2025-11-28 00:02:30,217 | ODIN | INFO | [013380a3] Response generated in 2.981s
+2025-11-28 00:02:30,218 | werkzeug | INFO | 127.0.0.1 - - [28/Nov/2025 00:02:30] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-28 00:02:46,230 | werkzeug | INFO | 127.0.0.1 - - [28/Nov/2025 00:02:46] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-28 00:02:46,234 | ODIN | INFO | [b8bed0c3] Received chat request
+2025-11-28 00:02:46,234 | ODIN | INFO | Executing Flux query: from(bucket: "sensors_db") |> range(start: -24h) |> filter(fn: (r) => r._measurement == "environment") |> filter(fn: (r) => r._field == "co2_ppm") |> group(columns: ["sensor_id", "_field"]) |> keep(columns: ["_time", "_value", "_field", "sensor_id", "zone"])
+2025-11-28 00:02:49,372 | ODIN | INFO | [b8bed0c3] Response generated in 3.138s
+2025-11-28 00:02:49,373 | werkzeug | INFO | 127.0.0.1 - - [28/Nov/2025 00:02:49] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-28 00:05:19,589 | werkzeug | INFO | 127.0.0.1 - - [28/Nov/2025 00:05:19] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-28 00:05:19,594 | ODIN | INFO | [39b463e9] Received chat request
+2025-11-28 00:05:26,452 | ODIN | INFO | [39b463e9] Response generated in 6.858s
+2025-11-28 00:05:26,452 | werkzeug | INFO | 127.0.0.1 - - [28/Nov/2025 00:05:26] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-28 00:06:25,559 | werkzeug | INFO | 127.0.0.1 - - [28/Nov/2025 00:06:25] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-28 00:06:25,563 | ODIN | INFO | [4be16c8e] Received chat request
+2025-11-28 00:06:37,164 | ODIN | INFO | [4be16c8e] Response generated in 11.602s
+2025-11-28 00:06:37,165 | werkzeug | INFO | 127.0.0.1 - - [28/Nov/2025 00:06:37] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-28 00:09:08,973 | werkzeug | INFO | 127.0.0.1 - - [28/Nov/2025 00:09:08] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-28 00:09:08,977 | ODIN | INFO | [ced8fdc0] Received chat request
+2025-11-28 00:09:08,978 | ODIN | INFO | Executing Flux query: from(bucket: "sensors_db") |> range(start: -24h) |> filter(fn: (r) => r._measurement == "environment") |> filter(fn: (r) => r._field == "co2_ppm" or r._field == "no2_ppb" or r._field == "pm25_ugm3" or r._field == "noise_db") |> group(columns: ["sensor_id", "_field"]) |> keep(columns: ["_time", "_value", "_field", "sensor_id", "zone"])
+2025-11-28 00:09:35,236 | ODIN | INFO | [ced8fdc0] Response generated in 26.259s
+2025-11-28 00:09:35,236 | werkzeug | INFO | 127.0.0.1 - - [28/Nov/2025 00:09:35] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-28 00:09:38,985 | werkzeug | INFO | 127.0.0.1 - - [28/Nov/2025 00:09:38] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-28 00:09:38,988 | ODIN | INFO | [02531c33] Received chat request
+2025-11-28 00:09:38,988 | ODIN | INFO | Executing Flux query: from(bucket: "sensors_db") |> range(start: -24h) |> filter(fn: (r) => r._measurement == "environment") |> filter(fn: (r) => r._field == "co2_ppm" or r._field == "no2_ppb" or r._field == "pm25_ugm3" or r._field == "noise_db") |> group(columns: ["sensor_id", "_field"]) |> keep(columns: ["_time", "_value", "_field", "sensor_id", "zone"])
+2025-11-28 00:09:52,836 | ODIN | INFO | [02531c33] Response generated in 13.848s
+2025-11-28 00:09:52,836 | werkzeug | INFO | 127.0.0.1 - - [28/Nov/2025 00:09:52] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-28 00:09:57,885 | werkzeug | INFO | 127.0.0.1 - - [28/Nov/2025 00:09:57] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-28 00:09:57,889 | ODIN | INFO | [11772eeb] Received chat request
+2025-11-28 00:10:00,493 | ODIN | INFO | [11772eeb] Response generated in 2.604s
+2025-11-28 00:10:00,493 | werkzeug | INFO | 127.0.0.1 - - [28/Nov/2025 00:10:00] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-28 00:10:56,160 | werkzeug | INFO | 127.0.0.1 - - [28/Nov/2025 00:10:56] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-28 00:10:56,164 | ODIN | INFO | [9ca1d5cc] Received chat request
+2025-11-28 00:10:56,165 | ODIN | INFO | Executing Flux query: from(bucket: "sensors_db") |> range(start: -24h) |> filter(fn: (r) => r._measurement == "environment") |> filter(fn: (r) => r._field == "co2_ppm" or r._field == "no2_ppb" or r._field == "pm25_ugm3" or r._field == "noise_db") |> group(columns: ["sensor_id", "_field"]) |> keep(columns: ["_time", "_value", "_field", "sensor_id", "zone"])
+2025-11-28 00:11:09,388 | ODIN | INFO | [9ca1d5cc] Response generated in 13.223s
+2025-11-28 00:11:09,388 | werkzeug | INFO | 127.0.0.1 - - [28/Nov/2025 00:11:09] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-28 00:11:55,922 | werkzeug | INFO | 127.0.0.1 - - [28/Nov/2025 00:11:55] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-28 00:11:55,925 | ODIN | INFO | [2723558d] Received chat request
+2025-11-28 00:11:55,926 | ODIN | INFO | Executing Flux query: from(bucket: "sensors_db") |> range(start: -24h) |> filter(fn: (r) => r._measurement == "environment") |> filter(fn: (r) => r._field == "co2_ppm" or r._field == "no2_ppb" or r._field == "pm25_ugm3" or r._field == "noise_db") |> group(columns: ["sensor_id", "_field"]) |> keep(columns: ["_time", "_value", "_field", "sensor_id", "zone"])
+2025-11-28 00:12:09,211 | ODIN | INFO | [2723558d] Response generated in 13.286s
+2025-11-28 00:12:09,212 | werkzeug | INFO | 127.0.0.1 - - [28/Nov/2025 00:12:09] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-28 00:14:55,427 | werkzeug | INFO | 127.0.0.1 - - [28/Nov/2025 00:14:55] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-28 00:14:55,441 | ODIN | INFO | [1a725bee] Received chat request
+2025-11-28 00:14:58,200 | ODIN | INFO | [1a725bee] Response generated in 2.758s
+2025-11-28 00:14:58,200 | werkzeug | INFO | 127.0.0.1 - - [28/Nov/2025 00:14:58] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-28 00:16:51,534 | werkzeug | INFO | 127.0.0.1 - - [28/Nov/2025 00:16:51] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-28 00:16:51,538 | ODIN | INFO | [6bb10c9e] Received chat request
+2025-11-28 00:17:00,886 | ODIN | INFO | [6bb10c9e] Response generated in 9.349s
+2025-11-28 00:17:00,887 | werkzeug | INFO | 127.0.0.1 - - [28/Nov/2025 00:17:00] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-28 00:18:12,825 | werkzeug | INFO | 127.0.0.1 - - [28/Nov/2025 00:18:12] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-28 00:18:12,828 | ODIN | INFO | [7895e376] Received chat request
+2025-11-28 00:18:22,800 | ODIN | INFO | [7895e376] Response generated in 9.972s
+2025-11-28 00:18:22,801 | werkzeug | INFO | 127.0.0.1 - - [28/Nov/2025 00:18:22] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-28 00:19:13,000 | werkzeug | INFO | 127.0.0.1 - - [28/Nov/2025 00:19:13] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-28 00:19:13,005 | ODIN | INFO | [4562988e] Received chat request
+2025-11-28 00:19:16,146 | ODIN | INFO | [4562988e] Response generated in 3.141s
+2025-11-28 00:19:16,146 | werkzeug | INFO | 127.0.0.1 - - [28/Nov/2025 00:19:16] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-28 00:19:27,054 | werkzeug | INFO | 127.0.0.1 - - [28/Nov/2025 00:19:27] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-28 00:19:27,060 | ODIN | INFO | [5c6ac1df] Received chat request
+2025-11-28 00:19:28,638 | ODIN | INFO | [5c6ac1df] Response generated in 1.578s
+2025-11-28 00:19:28,638 | werkzeug | INFO | 127.0.0.1 - - [28/Nov/2025 00:19:28] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-28 00:19:31,300 | ODIN | INFO | [35006c3d] Received chat request
+2025-11-28 00:19:36,864 | ODIN | INFO | [35006c3d] Response generated in 5.565s
+2025-11-28 00:19:36,865 | werkzeug | INFO | 127.0.0.1 - - [28/Nov/2025 00:19:36] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-28 00:21:08,451 | werkzeug | INFO | 127.0.0.1 - - [28/Nov/2025 00:21:08] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-28 00:21:08,456 | ODIN | INFO | [b5bee445] Received chat request
+2025-11-28 00:21:11,054 | ODIN | INFO | [b5bee445] Response generated in 2.598s
+2025-11-28 00:21:11,054 | werkzeug | INFO | 127.0.0.1 - - [28/Nov/2025 00:21:11] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-28 00:21:40,588 | werkzeug | INFO | 127.0.0.1 - - [28/Nov/2025 00:21:40] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-28 00:21:40,592 | ODIN | INFO | [ff287402] Received chat request
+2025-11-28 00:21:43,936 | ODIN | INFO | [ff287402] Response generated in 3.344s
+2025-11-28 00:21:43,936 | werkzeug | INFO | 127.0.0.1 - - [28/Nov/2025 00:21:43] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-28 00:29:31,892 | werkzeug | INFO | 127.0.0.1 - - [28/Nov/2025 00:29:31] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-28 00:29:31,902 | ODIN | INFO | [4fc14ace] Received chat request
+2025-11-28 00:29:39,544 | ODIN | INFO | [4fc14ace] Response generated in 7.641s
+2025-11-28 00:29:39,544 | werkzeug | INFO | 127.0.0.1 - - [28/Nov/2025 00:29:39] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-28 00:32:25,177 | werkzeug | INFO | 127.0.0.1 - - [28/Nov/2025 00:32:25] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-28 00:32:25,181 | ODIN | INFO | [0af8d519] Received chat request
+2025-11-28 00:32:37,638 | ODIN | INFO | [0af8d519] Response generated in 12.457s
+2025-11-28 00:32:37,638 | werkzeug | INFO | 127.0.0.1 - - [28/Nov/2025 00:32:37] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-28 00:32:57,992 | werkzeug | INFO | 127.0.0.1 - - [28/Nov/2025 00:32:57] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-28 00:32:58,002 | ODIN | INFO | [3e1b9755] Received chat request
+2025-11-28 00:32:58,002 | ODIN | INFO | Executing Flux query: from(bucket: "sensors_db") |> range(start: -24h) |> filter(fn: (r) => r._measurement == "environment") |> filter(fn: (r) => r._field == "co2_ppm" or r._field == "no2_ppb" or r._field == "pm25_ugm3" or r._field == "noise_db") |> group(columns: ["sensor_id", "_field"]) |> keep(columns: ["_time", "_value", "_field", "sensor_id", "zone"])
+2025-11-28 00:33:13,172 | ODIN | INFO | [3e1b9755] Response generated in 15.17s
+2025-11-28 00:33:13,173 | werkzeug | INFO | 127.0.0.1 - - [28/Nov/2025 00:33:13] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-28 00:34:12,503 | werkzeug | INFO | 127.0.0.1 - - [28/Nov/2025 00:34:12] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-28 00:34:12,508 | ODIN | INFO | [bc4a37af] Received chat request
+2025-11-28 00:34:16,143 | ODIN | INFO | [bc4a37af] Response generated in 3.635s
+2025-11-28 00:34:16,143 | werkzeug | INFO | 127.0.0.1 - - [28/Nov/2025 00:34:16] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-28 00:40:05,018 | werkzeug | INFO | 127.0.0.1 - - [28/Nov/2025 00:40:05] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-28 00:40:05,022 | ODIN | INFO | [1fd2d01b] Received chat request
+2025-11-28 00:40:05,022 | ODIN | INFO | Executing Flux query: from(bucket: "sensors_db") |> range(start: -24h) |> filter(fn: (r) => r._measurement == "environment") |> filter(fn: (r) => r._field == "co2_ppm") |> aggregateWindow(every: 1h, fn: mean, createEmpty: false) |> pivot(rowKey: ["_time"], columnKey: ["_field"], valueColumn: "_value") |> keep(columns: ["_time", "co2_ppm", "sensor_id", "zone"])
+2025-11-28 00:40:05,065 | ODIN | INFO | [1fd2d01b] Response generated in 0.043s
+2025-11-28 00:40:05,066 | werkzeug | INFO | 127.0.0.1 - - [28/Nov/2025 00:40:05] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-28 00:40:54,630 | werkzeug | INFO | 127.0.0.1 - - [28/Nov/2025 00:40:54] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-28 00:40:54,635 | ODIN | INFO | [121afefb] Received chat request
+2025-11-28 00:41:22,669 | ODIN | INFO | [121afefb] Response generated in 28.034s
+2025-11-28 00:41:22,669 | werkzeug | INFO | 127.0.0.1 - - [28/Nov/2025 00:41:22] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-28 00:43:21,657 | werkzeug | INFO | 127.0.0.1 - - [28/Nov/2025 00:43:21] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-28 00:43:21,665 | ODIN | INFO | [f71e9f07] Received chat request
+2025-11-28 00:43:24,035 | ODIN | INFO | [f71e9f07] Response generated in 2.37s
+2025-11-28 00:43:24,036 | werkzeug | INFO | 127.0.0.1 - - [28/Nov/2025 00:43:24] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-28 00:43:33,763 | werkzeug | INFO | 127.0.0.1 - - [28/Nov/2025 00:43:33] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-28 00:43:33,771 | ODIN | INFO | [cb8516cd] Received chat request
+2025-11-28 00:43:42,522 | ODIN | INFO | Executing Flux query: Here's the Flux query to analyze the current CO2 trend from the `environment` measurement in the `sensors_db` bucket:
+
+```flux
+from(bucket: "sensors_db")
+  |> range(start: -1h)
+  |> filter(fn: (r) => r._measurement == "environment" and r._field == "co2_ppm")
+  |> aggregateWindow(every: 1m, fn: mean)
+  |> yield(name: "co2_trend")
+```
+2025-11-28 00:43:42,529 | ODIN | ERROR | InfluxDB query error: (400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Content-Type': 'application/json; charset=utf-8', 'Vary': 'Accept-Encoding', 'X-Influxdb-Build': 'OSS', 'X-Influxdb-Version': 'v2.7.11', 'X-Platform-Error-Code': 'invalid', 'Date': 'Thu, 27 Nov 2025 23:43:42 GMT', 'Transfer-Encoding': 'chunked'})
+HTTP response body: b'{"code":"invalid","message":"compilation failed: error @1:5-1:6: invalid statement: \'\\n\\nerror @1:65-1:66: invalid statement: `\\n\\nerror @1:77-1:78: invalid statement: `\\n\\nerror @1:98-1:99: invalid statement: `\\n\\nerror @1:109-1:110: invalid statement: `\\n\\nerror @1:117-1:118: invalid statement: :\\n\\nerror @3:1-3:2: invalid statement: `\\n\\nerror @3:2-3:3: invalid statement: `\\n\\nerror @3:3-3:4: invalid statement: `\\n\\nerror @9:1-9:2: invalid statement: `\\n\\nerror @9:2-9:3: invalid statement: `\\n\\nerror @9:3-9:4: invalid statement: `"}'
+
+2025-11-28 00:43:42,529 | ODIN | ERROR | Sensor query failed: (400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Content-Type': 'application/json; charset=utf-8', 'Vary': 'Accept-Encoding', 'X-Influxdb-Build': 'OSS', 'X-Influxdb-Version': 'v2.7.11', 'X-Platform-Error-Code': 'invalid', 'Date': 'Thu, 27 Nov 2025 23:43:42 GMT', 'Transfer-Encoding': 'chunked'})
+HTTP response body: b'{"code":"invalid","message":"compilation failed: error @1:5-1:6: invalid statement: \'\\n\\nerror @1:65-1:66: invalid statement: `\\n\\nerror @1:77-1:78: invalid statement: `\\n\\nerror @1:98-1:99: invalid statement: `\\n\\nerror @1:109-1:110: invalid statement: `\\n\\nerror @1:117-1:118: invalid statement: :\\n\\nerror @3:1-3:2: invalid statement: `\\n\\nerror @3:2-3:3: invalid statement: `\\n\\nerror @3:3-3:4: invalid statement: `\\n\\nerror @9:1-9:2: invalid statement: `\\n\\nerror @9:2-9:3: invalid statement: `\\n\\nerror @9:3-9:4: invalid statement: `"}'
+
+2025-11-28 00:43:42,529 | ODIN | INFO | [cb8516cd] Response generated in 8.758s
+2025-11-28 00:43:42,529 | werkzeug | INFO | 127.0.0.1 - - [28/Nov/2025 00:43:42] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-28 00:57:15,000 | werkzeug | INFO | 127.0.0.1 - - [28/Nov/2025 00:57:15] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-28 00:57:15,005 | ODIN | INFO | [69c1d80c] Received chat request
+2025-11-28 00:57:18,025 | ODIN | INFO | [69c1d80c] Response generated in 3.021s
+2025-11-28 00:57:18,026 | werkzeug | INFO | 127.0.0.1 - - [28/Nov/2025 00:57:18] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-28 01:01:41,065 | werkzeug | INFO | 127.0.0.1 - - [28/Nov/2025 01:01:41] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-28 01:01:41,071 | ODIN | INFO | [2db21360] Received chat request
+2025-11-28 01:01:44,896 | ODIN | INFO | [2db21360] Response generated in 3.825s
+2025-11-28 01:01:44,896 | werkzeug | INFO | 127.0.0.1 - - [28/Nov/2025 01:01:44] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-28 01:01:54,066 | werkzeug | INFO | 127.0.0.1 - - [28/Nov/2025 01:01:54] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-28 01:01:54,070 | ODIN | INFO | [f7dbdc40] Received chat request
+2025-11-28 01:02:13,943 | ODIN | INFO | [f7dbdc40] Response generated in 19.874s
+2025-11-28 01:02:13,944 | werkzeug | INFO | 127.0.0.1 - - [28/Nov/2025 01:02:13] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-28 01:02:29,071 | werkzeug | INFO | 127.0.0.1 - - [28/Nov/2025 01:02:29] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-28 01:02:29,076 | ODIN | INFO | [8975dcaf] Received chat request
+2025-11-28 01:02:30,814 | ODIN | INFO | [8975dcaf] Response generated in 1.738s
+2025-11-28 01:02:30,815 | werkzeug | INFO | 127.0.0.1 - - [28/Nov/2025 01:02:30] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-28 01:02:36,144 | werkzeug | INFO | 127.0.0.1 - - [28/Nov/2025 01:02:36] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-28 01:02:36,147 | ODIN | INFO | [6295df47] Received chat request
+2025-11-28 01:02:40,932 | ODIN | INFO | [6295df47] Response generated in 4.784s
+2025-11-28 01:02:40,932 | werkzeug | INFO | 127.0.0.1 - - [28/Nov/2025 01:02:40] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-28 01:02:43,681 | werkzeug | INFO | 127.0.0.1 - - [28/Nov/2025 01:02:43] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-28 01:02:43,685 | ODIN | INFO | [0cfcf3c1] Received chat request
+2025-11-28 01:02:50,280 | ODIN | INFO | [0cfcf3c1] Response generated in 6.595s
+2025-11-28 01:02:50,281 | werkzeug | INFO | 127.0.0.1 - - [28/Nov/2025 01:02:50] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-28 01:03:14,065 | werkzeug | INFO | 127.0.0.1 - - [28/Nov/2025 01:03:14] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-28 01:03:14,069 | ODIN | INFO | [ecef17b4] Received chat request
+2025-11-28 01:03:19,682 | ODIN | INFO | [ecef17b4] Response generated in 5.613s
+2025-11-28 01:03:19,682 | werkzeug | INFO | 127.0.0.1 - - [28/Nov/2025 01:03:19] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-28 01:10:52,020 | werkzeug | INFO | 127.0.0.1 - - [28/Nov/2025 01:10:52] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-28 01:10:52,023 | ODIN | INFO | [51c3924e] Received chat request
+2025-11-28 01:11:00,923 | ODIN | INFO | [51c3924e] Response generated in 8.9s
+2025-11-28 01:11:00,924 | werkzeug | INFO | 127.0.0.1 - - [28/Nov/2025 01:11:00] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-28 01:13:27,699 | werkzeug | INFO | 127.0.0.1 - - [28/Nov/2025 01:13:27] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-28 01:13:27,703 | ODIN | INFO | [11fcc9d6] Received chat request
+2025-11-28 01:13:27,703 | ODIN | INFO | Executing Flux query: from(bucket: "sensors_db") |> range(start: -7d) |> filter(fn: (r) => r._measurement == "environment") |> filter(fn: (r) => r._field == "co2_ppm") |> group(columns: ["sensor_id"]) |> sort(columns: ["_time"], desc: true) |> limit(n: 1) |> keep(columns: ["_time", "_value", "sensor_id", "zone"])
+2025-11-28 01:13:27,867 | ODIN | INFO | [11fcc9d6] Response generated in 0.164s
+2025-11-28 01:13:27,868 | werkzeug | INFO | 127.0.0.1 - - [28/Nov/2025 01:13:27] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-28 01:13:34,051 | werkzeug | INFO | 127.0.0.1 - - [28/Nov/2025 01:13:34] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-28 01:13:34,055 | ODIN | INFO | [ea9d3f1f] Received chat request
+2025-11-28 01:13:34,056 | ODIN | INFO | Executing Flux query: from(bucket: "sensors_db") |> range(start: -7d) |> filter(fn: (r) => r._measurement == "environment") |> filter(fn: (r) => r._field == "co2_ppm") |> group(columns: ["sensor_id"]) |> sort(columns: ["_time"], desc: true) |> limit(n: 1) |> keep(columns: ["_time", "_value", "sensor_id", "zone"])
+2025-11-28 01:13:34,179 | ODIN | INFO | [ea9d3f1f] Response generated in 0.124s
+2025-11-28 01:13:34,180 | werkzeug | INFO | 127.0.0.1 - - [28/Nov/2025 01:13:34] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-28 01:32:44,134 | werkzeug | INFO | 127.0.0.1 - - [28/Nov/2025 01:32:44] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-28 01:32:44,139 | ODIN | INFO | [fbbc03e2] Received chat request
+2025-11-28 01:32:45,991 | ODIN | INFO | [fbbc03e2] Response generated in 1.853s
+2025-11-28 01:32:45,992 | werkzeug | INFO | 127.0.0.1 - - [28/Nov/2025 01:32:45] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-28 01:48:41,388 | werkzeug | INFO | 127.0.0.1 - - [28/Nov/2025 01:48:41] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-28 01:48:41,394 | ODIN | INFO | [037038aa] Received chat request
+2025-11-28 01:48:41,394 | ODIN | INFO | Executing Flux query: from(bucket: "sensors_db") |> range(start: -24h) |> filter(fn: (r) => r._measurement == "environment") |> filter(fn: (r) => r._field == "co2_ppm") |> group(columns: ["sensor_id", "_field"]) |> keep(columns: ["_time", "_value", "_field", "sensor_id", "zone"])
+2025-11-28 01:48:45,884 | ODIN | INFO | [037038aa] Response generated in 4.491s
+2025-11-28 01:48:45,885 | werkzeug | INFO | 127.0.0.1 - - [28/Nov/2025 01:48:45] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-28 02:03:08,429 | werkzeug | INFO | 127.0.0.1 - - [28/Nov/2025 02:03:08] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-28 02:03:08,434 | ODIN | INFO | [cb81e564] Received chat request
+2025-11-28 02:03:08,434 | ODIN | INFO | Executing Flux query: from(bucket: "sensors_db") |> range(start: -24h) |> filter(fn: (r) => r._measurement == "environment") |> filter(fn: (r) => r._field == "co2_ppm") |> group(columns: ["sensor_id", "_field"]) |> keep(columns: ["_time", "_value", "_field", "sensor_id", "zone"])
+2025-11-28 02:03:12,577 | ODIN | INFO | [cb81e564] Response generated in 4.143s
+2025-11-28 02:03:12,578 | werkzeug | INFO | 127.0.0.1 - - [28/Nov/2025 02:03:12] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-28 02:04:15,908 | werkzeug | INFO | 127.0.0.1 - - [28/Nov/2025 02:04:15] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-28 02:04:15,913 | ODIN | INFO | [895ca28b] Received chat request
+2025-11-28 02:04:15,913 | ODIN | INFO | Executing Flux query: from(bucket: "sensors_db") |> range(start: -7d) |> filter(fn: (r) => r._measurement == "environment") |> filter(fn: (r) => r._field == "co2_ppm") |> group(columns: ["sensor_id"]) |> sort(columns: ["_time"], desc: true) |> limit(n: 1) |> keep(columns: ["_time", "_value", "sensor_id", "zone"])
+2025-11-28 02:04:16,067 | ODIN | INFO | [895ca28b] Response generated in 0.154s
+2025-11-28 02:04:16,068 | werkzeug | INFO | 127.0.0.1 - - [28/Nov/2025 02:04:16] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-28 02:04:26,756 | werkzeug | INFO | 127.0.0.1 - - [28/Nov/2025 02:04:26] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-28 02:04:26,760 | ODIN | INFO | [fff434d6] Received chat request
+2025-11-28 02:04:26,761 | ODIN | INFO | Executing Flux query: from(bucket: "sensors_db") |> range(start: -7d) |> filter(fn: (r) => r._measurement == "environment") |> filter(fn: (r) => r._field == "co2_ppm") |> filter(fn: (r) => r.sensor_id == "s") |> group(columns: ["sensor_id"]) |> sort(columns: ["_time"], desc: true) |> limit(n: 1) |> keep(columns: ["_time", "_value", "sensor_id", "zone"])
+2025-11-28 02:04:26,768 | ODIN | INFO | [fff434d6] Response generated in 0.008s
+2025-11-28 02:04:26,768 | werkzeug | INFO | 127.0.0.1 - - [28/Nov/2025 02:04:26] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-28 02:04:38,327 | werkzeug | INFO | 127.0.0.1 - - [28/Nov/2025 02:04:38] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-28 02:04:38,331 | ODIN | INFO | [4c41e3f1] Received chat request
+2025-11-28 02:04:51,559 | ODIN | INFO | [4c41e3f1] Response generated in 13.228s
+2025-11-28 02:04:51,560 | werkzeug | INFO | 127.0.0.1 - - [28/Nov/2025 02:04:51] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-28 02:05:00,911 | werkzeug | INFO | 127.0.0.1 - - [28/Nov/2025 02:05:00] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-28 02:05:00,915 | ODIN | INFO | [9f3e0e6a] Received chat request
+2025-11-28 02:05:00,916 | ODIN | INFO | Executing Flux query: from(bucket: "sensors_db") |> range(start: -7d) |> filter(fn: (r) => r._measurement == "environment") |> filter(fn: (r) => r._field == "noise_db") |> group(columns: ["sensor_id"]) |> sort(columns: ["_time"], desc: true) |> limit(n: 1) |> keep(columns: ["_time", "_value", "sensor_id", "zone"])
+2025-11-28 02:05:01,133 | ODIN | INFO | [9f3e0e6a] Response generated in 0.217s
+2025-11-28 02:05:01,133 | werkzeug | INFO | 127.0.0.1 - - [28/Nov/2025 02:05:01] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-28 02:05:35,000 | werkzeug | INFO | 127.0.0.1 - - [28/Nov/2025 02:05:35] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-28 02:05:35,006 | ODIN | INFO | [c5c7a085] Received chat request
+2025-11-28 02:05:35,006 | ODIN | INFO | Executing Flux query: from(bucket: "sensors_db") |> range(start: -7d) |> filter(fn: (r) => r._measurement == "environment") |> filter(fn: (r) => r._field == "noise_db") |> filter(fn: (r) => r.sensor_id == "data") |> group(columns: ["sensor_id"]) |> sort(columns: ["_time"], desc: true) |> limit(n: 1) |> keep(columns: ["_time", "_value", "sensor_id", "zone"])
+2025-11-28 02:05:35,013 | ODIN | INFO | [c5c7a085] Response generated in 0.007s
+2025-11-28 02:05:35,013 | werkzeug | INFO | 127.0.0.1 - - [28/Nov/2025 02:05:35] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-28 02:05:46,226 | werkzeug | INFO | 127.0.0.1 - - [28/Nov/2025 02:05:46] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-28 02:05:46,230 | ODIN | INFO | [4079c598] Received chat request
+2025-11-28 02:05:46,231 | ODIN | INFO | Executing Flux query: from(bucket: "sensors_db") |> range(start: -7d) |> filter(fn: (r) => r._measurement == "environment") |> filter(fn: (r) => r._field == "pm25_ugm3") |> group(columns: ["sensor_id"]) |> sort(columns: ["_time"], desc: true) |> limit(n: 1) |> keep(columns: ["_time", "_value", "sensor_id", "zone"])
+2025-11-28 02:05:46,449 | ODIN | INFO | [4079c598] Response generated in 0.219s
+2025-11-28 02:05:46,450 | werkzeug | INFO | 127.0.0.1 - - [28/Nov/2025 02:05:46] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-28 02:05:55,027 | werkzeug | INFO | 127.0.0.1 - - [28/Nov/2025 02:05:55] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-28 02:05:55,030 | ODIN | INFO | [61a5162f] Received chat request
+2025-11-28 02:05:55,030 | ODIN | INFO | Executing Flux query: from(bucket: "sensors_db") |> range(start: -7d) |> filter(fn: (r) => r._measurement == "environment") |> filter(fn: (r) => r._field == "co2_ppm") |> filter(fn: (r) => r.sensor_id == "s") |> group(columns: ["sensor_id"]) |> sort(columns: ["_time"], desc: true) |> limit(n: 1) |> keep(columns: ["_time", "_value", "sensor_id", "zone"])
+2025-11-28 02:05:55,036 | ODIN | INFO | [61a5162f] Response generated in 0.005s
+2025-11-28 02:05:55,036 | werkzeug | INFO | 127.0.0.1 - - [28/Nov/2025 02:05:55] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-28 02:06:12,661 | werkzeug | INFO | 127.0.0.1 - - [28/Nov/2025 02:06:12] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-28 02:06:12,665 | ODIN | INFO | [17662876] Received chat request
+2025-11-28 02:06:12,665 | ODIN | INFO | [17662876] Response generated in 0.0s
+2025-11-28 02:06:12,665 | werkzeug | INFO | 127.0.0.1 - - [28/Nov/2025 02:06:12] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-28 02:06:25,025 | werkzeug | INFO | 127.0.0.1 - - [28/Nov/2025 02:06:25] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-28 02:06:25,029 | ODIN | INFO | [9f0e9140] Received chat request
+2025-11-28 02:06:40,777 | ODIN | INFO | [9f0e9140] Response generated in 15.748s
+2025-11-28 02:06:40,777 | werkzeug | INFO | 127.0.0.1 - - [28/Nov/2025 02:06:40] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-28 02:06:47,100 | werkzeug | INFO | 127.0.0.1 - - [28/Nov/2025 02:06:47] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-28 02:06:47,105 | ODIN | INFO | [29f41550] Received chat request
+2025-11-28 02:06:47,105 | ODIN | INFO | Executing Flux query: from(bucket: "sensors_db") |> range(start: -24h) |> filter(fn: (r) => r._measurement == "environment") |> filter(fn: (r) => r._field == "co2_ppm" or r._field == "no2_ppb" or r._field == "pm25_ugm3" or r._field == "noise_db") |> filter(fn: (r) => r.sensor_id == "data") |> group(columns: ["sensor_id", "_field"]) |> keep(columns: ["_time", "_value", "_field", "sensor_id", "zone"])
+2025-11-28 02:06:47,113 | ODIN | INFO | [29f41550] Response generated in 0.008s
+2025-11-28 02:06:47,114 | werkzeug | INFO | 127.0.0.1 - - [28/Nov/2025 02:06:47] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-28 02:07:08,612 | werkzeug | INFO | 127.0.0.1 - - [28/Nov/2025 02:07:08] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-28 02:07:08,615 | ODIN | INFO | [af5b5634] Received chat request
+2025-11-28 02:07:08,616 | ODIN | INFO | Executing Flux query: from(bucket: "sensors_db") |> range(start: -24h) |> filter(fn: (r) => r._measurement == "environment") |> filter(fn: (r) => r._field == "pm25_ugm3") |> group(columns: ["sensor_id", "_field"]) |> keep(columns: ["_time", "_value", "_field", "sensor_id", "zone"])
+2025-11-28 02:07:12,259 | ODIN | INFO | [af5b5634] Response generated in 3.643s
+2025-11-28 02:07:12,260 | werkzeug | INFO | 127.0.0.1 - - [28/Nov/2025 02:07:12] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-28 02:08:24,915 | werkzeug | INFO | 127.0.0.1 - - [28/Nov/2025 02:08:24] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-28 02:08:24,919 | ODIN | INFO | [9b8ae633] Received chat request
+2025-11-28 02:08:31,238 | ODIN | INFO | [9b8ae633] Response generated in 6.319s
+2025-11-28 02:08:31,239 | werkzeug | INFO | 127.0.0.1 - - [28/Nov/2025 02:08:31] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-28 02:08:44,445 | werkzeug | INFO | 127.0.0.1 - - [28/Nov/2025 02:08:44] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-28 02:08:44,450 | ODIN | INFO | [433e87e8] Received chat request
+2025-11-28 02:08:44,450 | ODIN | INFO | Executing Flux query: from(bucket: "sensors_db") |> range(start: -24h) |> filter(fn: (r) => r._measurement == "environment") |> filter(fn: (r) => r._field == "co2_ppm") |> group(columns: ["sensor_id", "_field"]) |> keep(columns: ["_time", "_value", "_field", "sensor_id", "zone"])
+2025-11-28 02:08:48,655 | ODIN | INFO | [433e87e8] Response generated in 4.206s
+2025-11-28 02:08:48,656 | werkzeug | INFO | 127.0.0.1 - - [28/Nov/2025 02:08:48] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-28 02:08:59,107 | werkzeug | INFO | 127.0.0.1 - - [28/Nov/2025 02:08:59] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-28 02:08:59,110 | ODIN | INFO | [76bf2b3c] Received chat request
+2025-11-28 02:08:59,111 | ODIN | INFO | Executing Flux query: from(bucket: "sensors_db") |> range(start: -24h) |> filter(fn: (r) => r._measurement == "environment") |> filter(fn: (r) => r._field == "pm25_ugm3") |> group(columns: ["sensor_id", "_field"]) |> keep(columns: ["_time", "_value", "_field", "sensor_id", "zone"])
+2025-11-28 02:09:03,358 | ODIN | INFO | [76bf2b3c] Response generated in 4.248s
+2025-11-28 02:09:03,359 | werkzeug | INFO | 127.0.0.1 - - [28/Nov/2025 02:09:03] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-28 02:11:14,031 | werkzeug | INFO | 127.0.0.1 - - [28/Nov/2025 02:11:14] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-28 02:11:14,036 | ODIN | INFO | [4fe9aece] Received chat request
+2025-11-28 02:11:15,427 | ODIN | ERROR | LLM API error: 400 Client Error: Bad Request for url: https://api.hyperbolic.xyz/v1/chat/completions
+2025-11-28 02:11:15,428 | ODIN | INFO | [4fe9aece] Response generated in 1.392s
+2025-11-28 02:11:15,428 | werkzeug | INFO | 127.0.0.1 - - [28/Nov/2025 02:11:15] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-28 02:11:19,417 | werkzeug | INFO | 127.0.0.1 - - [28/Nov/2025 02:11:19] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-28 02:11:19,420 | ODIN | INFO | [fe44f183] Received chat request
+2025-11-28 02:11:25,428 | ODIN | INFO | [fe44f183] Response generated in 6.008s
+2025-11-28 02:11:25,428 | werkzeug | INFO | 127.0.0.1 - - [28/Nov/2025 02:11:25] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-28 02:11:36,698 | werkzeug | INFO | 127.0.0.1 - - [28/Nov/2025 02:11:36] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-28 02:11:36,703 | ODIN | INFO | [8a2febe3] Received chat request
+2025-11-28 02:11:40,688 | ODIN | INFO | [8a2febe3] Response generated in 3.985s
+2025-11-28 02:11:40,688 | werkzeug | INFO | 127.0.0.1 - - [28/Nov/2025 02:11:40] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-28 02:12:04,973 | werkzeug | INFO | 127.0.0.1 - - [28/Nov/2025 02:12:04] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-28 02:12:04,978 | ODIN | INFO | [917f146d] Received chat request
+2025-11-28 02:12:04,978 | ODIN | INFO | Executing Flux query: from(bucket: "sensors_db") |> range(start: -7d) |> filter(fn: (r) => r._measurement == "environment") |> filter(fn: (r) => r._field == "co2_ppm") |> group(columns: ["sensor_id"]) |> sort(columns: ["_time"], desc: true) |> limit(n: 1) |> keep(columns: ["_time", "_value", "sensor_id", "zone"])
+2025-11-28 02:12:05,134 | ODIN | INFO | [917f146d] Response generated in 0.157s
+2025-11-28 02:12:05,135 | werkzeug | INFO | 127.0.0.1 - - [28/Nov/2025 02:12:05] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-28 02:12:16,553 | werkzeug | INFO | 127.0.0.1 - - [28/Nov/2025 02:12:16] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-28 02:12:16,560 | ODIN | INFO | [6fdedbff] Received chat request
+2025-11-28 02:12:16,561 | ODIN | INFO | Executing Flux query: from(bucket: "sensors_db") |> range(start: -24h) |> filter(fn: (r) => r._measurement == "environment") |> filter(fn: (r) => r._field == "noise_db") |> group(columns: ["sensor_id", "_field"]) |> keep(columns: ["_time", "_value", "_field", "sensor_id", "zone"])
+2025-11-28 02:12:21,081 | ODIN | INFO | [6fdedbff] Response generated in 4.521s
+2025-11-28 02:12:21,082 | werkzeug | INFO | 127.0.0.1 - - [28/Nov/2025 02:12:21] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-28 02:14:20,196 | werkzeug | INFO | 127.0.0.1 - - [28/Nov/2025 02:14:20] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-28 02:14:20,200 | ODIN | INFO | [621f5521] Received chat request
+2025-11-28 02:14:20,200 | ODIN | INFO | Executing Flux query: from(bucket: "sensors_db") |> range(start: -24h) |> filter(fn: (r) => r._measurement == "environment") |> filter(fn: (r) => r._field == "co2_ppm") |> group(columns: ["sensor_id", "_field"]) |> keep(columns: ["_time", "_value", "_field", "sensor_id", "zone"])
+2025-11-28 02:14:24,404 | ODIN | INFO | [621f5521] Response generated in 4.204s
+2025-11-28 02:14:24,404 | werkzeug | INFO | 127.0.0.1 - - [28/Nov/2025 02:14:24] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-28 02:16:30,684 | werkzeug | INFO | 127.0.0.1 - - [28/Nov/2025 02:16:30] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-28 02:16:30,689 | ODIN | INFO | [e6872bf7] Received chat request
+2025-11-28 02:16:38,624 | ODIN | INFO | [e6872bf7] Response generated in 7.935s
+2025-11-28 02:16:38,624 | werkzeug | INFO | 127.0.0.1 - - [28/Nov/2025 02:16:38] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-28 02:16:49,834 | werkzeug | INFO | 127.0.0.1 - - [28/Nov/2025 02:16:49] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-28 02:16:49,838 | ODIN | INFO | [b2eb3ee4] Received chat request
+2025-11-28 02:16:49,839 | ODIN | INFO | Executing Flux query: from(bucket: "sensors_db") |> range(start: -7d) |> filter(fn: (r) => r._measurement == "environment") |> filter(fn: (r) => r._field == "co2_ppm") |> group(columns: ["sensor_id"]) |> sort(columns: ["_time"], desc: true) |> limit(n: 1) |> keep(columns: ["_time", "_value", "sensor_id", "zone"])
+2025-11-28 02:16:50,001 | ODIN | INFO | [b2eb3ee4] Response generated in 0.163s
+2025-11-28 02:16:50,002 | werkzeug | INFO | 127.0.0.1 - - [28/Nov/2025 02:16:50] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-28 02:16:58,809 | werkzeug | INFO | 127.0.0.1 - - [28/Nov/2025 02:16:58] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-28 02:16:58,813 | ODIN | INFO | [ed4ee71e] Received chat request
+2025-11-28 02:16:58,814 | ODIN | INFO | Executing Flux query: from(bucket: "sensors_db") |> range(start: -24h) |> filter(fn: (r) => r._measurement == "environment") |> filter(fn: (r) => r._field == "pm25_ugm3") |> group(columns: ["sensor_id", "_field"]) |> keep(columns: ["_time", "_value", "_field", "sensor_id", "zone"])
+2025-11-28 02:17:03,154 | ODIN | INFO | [ed4ee71e] Response generated in 4.341s
+2025-11-28 02:17:03,155 | werkzeug | INFO | 127.0.0.1 - - [28/Nov/2025 02:17:03] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-28 02:17:11,439 | werkzeug | INFO | 127.0.0.1 - - [28/Nov/2025 02:17:11] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-28 02:17:11,444 | ODIN | INFO | [43b733b3] Received chat request
+2025-11-28 02:17:11,444 | ODIN | INFO | Executing Flux query: from(bucket: "sensors_db") |> range(start: -7d) |> filter(fn: (r) => r._measurement == "environment") |> filter(fn: (r) => r._field == "pm25_ugm3") |> group(columns: ["sensor_id"]) |> sort(columns: ["_time"], desc: true) |> limit(n: 1) |> keep(columns: ["_time", "_value", "sensor_id", "zone"])
+2025-11-28 02:17:11,620 | ODIN | INFO | [43b733b3] Response generated in 0.177s
+2025-11-28 02:17:11,621 | werkzeug | INFO | 127.0.0.1 - - [28/Nov/2025 02:17:11] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-28 02:17:17,089 | werkzeug | INFO | 127.0.0.1 - - [28/Nov/2025 02:17:17] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-28 02:17:17,093 | ODIN | INFO | [6b87338d] Received chat request
+2025-11-28 02:17:47,174 | ODIN | ERROR | LLM API error: HTTPSConnectionPool(host='api.hyperbolic.xyz', port=443): Read timed out. (read timeout=30)
+2025-11-28 02:17:47,174 | ODIN | INFO | [6b87338d] Response generated in 30.081s
+2025-11-28 02:17:47,175 | werkzeug | INFO | 127.0.0.1 - - [28/Nov/2025 02:17:47] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-28 02:17:49,573 | werkzeug | INFO | 127.0.0.1 - - [28/Nov/2025 02:17:49] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-28 02:17:49,577 | ODIN | INFO | [adf9c9d6] Received chat request
+2025-11-28 02:17:54,660 | ODIN | INFO | [adf9c9d6] Response generated in 5.082s
+2025-11-28 02:17:54,660 | werkzeug | INFO | 127.0.0.1 - - [28/Nov/2025 02:17:54] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-28 02:18:01,694 | werkzeug | INFO | 127.0.0.1 - - [28/Nov/2025 02:18:01] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-28 02:18:01,698 | ODIN | INFO | [cf4211a1] Received chat request
+2025-11-28 02:18:01,698 | ODIN | INFO | Executing Flux query: from(bucket: "sensors_db") |> range(start: -24h) |> filter(fn: (r) => r._measurement == "environment") |> filter(fn: (r) => r._field == "pm25_ugm3") |> group(columns: ["sensor_id", "_field"]) |> keep(columns: ["_time", "_value", "_field", "sensor_id", "zone"])
+2025-11-28 02:18:05,919 | ODIN | INFO | [cf4211a1] Response generated in 4.221s
+2025-11-28 02:18:05,920 | werkzeug | INFO | 127.0.0.1 - - [28/Nov/2025 02:18:05] "POST /odin/chat HTTP/1.1" 200 -
+2025-11-28 02:18:17,942 | werkzeug | INFO | 127.0.0.1 - - [28/Nov/2025 02:18:17] "OPTIONS /odin/chat HTTP/1.1" 200 -
+2025-11-28 02:18:17,946 | ODIN | INFO | [42f2a9b0] Received chat request
+2025-11-28 02:18:48,025 | ODIN | ERROR | LLM API error: HTTPSConnectionPool(host='api.hyperbolic.xyz', port=443): Read timed out. (read timeout=30)
+2025-11-28 02:18:48,026 | ODIN | INFO | [42f2a9b0] Response generated in 30.08s
+2025-11-28 02:18:48,026 | werkzeug | INFO | 127.0.0.1 - - [28/Nov/2025 02:18:48] "POST /odin/chat HTTP/1.1" 200 -

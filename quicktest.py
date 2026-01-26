@@ -5,6 +5,8 @@ import requests
 quick_queries = [
     "What was CO2 in construction zone yesterday?",
     "Show noise levels for S-I1",
+    "Show where CO2 > 600 ppm in the last hour",
+    "List all sensors in residential zone",
     "What is current temperature?"  # Should fail gracefully
 ]
 
