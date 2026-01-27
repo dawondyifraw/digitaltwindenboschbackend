@@ -6,7 +6,7 @@ A production-grade backend for the Digital Twin of Den Bosch. It ingests real-ti
 
 Version: Runner 3.0
 
-**Quick Links:** 📘 Overview · 🧭 Architecture · 🚀 Quick Start · ⚙️ Configuration · ☁️ Azure Deployment · 🩺 Operations
+**Quick Links:** 📘 [Overview](#overview) · 🧭 [Architecture](#architecture) · 🚀 [Quick Start](#quick-start-docker) · ⚙️ [Configuration](#configuration) · ☁️ [Azure Deployment](#azure-deployment-vm--docker-compose) · 🩺 [Operations](#operations)
 
 ## Table of Contents
 
@@ -198,10 +198,10 @@ python consumers/kafka_consumer_influx.py
 This stack is multi-service and runs cleanly on a Linux VM using Docker Compose. The steps below reference official Azure and Docker documentation.
 
 1) Create an Ubuntu Linux VM in Azure.
-   - Use the Azure portal quickstart for VM creation and SSH access. citeturn0search2
+   - Use the Azure portal quickstart for VM creation and SSH access.
 
 2) Install Docker Engine and Docker Compose on the VM.
-   - Follow Docker’s official Ubuntu installation guide. citeturn0search1
+   - Follow Docker’s official Ubuntu installation guide.
 
 3) Deploy the stack.
 
@@ -242,6 +242,11 @@ docker-compose -f config/docker-compose.yml logs -f
 - Rotate tokens regularly.
 - Use private subnets and NSG rules to limit external exposure.
 - For production, front APIs with a reverse proxy and TLS termination.
+
+## References
+
+- Azure portal: Create a Linux VM: https://learn.microsoft.com/en-us/azure/virtual-machines/linux/quick-create-portal
+- Docker Engine on Ubuntu: https://docs.docker.com/engine/install/ubuntu/
 
 ## License
 
