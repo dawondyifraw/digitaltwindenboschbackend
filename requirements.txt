@@ -1,0 +1,11 @@
+# Digital Twin Den Bosch Backend Python dependencies
+flask
+flask-cors
+requests
+influxdb-client
+confluent-kafka
+statistics
+python-dotenv
+websockets
+socketio
+eventlet

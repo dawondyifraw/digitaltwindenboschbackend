@@ -1,3 +1,11 @@
+#!/usr/bin/env python3
+"""
+Socket.IO Client Tester
+AUTHOR: Daniel Wondyifraw DataTwinLabs.nl
+
+Test client for WebSocket connections to anomaly detection server.
+"""
+
 import socketio
 
 # Create a Socket.IO client instance

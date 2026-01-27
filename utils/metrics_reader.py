@@ -1,7 +1,14 @@
 #!/usr/bin/env python3
+"""
+Metrics Reader Utility
+AUTHOR: Daniel Wondyifraw DataTwinLabs.nl
+
+Reads and processes metrics data from CSV files for analysis.
+"""
+
 import csv, sys, os, statistics
 from collections import defaultdict
-CSV_FILE = "metrics_ingest.csv"
+CSV_FILE = "evaluation/metrics_ingest.csv"
 CSV_PATH = os.getenv("CSV_PATH", CSV_FILE)
 
 def load_rows(run_id=None):
