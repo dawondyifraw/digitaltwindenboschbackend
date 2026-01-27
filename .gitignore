@@ -1,1 +1,168 @@
+# Environment variables and secrets
 .env
+.env.local
+.env.*.local
+.env.*
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+venv/
+env/
+ENV/
+.venv/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+*.code-workspace
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Logs
+*.log
+logs/
+*.log.*
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+*.swo
+
+# Database
+*.db
+*.sqlite3
+*.sqlite
+
+# Docker
+.dockerignore
+
+# Node.js (if any)
+node_modules/
+npm-debug.log*
+
+# Secrets and keys
+secrets/
+*.key
+*.pem
+*.crt
+*.p12
+*.p8
+
+# Backup files
+*.bak
+*.backup
+*.orig
+*.rej
+
+# Data files (may contain sensitive data)
+data/
+evaluation/*.csv
+odin/*.csv
+odin/*.log
+
+# Generated HTML files
+*.html
+
+# Testing and coverage
+.pytest_cache/
+.mypy_cache/
+.tox/
+.coverage
+htmlcov/
+.coverage.*
+coverage.xml
+*.cover
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Machine Learning / Data Science
+*.h5
+*.hdf5
+*.pkl
+*.pickle
+*.model
+*.weights
+*.npy
+*.npz
+*.parquet
+*.feather
+models/
+checkpoints/
+
+# Performance and profiling
+*.prof
+*.lprof
+
+# Local development
+.local
+*.local
+
+# Additional Python patterns
+.pytest_cache/
+.mypy_cache/
+.tox/
+.coverage
+htmlcov/
+.coverage.*
+coverage.xml
+*.cover
+*.pyo
+*.pyd
+
+# Additional IDE patterns
+*.code-workspace
+.history/
+
+# Additional OS patterns
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# Additional backup patterns
+*.orig
+*.rej
+*~
+
+# Additional log patterns
+*.log.*
+logs/
+
+# Additional temporary patterns
+*.tmp
+*.temp
+.cache/
+.tmp/
