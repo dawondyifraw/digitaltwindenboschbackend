@@ -160,6 +160,15 @@ curl http://localhost:5001/health
 curl http://localhost:5050/health
 ```
 
+## Connect to UI
+
+The real-time UI should connect to the WebSocket service exposed by the anomaly/streaming server.
+
+- WebSocket (Socket.IO): `http://localhost:5000`
+- Events: `anomaly`, `kafka_data`, `heartbeat`
+
+If your UI expects a plain WebSocket URL, use `ws://localhost:5000` and configure Socket.IO transport accordingly.
+
 ## Configuration
 
 Create a local `.env` file based on `.env.example`.
@@ -172,6 +181,13 @@ Required variables:
 - BUCKET
 - HYPERBOLIC_API_KEY (or equivalent LLM provider key)
 - KAFKA_BOOTSTRAP_SERVERS
+
+### Compose and Telegraf Variants
+
+- `config/docker-compose.yml`: primary, stable Compose file (local + standard deployments)
+- `config/docker-compose-new.yml`: experimental/alternate stack; use only if you need newer service wiring
+- `config/telegraf.conf`: default Telegraf configuration
+- `config/telegraf_new.conf`: alternate Telegraf configuration for experimental stack
 
 ## Local Development
 
@@ -250,4 +266,4 @@ docker-compose -f config/docker-compose.yml logs -f
 
 ## License
 
-This project is licensed under the MIT License. See `LICENSE`.
+This project is licensed under the Apache License 2.0. See `LICENSE`.
