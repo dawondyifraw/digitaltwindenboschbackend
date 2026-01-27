@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>WS Client Test</title>
+    <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+</head>
+
+<body>
+    <h2>WebSocket Test Client</h2>
+    <button id="connectBtn">Connect</button>
+
+    <pre id="log" style="background:#1e1e1e;color:#00ff00;padding:10px;height:300px;overflow:auto;"></pre>
+
+    <script>
+        function log(msg) {
+            document.getElementById("log").textContent += msg + "\n";
+        }
+
+        async function checkServerAndProceed(action) {
+            try {
+                const response = await fetch('http://localhost:5000/health');
+                if (!response.ok) throw new Error('Server not OK');
+                action();
+            } catch (e) {
+                alert("Server is NOT available. Please start the backend and try again.");
+            }
+        }
+
+        document.getElementById("connectBtn").addEventListener("click", function () {
+            checkServerAndProceed(() => {
+                log("Connecting to ws://localhost:5000 ...");
+                const socket = io("http://localhost:5000");
+
+                socket.on("connect", () => {
+                    log("CONNECTED → " + socket.id);
+                });
+
+                socket.onAny((event, data) => {
+                    log("EVENT → " + event + " : " + JSON.stringify(data));
+                });
+
+                socket.on("disconnect", () => {
+                    log("DISCONNECTED");
+                });
+            });
+        });
+    </script>
+
+</body>
+
+</html>
