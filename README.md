@@ -6,6 +6,8 @@ A production-grade backend for the Digital Twin of Den Bosch. It ingests real-ti
 
 Version: Runner 3.0
 
+Actively maintained for demo and research follow-up (best-effort maintenance, no production SLA).
+
 **Quick Links:** 📘 [Overview](#overview) · 🧭 [Architecture](#architecture) · 🚀 [Quick Start](#quick-start-docker) · ⚙️ [Configuration](#configuration) · ☁️ [Azure Deployment](#azure-deployment-vm--docker-compose) · 🩺 [Operations](#operations)
 
 ## Table of Contents
@@ -16,6 +18,7 @@ Version: Runner 3.0
 - Data Flow
 - Technology Stack
 - Repository Structure
+- Start Here
 - Quick Start (Docker)
 - Configuration
 - Local Development
@@ -143,6 +146,21 @@ digitaltwindenboschbackend/
 ├── README.md
 └── requirements.txt
 ```
+
+## Start Here
+
+```bash
+cp .env.example .env
+# Edit .env with real values
+
+docker-compose -f config/docker-compose.yml up --build -d
+```
+
+Once running:
+
+- WebSocket/Socket.IO: `http://localhost:5000`
+- Dashboard API health: `http://localhost:5001/health`
+- LLM Query API health: `http://localhost:5050/health`
 
 ## Quick Start (Docker)
 
