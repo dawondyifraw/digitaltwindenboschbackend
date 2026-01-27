@@ -59,6 +59,8 @@ logs/
 *.temp
 *.swp
 *.swo
+.cache/
+.tmp/
 
 # Database
 *.db
@@ -104,6 +106,8 @@ htmlcov/
 .coverage.*
 coverage.xml
 *.cover
+*.pyo
+*.pyd
 
 # Jupyter Notebook
 .ipynb_checkpoints
@@ -130,20 +134,7 @@ checkpoints/
 .local
 *.local
 
-# Additional Python patterns
-.pytest_cache/
-.mypy_cache/
-.tox/
-.coverage
-htmlcov/
-.coverage.*
-coverage.xml
-*.cover
-*.pyo
-*.pyd
-
 # Additional IDE patterns
-*.code-workspace
 .history/
 
 # Additional OS patterns
@@ -151,18 +142,3 @@ coverage.xml
 .directory
 .Trash-*
 .nfs*
-
-# Additional backup patterns
-*.orig
-*.rej
-*~
-
-# Additional log patterns
-*.log.*
-logs/
-
-# Additional temporary patterns
-*.tmp
-*.temp
-.cache/
-.tmp/
